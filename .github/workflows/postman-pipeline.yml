@@ -1,0 +1,154 @@
+name: Postman Pipeline
+
+# Runs the full CSE pipeline against the monorepo:
+#   1. Bootstrap  — uploads each service's OpenAPI spec to Postman and
+#                   generates baseline/smoke/contract collections
+#   2. Docs       — generates natural-language descriptions for every
+#                   collection in the workspace using the agent-docs action
+#
+# Required secrets:  POSTMAN_API_KEY
+# Optional variables: POSTMAN_WORKSPACE_ID  (leave unset to auto-create)
+
+on:
+  workflow_dispatch:
+    inputs:
+      workspace-id:
+        description: >-
+          Existing Postman workspace ID to add services into.
+          Leave empty to create a new workspace from order-service.
+        required: false
+      dry-run:
+        description: 'Run docs step in dry-run mode (no writes to Postman)'
+        required: false
+        default: 'false'
+
+jobs:
+
+  # ---------------------------------------------------------------------------
+  # Phase 1a — Bootstrap order-service (the anchor job)
+  #
+  # Creates (or joins) the workspace. All other bootstrap jobs depend on
+  # this job's workspace-id output so they all land in the same workspace.
+  # ---------------------------------------------------------------------------
+  bootstrap-anchor:
+    name: Bootstrap order-service
+    runs-on: ubuntu-latest
+    outputs:
+      workspace-id: ${{ steps.bootstrap.outputs.workspace-id }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bootstrap order-service
+        id: bootstrap
+        uses: postman-cs/postman-bootstrap-action@main
+        with:
+          project-name:   order-service
+          spec-url:       https://raw.githubusercontent.com/andrewpostymt/TestGit/main/services/order-service/openapi.yaml
+          workspace-id:   ${{ inputs.workspace-id || vars.POSTMAN_WORKSPACE_ID }}
+          postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
+
+      - name: Print workspace info
+        run: |
+          echo "workspace-id:   ${{ steps.bootstrap.outputs.workspace-id }}"
+          echo "workspace-name: ${{ steps.bootstrap.outputs.workspace-name }}"
+          echo "workspace-url:  ${{ steps.bootstrap.outputs.workspace-url }}"
+          echo "collections:    ${{ steps.bootstrap.outputs.collections-json }}"
+
+  # ---------------------------------------------------------------------------
+  # Phase 1b — Bootstrap all remaining services (matrix)
+  #
+  # Each job targets the same workspace created/identified in Phase 1a.
+  # fail-fast: false so one bad spec does not cancel the rest.
+  # ---------------------------------------------------------------------------
+  bootstrap-services:
+    name: Bootstrap ${{ matrix.service }}
+    needs: bootstrap-anchor
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        service:
+          - user-service
+          - auth-service
+          - product-service
+          - payment-service
+          - inventory-service
+          - notification-service
+          - shipping-service
+          - review-service
+          - search-service
+          - analytics-service
+          - customer-service
+          - catalog-service
+          - cart-service
+          - checkout-service
+          - recommendation-service
+          - subscription-service
+          - billing-service
+          - admin-service
+          - webhook-service
+          - file-service
+          - email-service
+          - sms-service
+          - audit-service
+          - config-service
+          - feature-flag-service
+          - event-service
+          - workflow-service
+          - document-service
+          - media-service
+          - localisation-service
+          - tax-service
+          - discount-service
+          - loyalty-service
+          - rate-limit-service
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bootstrap ${{ matrix.service }}
+        id: bootstrap
+        uses: postman-cs/postman-bootstrap-action@main
+        with:
+          project-name:   ${{ matrix.service }}
+          spec-url:       https://raw.githubusercontent.com/andrewpostymt/TestGit/main/services/${{ matrix.service }}/openapi.yaml
+          workspace-id:   ${{ needs.bootstrap-anchor.outputs.workspace-id }}
+          postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
+
+      - name: Print collection outputs
+        run: |
+          echo "service:       ${{ matrix.service }}"
+          echo "collections:   ${{ steps.bootstrap.outputs.collections-json }}"
+
+  # ---------------------------------------------------------------------------
+  # Phase 2 — Generate documentation
+  #
+  # Runs after all bootstrap jobs complete. Iterates over every collection
+  # in the workspace and writes natural-language descriptions via the
+  # agent-docs action (template mode by default; set agent-mode: 'true'
+  # in the action inputs to use the Postman AI agent instead).
+  # ---------------------------------------------------------------------------
+  generate-docs:
+    name: Generate collection documentation
+    needs: [bootstrap-anchor, bootstrap-services]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate docs for all collections
+        id: docs
+        uses: andrewpostymt/postman-agent-docs-action@main
+        with:
+          postman-api-key:    ${{ secrets.POSTMAN_API_KEY }}
+          workspace-id:       ${{ needs.bootstrap-anchor.outputs.workspace-id }}
+          overwrite-existing: 'true'
+          dry-run:            ${{ inputs.dry-run }}
+
+      - name: Print docs results
+        run: |
+          echo "collections-updated: ${{ steps.docs.outputs.collections-updated }}"
+          echo "collections-skipped: ${{ steps.docs.outputs.collections-skipped }}"
+          echo ""
+          echo "Results:"
+          echo '${{ steps.docs.outputs.results-json }}' | jq '.'
