@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/tax
     description: Staging
 paths:
-  /tax/rates:
+  '/tax/rates':
     get:
       summary: List taxRates
       operationId: get_tax_rates
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tax/rates/{taxRateId}:
+  '/tax/rates/{taxRateId}':
     get:
       summary: Get taxRate
       operationId: get_tax_rates_taxrateid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tax/calculate:
+  '/tax/calculate':
     post:
       summary: Calculate tax
       operationId: post_tax_calculate
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tax/nexus:
+  '/tax/nexus':
     get:
       summary: List tax nexus
       operationId: get_tax_nexus
@@ -171,7 +171,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tax/nexus:
     post:
       summary: Add nexus
       operationId: post_tax_nexus
@@ -191,7 +190,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tax/exemptions:
+  '/tax/exemptions':
     get:
       summary: List exemptions
       operationId: get_tax_exemptions
@@ -203,7 +202,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tax/exemptions:
     post:
       summary: Create exemption
       operationId: post_tax_exemptions
@@ -223,7 +221,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tax/reports:
+  '/tax/reports':
     get:
       summary: Tax reports
       operationId: get_tax_reports
@@ -235,7 +233,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tax/categories:
+  '/tax/categories':
     get:
       summary: List tax categories
       operationId: get_tax_categories
@@ -247,7 +245,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tax/jurisdictions:
+  '/tax/jurisdictions':
     get:
       summary: List jurisdictions
       operationId: get_tax_jurisdictions
@@ -259,7 +257,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tax/validate:
+  '/tax/validate':
     post:
       summary: Validate tax ID
       operationId: post_tax_validate
@@ -279,7 +277,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tax/filing:
+  '/tax/filing':
     get:
       summary: List tax filings
       operationId: get_tax_filing

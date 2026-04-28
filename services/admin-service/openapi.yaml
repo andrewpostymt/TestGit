@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/admin
     description: Staging
 paths:
-  /admin/config:
+  '/admin/config':
     get:
       summary: List configs
       operationId: get_admin_config
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/config/{configId}:
+  '/admin/config/{configId}':
     get:
       summary: Get config
       operationId: get_admin_config_configid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/users:
+  '/admin/users':
     get:
       summary: List admin users
       operationId: get_admin_users
@@ -151,7 +151,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/users:
     post:
       summary: Create admin user
       operationId: post_admin_users
@@ -171,7 +170,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/users/{userId}/roles:
+  '/admin/users/{userId}/roles':
     put:
       summary: Update user roles
       operationId: put_admin_users_userid_roles
@@ -191,7 +190,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/permissions:
+  '/admin/permissions':
     get:
       summary: List permissions
       operationId: get_admin_permissions
@@ -203,7 +202,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/audit-log:
+  '/admin/audit-log':
     get:
       summary: Get audit log
       operationId: get_admin_audit_log
@@ -215,7 +214,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/system/health:
+  '/admin/system/health':
     get:
       summary: System health check
       operationId: get_admin_system_health
@@ -227,7 +226,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/system/status:
+  '/admin/system/status':
     get:
       summary: System status
       operationId: get_admin_system_status
@@ -239,7 +238,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/system/maintenance:
+  '/admin/system/maintenance':
     post:
       summary: Enable maintenance mode
       operationId: post_admin_system_maintenance
@@ -259,7 +258,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/features:
+  '/admin/features':
     get:
       summary: List feature flags
       operationId: get_admin_features
@@ -271,7 +270,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/features/{featureId}:
+  '/admin/features/{featureId}':
     put:
       summary: Update feature flag
       operationId: put_admin_features_featureid
@@ -291,7 +290,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/tenants:
+  '/admin/tenants':
     get:
       summary: List tenants
       operationId: get_admin_tenants
@@ -303,7 +302,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/tenants:
     post:
       summary: Create tenant
       operationId: post_admin_tenants
@@ -323,7 +321,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/backups:
+  '/admin/backups':
     get:
       summary: List backups
       operationId: get_admin_backups
@@ -335,7 +333,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/backups:
     post:
       summary: Trigger backup
       operationId: post_admin_backups
@@ -347,7 +344,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/migrations:
+  '/admin/migrations':
     get:
       summary: List migrations
       operationId: get_admin_migrations
@@ -359,7 +356,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/cache/flush:
+  '/admin/cache/flush':
     post:
       summary: Flush cache
       operationId: post_admin_cache_flush
@@ -371,7 +368,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/jobs:
+  '/admin/jobs':
     get:
       summary: List background jobs
       operationId: get_admin_jobs
@@ -383,7 +380,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/jobs/{jobId}/retry:
+  '/admin/jobs/{jobId}/retry':
     post:
       summary: Retry failed job
       operationId: post_admin_jobs_jobid_retry
@@ -395,7 +392,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /admin/metrics:
+  '/admin/metrics':
     get:
       summary: System metrics
       operationId: get_admin_metrics

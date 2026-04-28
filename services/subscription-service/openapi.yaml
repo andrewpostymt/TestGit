@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/subscriptions
     description: Staging
 paths:
-  /subscriptions:
+  '/subscriptions':
     get:
       summary: List subscriptions
       operationId: get_subscriptions
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/{subscriptionId}:
+  '/subscriptions/{subscriptionId}':
     get:
       summary: Get subscription
       operationId: get_subscriptions_subscriptionid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/{subscriptionId}/pause:
+  '/subscriptions/{subscriptionId}/pause':
     post:
       summary: Pause subscription
       operationId: post_subscriptions_subscriptionid_pause
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/{subscriptionId}/resume:
+  '/subscriptions/{subscriptionId}/resume':
     post:
       summary: Resume subscription
       operationId: post_subscriptions_subscriptionid_resume
@@ -171,7 +171,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/{subscriptionId}/cancel:
+  '/subscriptions/{subscriptionId}/cancel':
     post:
       summary: Cancel subscription
       operationId: post_subscriptions_subscriptionid_cancel
@@ -191,7 +191,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/{subscriptionId}/upgrade:
+  '/subscriptions/{subscriptionId}/upgrade':
     post:
       summary: Upgrade subscription
       operationId: post_subscriptions_subscriptionid_upgrade
@@ -211,7 +211,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/{subscriptionId}/downgrade:
+  '/subscriptions/{subscriptionId}/downgrade':
     post:
       summary: Downgrade subscription
       operationId: post_subscriptions_subscriptionid_downgrade
@@ -231,7 +231,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/{subscriptionId}/billing:
+  '/subscriptions/{subscriptionId}/billing':
     get:
       summary: Get billing history
       operationId: get_subscriptions_subscriptionid_billing
@@ -243,7 +243,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/{subscriptionId}/invoices:
+  '/subscriptions/{subscriptionId}/invoices':
     get:
       summary: Get invoices
       operationId: get_subscriptions_subscriptionid_invoices
@@ -255,7 +255,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/{subscriptionId}/usage:
+  '/subscriptions/{subscriptionId}/usage':
     get:
       summary: Get usage data
       operationId: get_subscriptions_subscriptionid_usage
@@ -267,7 +267,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/plans:
+  '/subscriptions/plans':
     get:
       summary: List plans
       operationId: get_subscriptions_plans
@@ -279,7 +279,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/plans/{planId}:
+  '/subscriptions/plans/{planId}':
     get:
       summary: Get plan details
       operationId: get_subscriptions_plans_planid
@@ -291,7 +291,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/trials:
+  '/subscriptions/trials':
     get:
       summary: List active trials
       operationId: get_subscriptions_trials
@@ -303,7 +303,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/{subscriptionId}/payment-method:
+  '/subscriptions/{subscriptionId}/payment-method':
     put:
       summary: Update payment method
       operationId: put_subscriptions_subscriptionid_payment_method
@@ -323,7 +323,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/analytics:
+  '/subscriptions/analytics':
     get:
       summary: Subscription analytics
       operationId: get_subscriptions_analytics
@@ -335,7 +335,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /subscriptions/{subscriptionId}/prorate:
+  '/subscriptions/{subscriptionId}/prorate':
     post:
       summary: Calculate proration
       operationId: post_subscriptions_subscriptionid_prorate

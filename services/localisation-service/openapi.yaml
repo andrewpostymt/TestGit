@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/l10n
     description: Staging
 paths:
-  /locales:
+  '/locales':
     get:
       summary: List locales
       operationId: get_locales
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /locales/{localeId}:
+  '/locales/{localeId}':
     get:
       summary: Get locale
       operationId: get_locales_localeid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /locales/{localeCode}/translations:
+  '/locales/{localeCode}/translations':
     get:
       summary: Get translations for locale
       operationId: get_locales_localecode_translations
@@ -151,7 +151,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /locales/{localeCode}/translations:
     put:
       summary: Update translations
       operationId: put_locales_localecode_translations
@@ -171,7 +170,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /translations/keys:
+  '/translations/keys':
     get:
       summary: List translation keys
       operationId: get_translations_keys
@@ -183,7 +182,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /translations/keys:
     post:
       summary: Create translation key
       operationId: post_translations_keys
@@ -203,7 +201,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /translations/keys/{keyId}:
+  '/translations/keys/{keyId}':
     put:
       summary: Update translation key
       operationId: put_translations_keys_keyid
@@ -223,7 +221,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /translations/import:
+  '/translations/import':
     post:
       summary: Import translations
       operationId: post_translations_import
@@ -243,7 +241,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /translations/export:
+  '/translations/export':
     post:
       summary: Export translations
       operationId: post_translations_export
@@ -263,7 +261,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /translations/missing:
+  '/translations/missing':
     get:
       summary: Get missing translations
       operationId: get_translations_missing
@@ -275,7 +273,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /currencies:
+  '/currencies':
     get:
       summary: List supported currencies
       operationId: get_currencies
@@ -287,7 +285,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /timezones:
+  '/timezones':
     get:
       summary: List timezones
       operationId: get_timezones

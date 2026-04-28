@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/documents
     description: Staging
 paths:
-  /documents:
+  '/documents':
     get:
       summary: List documents
       operationId: get_documents
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/{documentId}:
+  '/documents/{documentId}':
     get:
       summary: Get document
       operationId: get_documents_documentid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/{documentId}/versions:
+  '/documents/{documentId}/versions':
     get:
       summary: List document versions
       operationId: get_documents_documentid_versions
@@ -151,7 +151,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/{documentId}/versions:
     post:
       summary: Create new version
       operationId: post_documents_documentid_versions
@@ -171,7 +170,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/{documentId}/download:
+  '/documents/{documentId}/download':
     get:
       summary: Download document
       operationId: get_documents_documentid_download
@@ -183,7 +182,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/{documentId}/sign:
+  '/documents/{documentId}/sign':
     post:
       summary: Sign document
       operationId: post_documents_documentid_sign
@@ -203,7 +202,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/{documentId}/signatures:
+  '/documents/{documentId}/signatures':
     get:
       summary: Get signatures
       operationId: get_documents_documentid_signatures
@@ -215,7 +214,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/{documentId}/share:
+  '/documents/{documentId}/share':
     post:
       summary: Share document
       operationId: post_documents_documentid_share
@@ -235,7 +234,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/templates:
+  '/documents/templates':
     get:
       summary: List document templates
       operationId: get_documents_templates
@@ -247,7 +246,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/templates:
     post:
       summary: Create template
       operationId: post_documents_templates
@@ -267,7 +265,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/generate:
+  '/documents/generate':
     post:
       summary: Generate document from template
       operationId: post_documents_generate
@@ -287,7 +285,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/{documentId}/convert:
+  '/documents/{documentId}/convert':
     post:
       summary: Convert document format
       operationId: post_documents_documentid_convert
@@ -307,7 +305,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/{documentId}/archive:
+  '/documents/{documentId}/archive':
     post:
       summary: Archive document
       operationId: post_documents_documentid_archive
@@ -319,7 +317,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/search:
+  '/documents/search':
     get:
       summary: Search documents
       operationId: get_documents_search
@@ -331,7 +329,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/folders:
+  '/documents/folders':
     get:
       summary: List folders
       operationId: get_documents_folders
@@ -343,7 +341,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /documents/folders:
     post:
       summary: Create folder
       operationId: post_documents_folders

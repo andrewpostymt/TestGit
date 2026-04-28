@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/carts
     description: Staging
 paths:
-  /carts:
+  '/carts':
     get:
       summary: List carts
       operationId: get_carts
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /carts/{cartId}:
+  '/carts/{cartId}':
     get:
       summary: Get cart
       operationId: get_carts_cartid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /carts/{cartId}/items:
+  '/carts/{cartId}/items':
     post:
       summary: Add item to cart
       operationId: post_carts_cartid_items
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /carts/{cartId}/items/{itemId}:
+  '/carts/{cartId}/items/{itemId}':
     put:
       summary: Update cart item
       operationId: put_carts_cartid_items_itemid
@@ -179,7 +179,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /carts/{cartId}/items/{itemId}:
     delete:
       summary: Remove cart item
       operationId: delete_carts_cartid_items_itemid
@@ -191,7 +190,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /carts/{cartId}/coupon:
+  '/carts/{cartId}/coupon':
     post:
       summary: Apply coupon
       operationId: post_carts_cartid_coupon
@@ -211,7 +210,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /carts/{cartId}/coupon:
     delete:
       summary: Remove coupon
       operationId: delete_carts_cartid_coupon
@@ -223,7 +221,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /carts/{cartId}/checkout:
+  '/carts/{cartId}/checkout':
     post:
       summary: Convert cart to order
       operationId: post_carts_cartid_checkout
@@ -243,7 +241,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /carts/{cartId}/totals:
+  '/carts/{cartId}/totals':
     get:
       summary: Get cart totals
       operationId: get_carts_cartid_totals
@@ -255,7 +253,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /carts/{cartId}/merge:
+  '/carts/{cartId}/merge':
     post:
       summary: Merge carts
       operationId: post_carts_cartid_merge
@@ -275,7 +273,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /carts/abandoned:
+  '/carts/abandoned':
     get:
       summary: List abandoned carts
       operationId: get_carts_abandoned
@@ -287,7 +285,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /carts/{cartId}/recover:
+  '/carts/{cartId}/recover':
     post:
       summary: Recover abandoned cart
       operationId: post_carts_cartid_recover

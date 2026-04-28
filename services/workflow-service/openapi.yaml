@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/workflows
     description: Staging
 paths:
-  /workflows:
+  '/workflows':
     get:
       summary: List workflows
       operationId: get_workflows
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}:
+  '/workflows/{workflowId}':
     get:
       summary: Get workflow
       operationId: get_workflows_workflowid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}/start:
+  '/workflows/{workflowId}/start':
     post:
       summary: Start workflow
       operationId: post_workflows_workflowid_start
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}/pause:
+  '/workflows/{workflowId}/pause':
     post:
       summary: Pause workflow
       operationId: post_workflows_workflowid_pause
@@ -171,7 +171,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}/resume:
+  '/workflows/{workflowId}/resume':
     post:
       summary: Resume workflow
       operationId: post_workflows_workflowid_resume
@@ -183,7 +183,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}/cancel:
+  '/workflows/{workflowId}/cancel':
     post:
       summary: Cancel workflow
       operationId: post_workflows_workflowid_cancel
@@ -195,7 +195,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}/instances:
+  '/workflows/{workflowId}/instances':
     get:
       summary: List workflow instances
       operationId: get_workflows_workflowid_instances
@@ -207,7 +207,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/instances/{instanceId}:
+  '/workflows/instances/{instanceId}':
     get:
       summary: Get workflow instance
       operationId: get_workflows_instances_instanceid
@@ -219,7 +219,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/instances/{instanceId}/steps:
+  '/workflows/instances/{instanceId}/steps':
     get:
       summary: Get workflow steps
       operationId: get_workflows_instances_instanceid_steps
@@ -231,7 +231,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}/triggers:
+  '/workflows/{workflowId}/triggers':
     get:
       summary: List workflow triggers
       operationId: get_workflows_workflowid_triggers
@@ -243,7 +243,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}/triggers:
     post:
       summary: Add trigger
       operationId: post_workflows_workflowid_triggers
@@ -263,7 +262,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/templates:
+  '/workflows/templates':
     get:
       summary: List workflow templates
       operationId: get_workflows_templates
@@ -275,7 +274,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}/export:
+  '/workflows/{workflowId}/export':
     get:
       summary: Export workflow definition
       operationId: get_workflows_workflowid_export
@@ -287,7 +286,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/import:
+  '/workflows/import':
     post:
       summary: Import workflow
       operationId: post_workflows_import
@@ -307,7 +306,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}/analytics:
+  '/workflows/{workflowId}/analytics':
     get:
       summary: Workflow analytics
       operationId: get_workflows_workflowid_analytics
@@ -319,7 +318,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}/permissions:
+  '/workflows/{workflowId}/permissions':
     get:
       summary: Get workflow permissions
       operationId: get_workflows_workflowid_permissions
@@ -331,7 +330,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/{workflowId}/permissions:
     put:
       summary: Update permissions
       operationId: put_workflows_workflowid_permissions
@@ -351,7 +349,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/tasks:
+  '/workflows/tasks':
     get:
       summary: List pending tasks
       operationId: get_workflows_tasks
@@ -363,7 +361,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /workflows/tasks/{taskId}/complete:
+  '/workflows/tasks/{taskId}/complete':
     post:
       summary: Complete task
       operationId: post_workflows_tasks_taskid_complete

@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/sms
     description: Staging
 paths:
-  /sms/messages:
+  '/sms/messages':
     get:
       summary: List messages
       operationId: get_sms_messages
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/messages/{messageId}:
+  '/sms/messages/{messageId}':
     get:
       summary: Get message
       operationId: get_sms_messages_messageid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/send:
+  '/sms/send':
     post:
       summary: Send SMS
       operationId: post_sms_send
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/send/bulk:
+  '/sms/send/bulk':
     post:
       summary: Send bulk SMS
       operationId: post_sms_send_bulk
@@ -179,7 +179,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/templates:
+  '/sms/templates':
     get:
       summary: List SMS templates
       operationId: get_sms_templates
@@ -191,7 +191,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/templates:
     post:
       summary: Create SMS template
       operationId: post_sms_templates
@@ -211,7 +210,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/numbers:
+  '/sms/numbers':
     get:
       summary: List phone numbers
       operationId: get_sms_numbers
@@ -223,7 +222,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/numbers:
     post:
       summary: Purchase phone number
       operationId: post_sms_numbers
@@ -243,7 +241,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/opt-outs:
+  '/sms/opt-outs':
     get:
       summary: List opt-outs
       operationId: get_sms_opt_outs
@@ -255,7 +253,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/analytics:
+  '/sms/analytics':
     get:
       summary: SMS analytics
       operationId: get_sms_analytics
@@ -267,7 +265,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/inbound:
+  '/sms/inbound':
     get:
       summary: List inbound messages
       operationId: get_sms_inbound
@@ -279,7 +277,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/keywords:
+  '/sms/keywords':
     get:
       summary: List keywords
       operationId: get_sms_keywords
@@ -291,7 +289,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sms/keywords:
     post:
       summary: Register keyword
       operationId: post_sms_keywords

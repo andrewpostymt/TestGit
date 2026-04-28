@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/features
     description: Staging
 paths:
-  /features:
+  '/features':
     get:
       summary: List flags
       operationId: get_features
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/{flagId}:
+  '/features/{flagId}':
     get:
       summary: Get flag
       operationId: get_features_flagid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/{flagId}/enable:
+  '/features/{flagId}/enable':
     post:
       summary: Enable feature flag
       operationId: post_features_flagid_enable
@@ -151,7 +151,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/{flagId}/disable:
+  '/features/{flagId}/disable':
     post:
       summary: Disable feature flag
       operationId: post_features_flagid_disable
@@ -163,7 +163,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/{flagId}/rollout:
+  '/features/{flagId}/rollout':
     put:
       summary: Update rollout percentage
       operationId: put_features_flagid_rollout
@@ -183,7 +183,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/{flagId}/targets:
+  '/features/{flagId}/targets':
     get:
       summary: Get targeting rules
       operationId: get_features_flagid_targets
@@ -195,7 +195,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/{flagId}/targets:
     put:
       summary: Update targeting rules
       operationId: put_features_flagid_targets
@@ -215,7 +214,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/evaluate:
+  '/features/evaluate':
     post:
       summary: Evaluate flags for user
       operationId: post_features_evaluate
@@ -235,7 +234,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/{flagId}/history:
+  '/features/{flagId}/history':
     get:
       summary: Flag change history
       operationId: get_features_flagid_history
@@ -247,7 +246,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/ab-tests:
+  '/features/ab-tests':
     get:
       summary: List A/B tests
       operationId: get_features_ab_tests
@@ -259,7 +258,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/ab-tests:
     post:
       summary: Create A/B test
       operationId: post_features_ab_tests
@@ -279,7 +277,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/environments:
+  '/features/environments':
     get:
       summary: List environments
       operationId: get_features_environments
@@ -291,7 +289,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /features/analytics:
+  '/features/analytics':
     get:
       summary: Flag analytics
       operationId: get_features_analytics

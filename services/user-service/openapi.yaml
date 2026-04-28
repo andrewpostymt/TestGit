@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/users
     description: Staging
 paths:
-  /users:
+  '/users':
     get:
       summary: List users
       operationId: get_users
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}:
+  '/users/{userId}':
     get:
       summary: Get user
       operationId: get_users_userid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/avatar:
+  '/users/{userId}/avatar':
     post:
       summary: Upload user avatar
       operationId: post_users_userid_avatar
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/preferences:
+  '/users/{userId}/preferences':
     get:
       summary: Get user preferences
       operationId: get_users_userid_preferences
@@ -171,7 +171,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/preferences:
     put:
       summary: Update user preferences
       operationId: put_users_userid_preferences
@@ -191,7 +190,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/activity:
+  '/users/{userId}/activity':
     get:
       summary: Get user activity log
       operationId: get_users_userid_activity
@@ -203,7 +202,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/sessions:
+  '/users/{userId}/sessions':
     get:
       summary: List active sessions
       operationId: get_users_userid_sessions
@@ -215,7 +214,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/sessions:
     delete:
       summary: Revoke all sessions
       operationId: delete_users_userid_sessions
@@ -227,7 +225,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/mfa:
+  '/users/{userId}/mfa':
     post:
       summary: Enable MFA
       operationId: post_users_userid_mfa
@@ -247,7 +245,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/mfa:
     delete:
       summary: Disable MFA
       operationId: delete_users_userid_mfa
@@ -259,7 +256,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/me:
+  '/users/me':
     get:
       summary: Get current user
       operationId: get_users_me
@@ -271,7 +268,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/me:
     put:
       summary: Update current user
       operationId: put_users_me
@@ -291,7 +287,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/deactivate:
+  '/users/{userId}/deactivate':
     post:
       summary: Deactivate user
       operationId: post_users_userid_deactivate
@@ -303,7 +299,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/reactivate:
+  '/users/{userId}/reactivate':
     post:
       summary: Reactivate user
       operationId: post_users_userid_reactivate
@@ -315,7 +311,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/search:
+  '/users/search':
     get:
       summary: Search users
       operationId: get_users_search
@@ -327,7 +323,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/roles:
+  '/users/{userId}/roles':
     get:
       summary: Get user roles
       operationId: get_users_userid_roles
@@ -339,7 +335,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /users/{userId}/permissions:
+  '/users/{userId}/permissions':
     get:
       summary: Get user permissions
       operationId: get_users_userid_permissions

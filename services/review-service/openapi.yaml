@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/reviews
     description: Staging
 paths:
-  /reviews:
+  '/reviews':
     get:
       summary: List reviews
       operationId: get_reviews
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /reviews/{reviewId}:
+  '/reviews/{reviewId}':
     get:
       summary: Get review
       operationId: get_reviews_reviewid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /reviews/{reviewId}/approve:
+  '/reviews/{reviewId}/approve':
     post:
       summary: Approve review
       operationId: post_reviews_reviewid_approve
@@ -151,7 +151,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /reviews/{reviewId}/reject:
+  '/reviews/{reviewId}/reject':
     post:
       summary: Reject review
       operationId: post_reviews_reviewid_reject
@@ -171,7 +171,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /reviews/{reviewId}/flag:
+  '/reviews/{reviewId}/flag':
     post:
       summary: Flag review
       operationId: post_reviews_reviewid_flag
@@ -191,7 +191,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /reviews/{reviewId}/helpful:
+  '/reviews/{reviewId}/helpful':
     post:
       summary: Mark review as helpful
       operationId: post_reviews_reviewid_helpful
@@ -203,7 +203,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /reviews/{reviewId}/reply:
+  '/reviews/{reviewId}/reply':
     post:
       summary: Reply to review
       operationId: post_reviews_reviewid_reply
@@ -223,7 +223,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /reviews/products/{productId}:
+  '/reviews/products/{productId}':
     get:
       summary: Get product reviews
       operationId: get_reviews_products_productid
@@ -235,7 +235,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /reviews/summary/{productId}:
+  '/reviews/summary/{productId}':
     get:
       summary: Get review summary
       operationId: get_reviews_summary_productid
@@ -247,7 +247,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /reviews/moderation/queue:
+  '/reviews/moderation/queue':
     get:
       summary: Moderation queue
       operationId: get_reviews_moderation_queue
@@ -259,7 +259,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /reviews/import:
+  '/reviews/import':
     post:
       summary: Import reviews
       operationId: post_reviews_import

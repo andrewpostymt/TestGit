@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/auth
     description: Staging
 paths:
-  /auth/tokens:
+  '/auth/tokens':
     get:
       summary: List tokens
       operationId: get_auth_tokens
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/tokens/{tokenId}:
+  '/auth/tokens/{tokenId}':
     get:
       summary: Get token
       operationId: get_auth_tokens_tokenid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/login:
+  '/auth/login':
     post:
       summary: Login with credentials
       operationId: post_auth_login
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/logout:
+  '/auth/logout':
     post:
       summary: Logout current session
       operationId: post_auth_logout
@@ -171,7 +171,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/refresh:
+  '/auth/refresh':
     post:
       summary: Refresh access token
       operationId: post_auth_refresh
@@ -191,7 +191,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/register:
+  '/auth/register':
     post:
       summary: Register new account
       operationId: post_auth_register
@@ -211,7 +211,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/forgot-password:
+  '/auth/forgot-password':
     post:
       summary: Request password reset
       operationId: post_auth_forgot_password
@@ -231,7 +231,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/reset-password:
+  '/auth/reset-password':
     post:
       summary: Reset password
       operationId: post_auth_reset_password
@@ -251,7 +251,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/verify-email:
+  '/auth/verify-email':
     post:
       summary: Verify email address
       operationId: post_auth_verify_email
@@ -271,7 +271,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/oauth/authorize:
+  '/auth/oauth/authorize':
     get:
       summary: OAuth2 authorize endpoint
       operationId: get_auth_oauth_authorize
@@ -283,7 +283,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/oauth/token:
+  '/auth/oauth/token':
     post:
       summary: OAuth2 token exchange
       operationId: post_auth_oauth_token
@@ -303,7 +303,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/oauth/revoke:
+  '/auth/oauth/revoke':
     post:
       summary: Revoke OAuth2 token
       operationId: post_auth_oauth_revoke
@@ -323,7 +323,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/saml/sso:
+  '/auth/saml/sso':
     get:
       summary: SAML SSO initiation
       operationId: get_auth_saml_sso
@@ -335,7 +335,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/permissions:
+  '/auth/permissions':
     get:
       summary: List permissions
       operationId: get_auth_permissions
@@ -347,7 +347,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/roles:
+  '/auth/roles':
     get:
       summary: List roles
       operationId: get_auth_roles
@@ -359,7 +359,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/roles:
     post:
       summary: Create role
       operationId: post_auth_roles
@@ -379,7 +378,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /auth/introspect:
+  '/auth/introspect':
     post:
       summary: Introspect token
       operationId: post_auth_introspect

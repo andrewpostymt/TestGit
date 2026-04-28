@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/shipping
     description: Staging
 paths:
-  /shipments:
+  '/shipments':
     get:
       summary: List shipments
       operationId: get_shipments
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipments/{shipmentId}:
+  '/shipments/{shipmentId}':
     get:
       summary: Get shipment
       operationId: get_shipments_shipmentid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipments/{shipmentId}/track:
+  '/shipments/{shipmentId}/track':
     get:
       summary: Track shipment
       operationId: get_shipments_shipmentid_track
@@ -151,7 +151,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipments/{shipmentId}/label:
+  '/shipments/{shipmentId}/label':
     post:
       summary: Generate label
       operationId: post_shipments_shipmentid_label
@@ -163,7 +163,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipping/rates:
+  '/shipping/rates':
     post:
       summary: Calculate shipping rates
       operationId: post_shipping_rates
@@ -183,7 +183,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipping/carriers:
+  '/shipping/carriers':
     get:
       summary: List carriers
       operationId: get_shipping_carriers
@@ -195,7 +195,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipping/carriers/{carrierId}/services:
+  '/shipping/carriers/{carrierId}/services':
     get:
       summary: Get carrier services
       operationId: get_shipping_carriers_carrierid_services
@@ -207,7 +207,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipping/zones:
+  '/shipping/zones':
     get:
       summary: List shipping zones
       operationId: get_shipping_zones
@@ -219,7 +219,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipping/address/validate:
+  '/shipping/address/validate':
     post:
       summary: Validate address
       operationId: post_shipping_address_validate
@@ -239,7 +239,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipping/manifests:
+  '/shipping/manifests':
     get:
       summary: List manifests
       operationId: get_shipping_manifests
@@ -251,7 +251,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipping/manifests:
     post:
       summary: Create manifest
       operationId: post_shipping_manifests
@@ -271,7 +270,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipping/pickups:
+  '/shipping/pickups':
     get:
       summary: List pickups
       operationId: get_shipping_pickups
@@ -283,7 +282,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipping/pickups:
     post:
       summary: Schedule pickup
       operationId: post_shipping_pickups
@@ -303,7 +301,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /shipping/insurance/quote:
+  '/shipping/insurance/quote':
     post:
       summary: Get insurance quote
       operationId: post_shipping_insurance_quote

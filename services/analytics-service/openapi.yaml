@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/analytics
     description: Staging
 paths:
-  /analytics/reports:
+  '/analytics/reports':
     get:
       summary: List reports
       operationId: get_analytics_reports
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/reports/{reportId}:
+  '/analytics/reports/{reportId}':
     get:
       summary: Get report
       operationId: get_analytics_reports_reportid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/dashboards:
+  '/analytics/dashboards':
     get:
       summary: List dashboards
       operationId: get_analytics_dashboards
@@ -151,7 +151,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/dashboards:
     post:
       summary: Create dashboard
       operationId: post_analytics_dashboards
@@ -171,7 +170,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/dashboards/{dashboardId}:
+  '/analytics/dashboards/{dashboardId}':
     get:
       summary: Get dashboard
       operationId: get_analytics_dashboards_dashboardid
@@ -183,7 +182,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/metrics:
+  '/analytics/metrics':
     get:
       summary: Get metrics
       operationId: get_analytics_metrics
@@ -195,7 +194,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/kpis:
+  '/analytics/kpis':
     get:
       summary: Get KPIs
       operationId: get_analytics_kpis
@@ -207,7 +206,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/funnels:
+  '/analytics/funnels':
     get:
       summary: Get funnel analysis
       operationId: get_analytics_funnels
@@ -219,7 +218,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/cohorts:
+  '/analytics/cohorts':
     get:
       summary: Get cohort analysis
       operationId: get_analytics_cohorts
@@ -231,7 +230,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/segments:
+  '/analytics/segments':
     get:
       summary: Get customer segments
       operationId: get_analytics_segments
@@ -243,7 +242,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/export:
+  '/analytics/export':
     post:
       summary: Export analytics data
       operationId: post_analytics_export
@@ -263,7 +262,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/schedule:
+  '/analytics/schedule':
     post:
       summary: Schedule report
       operationId: post_analytics_schedule
@@ -283,7 +282,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/alerts:
+  '/analytics/alerts':
     get:
       summary: Get analytics alerts
       operationId: get_analytics_alerts
@@ -295,7 +294,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/forecast:
+  '/analytics/forecast':
     get:
       summary: Get forecasts
       operationId: get_analytics_forecast
@@ -307,7 +306,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/attribution:
+  '/analytics/attribution':
     get:
       summary: Get attribution data
       operationId: get_analytics_attribution
@@ -319,7 +318,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /analytics/ab-tests:
+  '/analytics/ab-tests':
     get:
       summary: Get A/B test results
       operationId: get_analytics_ab_tests

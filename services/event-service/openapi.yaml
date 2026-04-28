@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/events
     description: Staging
 paths:
-  /events:
+  '/events':
     get:
       summary: List events
       operationId: get_events
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/{eventId}:
+  '/events/{eventId}':
     get:
       summary: Get event
       operationId: get_events_eventid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/publish:
+  '/events/publish':
     post:
       summary: Publish event
       operationId: post_events_publish
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/publish/batch:
+  '/events/publish/batch':
     post:
       summary: Publish batch events
       operationId: post_events_publish_batch
@@ -179,7 +179,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/topics:
+  '/events/topics':
     get:
       summary: List topics
       operationId: get_events_topics
@@ -191,7 +191,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/topics:
     post:
       summary: Create topic
       operationId: post_events_topics
@@ -211,7 +210,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/topics/{topicId}/subscriptions:
+  '/events/topics/{topicId}/subscriptions':
     get:
       summary: List subscriptions
       operationId: get_events_topics_topicid_subscriptions
@@ -223,7 +222,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/topics/{topicId}/subscriptions:
     post:
       summary: Subscribe to topic
       operationId: post_events_topics_topicid_subscriptions
@@ -243,7 +241,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/subscriptions/{subscriptionId}/pause:
+  '/events/subscriptions/{subscriptionId}/pause':
     post:
       summary: Pause subscription
       operationId: post_events_subscriptions_subscriptionid_pause
@@ -255,7 +253,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/subscriptions/{subscriptionId}/resume:
+  '/events/subscriptions/{subscriptionId}/resume':
     post:
       summary: Resume subscription
       operationId: post_events_subscriptions_subscriptionid_resume
@@ -267,7 +265,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/replay:
+  '/events/replay':
     post:
       summary: Replay events
       operationId: post_events_replay
@@ -287,7 +285,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/dead-letter:
+  '/events/dead-letter':
     get:
       summary: Get dead letter queue
       operationId: get_events_dead_letter
@@ -299,7 +297,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/metrics:
+  '/events/metrics':
     get:
       summary: Event metrics
       operationId: get_events_metrics
@@ -311,7 +309,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/consumers:
+  '/events/consumers':
     get:
       summary: List consumers
       operationId: get_events_consumers
@@ -323,7 +321,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/schema-registry:
+  '/events/schema-registry':
     get:
       summary: Get schema registry
       operationId: get_events_schema_registry
@@ -335,7 +333,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/schema-registry:
     post:
       summary: Register schema
       operationId: post_events_schema_registry
@@ -355,7 +352,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /events/filters:
+  '/events/filters':
     get:
       summary: List event filters
       operationId: get_events_filters

@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/products
     description: Staging
 paths:
-  /products:
+  '/products':
     get:
       summary: List products
       operationId: get_products
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}:
+  '/products/{productId}':
     get:
       summary: Get product
       operationId: get_products_productid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/variants:
+  '/products/{productId}/variants':
     get:
       summary: List product variants
       operationId: get_products_productid_variants
@@ -151,7 +151,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/variants:
     post:
       summary: Create product variant
       operationId: post_products_productid_variants
@@ -171,7 +170,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/images:
+  '/products/{productId}/images':
     get:
       summary: List product images
       operationId: get_products_productid_images
@@ -183,7 +182,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/images:
     post:
       summary: Upload product image
       operationId: post_products_productid_images
@@ -203,7 +201,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/pricing:
+  '/products/{productId}/pricing':
     get:
       summary: Get product pricing
       operationId: get_products_productid_pricing
@@ -215,7 +213,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/pricing:
     put:
       summary: Update product pricing
       operationId: put_products_productid_pricing
@@ -235,7 +232,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/inventory:
+  '/products/{productId}/inventory':
     get:
       summary: Get inventory levels
       operationId: get_products_productid_inventory
@@ -247,7 +244,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/tags:
+  '/products/{productId}/tags':
     get:
       summary: Get product tags
       operationId: get_products_productid_tags
@@ -259,7 +256,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/related:
+  '/products/{productId}/related':
     get:
       summary: Get related products
       operationId: get_products_productid_related
@@ -271,7 +268,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/reviews:
+  '/products/{productId}/reviews':
     get:
       summary: Get product reviews
       operationId: get_products_productid_reviews
@@ -283,7 +280,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/categories:
+  '/products/categories':
     get:
       summary: List categories
       operationId: get_products_categories
@@ -295,7 +292,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/search:
+  '/products/search':
     get:
       summary: Search products
       operationId: get_products_search
@@ -307,7 +304,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/publish:
+  '/products/{productId}/publish':
     post:
       summary: Publish product
       operationId: post_products_productid_publish
@@ -319,7 +316,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/unpublish:
+  '/products/{productId}/unpublish':
     post:
       summary: Unpublish product
       operationId: post_products_productid_unpublish
@@ -331,7 +328,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/import:
+  '/products/import':
     post:
       summary: Import products
       operationId: post_products_import
@@ -351,7 +348,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/export:
+  '/products/export':
     post:
       summary: Export products
       operationId: post_products_export
@@ -371,7 +368,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/bulk/update:
+  '/products/bulk/update':
     patch:
       summary: Bulk update products
       operationId: patch_products_bulk_update
@@ -391,7 +388,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/seo:
+  '/products/{productId}/seo':
     put:
       summary: Update SEO metadata
       operationId: put_products_productid_seo
@@ -411,7 +408,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /products/{productId}/attributes:
+  '/products/{productId}/attributes':
     get:
       summary: Get product attributes
       operationId: get_products_productid_attributes

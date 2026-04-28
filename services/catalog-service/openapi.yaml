@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/catalog
     description: Staging
 paths:
-  /catalog/items:
+  '/catalog/items':
     get:
       summary: List catalogs
       operationId: get_catalog_items
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/items/{catalogId}:
+  '/catalog/items/{catalogId}':
     get:
       summary: Get catalog
       operationId: get_catalog_items_catalogid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/collections:
+  '/catalog/collections':
     get:
       summary: List collections
       operationId: get_catalog_collections
@@ -151,7 +151,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/collections:
     post:
       summary: Create collection
       operationId: post_catalog_collections
@@ -171,7 +170,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/collections/{collectionId}:
+  '/catalog/collections/{collectionId}':
     get:
       summary: Get collection
       operationId: get_catalog_collections_collectionid
@@ -183,7 +182,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/collections/{collectionId}:
     put:
       summary: Update collection
       operationId: put_catalog_collections_collectionid
@@ -203,7 +201,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/collections/{collectionId}/items:
+  '/catalog/collections/{collectionId}/items':
     get:
       summary: List collection items
       operationId: get_catalog_collections_collectionid_items
@@ -215,7 +213,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/categories:
+  '/catalog/categories':
     get:
       summary: List categories
       operationId: get_catalog_categories
@@ -227,7 +225,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/categories:
     post:
       summary: Create category
       operationId: post_catalog_categories
@@ -247,7 +244,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/categories/{categoryId}:
+  '/catalog/categories/{categoryId}':
     get:
       summary: Get category
       operationId: get_catalog_categories_categoryid
@@ -259,7 +256,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/categories/{categoryId}/tree:
+  '/catalog/categories/{categoryId}/tree':
     get:
       summary: Get category tree
       operationId: get_catalog_categories_categoryid_tree
@@ -271,7 +268,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/rules:
+  '/catalog/rules':
     get:
       summary: List merchandising rules
       operationId: get_catalog_rules
@@ -283,7 +280,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/rules:
     post:
       summary: Create merchandising rule
       operationId: post_catalog_rules
@@ -303,7 +299,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/attributes:
+  '/catalog/attributes':
     get:
       summary: List attributes
       operationId: get_catalog_attributes
@@ -315,7 +311,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/attributes:
     post:
       summary: Create attribute
       operationId: post_catalog_attributes
@@ -335,7 +330,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/import:
+  '/catalog/import':
     post:
       summary: Import catalog
       operationId: post_catalog_import
@@ -355,7 +350,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/export:
+  '/catalog/export':
     post:
       summary: Export catalog
       operationId: post_catalog_export
@@ -375,7 +370,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /catalog/publish:
+  '/catalog/publish':
     post:
       summary: Publish catalog changes
       operationId: post_catalog_publish

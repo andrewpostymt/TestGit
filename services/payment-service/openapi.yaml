@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/payments
     description: Staging
 paths:
-  /payments:
+  '/payments':
     get:
       summary: List payments
       operationId: get_payments
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/{paymentId}:
+  '/payments/{paymentId}':
     get:
       summary: Get payment
       operationId: get_payments_paymentid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/{paymentId}/capture:
+  '/payments/{paymentId}/capture':
     post:
       summary: Capture payment
       operationId: post_payments_paymentid_capture
@@ -151,7 +151,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/{paymentId}/void:
+  '/payments/{paymentId}/void':
     post:
       summary: Void payment
       operationId: post_payments_paymentid_void
@@ -163,7 +163,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/{paymentId}/refund:
+  '/payments/{paymentId}/refund':
     post:
       summary: Refund payment
       operationId: post_payments_paymentid_refund
@@ -183,7 +183,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/methods:
+  '/payments/methods':
     get:
       summary: List payment methods
       operationId: get_payments_methods
@@ -195,7 +195,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/methods:
     post:
       summary: Add payment method
       operationId: post_payments_methods
@@ -215,7 +214,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/methods/{methodId}:
+  '/payments/methods/{methodId}':
     delete:
       summary: Remove payment method
       operationId: delete_payments_methods_methodid
@@ -227,7 +226,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/methods/{methodId}/default:
+  '/payments/methods/{methodId}/default':
     post:
       summary: Set default payment method
       operationId: post_payments_methods_methodid_default
@@ -239,7 +238,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/{paymentId}/dispute:
+  '/payments/{paymentId}/dispute':
     post:
       summary: Create dispute
       operationId: post_payments_paymentid_dispute
@@ -259,7 +258,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/transactions:
+  '/payments/transactions':
     get:
       summary: List transactions
       operationId: get_payments_transactions
@@ -271,7 +270,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/reconcile:
+  '/payments/reconcile':
     post:
       summary: Reconcile payments
       operationId: post_payments_reconcile
@@ -291,7 +290,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/reports/daily:
+  '/payments/reports/daily':
     get:
       summary: Daily payment report
       operationId: get_payments_reports_daily
@@ -303,7 +302,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/reports/monthly:
+  '/payments/reports/monthly':
     get:
       summary: Monthly payment report
       operationId: get_payments_reports_monthly
@@ -315,7 +314,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/webhooks:
+  '/payments/webhooks':
     post:
       summary: Payment webhook endpoint
       operationId: post_payments_webhooks
@@ -335,7 +334,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /payments/{paymentId}/receipt:
+  '/payments/{paymentId}/receipt':
     get:
       summary: Get payment receipt
       operationId: get_payments_paymentid_receipt

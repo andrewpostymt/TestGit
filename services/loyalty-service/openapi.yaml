@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/loyalty
     description: Staging
 paths:
-  /loyalty/accounts:
+  '/loyalty/accounts':
     get:
       summary: List loyaltys
       operationId: get_loyalty_accounts
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/accounts/{loyaltyId}:
+  '/loyalty/accounts/{loyaltyId}':
     get:
       summary: Get loyalty
       operationId: get_loyalty_accounts_loyaltyid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/accounts/{accountId}/points:
+  '/loyalty/accounts/{accountId}/points':
     post:
       summary: Award points
       operationId: post_loyalty_accounts_accountid_points
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/accounts/{accountId}/points/redeem:
+  '/loyalty/accounts/{accountId}/points/redeem':
     post:
       summary: Redeem points
       operationId: post_loyalty_accounts_accountid_points_redeem
@@ -179,7 +179,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/accounts/{accountId}/points/history:
+  '/loyalty/accounts/{accountId}/points/history':
     get:
       summary: Points history
       operationId: get_loyalty_accounts_accountid_points_history
@@ -191,7 +191,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/tiers:
+  '/loyalty/tiers':
     get:
       summary: List loyalty tiers
       operationId: get_loyalty_tiers
@@ -203,7 +203,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/tiers:
     post:
       summary: Create tier
       operationId: post_loyalty_tiers
@@ -223,7 +222,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/rewards:
+  '/loyalty/rewards':
     get:
       summary: List rewards
       operationId: get_loyalty_rewards
@@ -235,7 +234,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/rewards:
     post:
       summary: Create reward
       operationId: post_loyalty_rewards
@@ -255,7 +253,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/rewards/{rewardId}/claim:
+  '/loyalty/rewards/{rewardId}/claim':
     post:
       summary: Claim reward
       operationId: post_loyalty_rewards_rewardid_claim
@@ -275,7 +273,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/programmes:
+  '/loyalty/programmes':
     get:
       summary: List programmes
       operationId: get_loyalty_programmes
@@ -287,7 +285,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/programmes:
     post:
       summary: Create programme
       operationId: post_loyalty_programmes
@@ -307,7 +304,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/analytics:
+  '/loyalty/analytics':
     get:
       summary: Loyalty analytics
       operationId: get_loyalty_analytics
@@ -319,7 +316,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /loyalty/leaderboard:
+  '/loyalty/leaderboard':
     get:
       summary: Get points leaderboard
       operationId: get_loyalty_leaderboard

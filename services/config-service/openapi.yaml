@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/config
     description: Staging
 paths:
-  /config/entries:
+  '/config/entries':
     get:
       summary: List configs
       operationId: get_config_entries
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /config/entries/{configId}:
+  '/config/entries/{configId}':
     get:
       summary: Get config
       operationId: get_config_entries_configid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /config/entries/bulk:
+  '/config/entries/bulk':
     put:
       summary: Bulk update config
       operationId: put_config_entries_bulk
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /config/environments:
+  '/config/environments':
     get:
       summary: List environments
       operationId: get_config_environments
@@ -171,7 +171,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /config/environments:
     post:
       summary: Create environment
       operationId: post_config_environments
@@ -191,7 +190,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /config/namespaces:
+  '/config/namespaces':
     get:
       summary: List namespaces
       operationId: get_config_namespaces
@@ -203,7 +202,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /config/namespaces:
     post:
       summary: Create namespace
       operationId: post_config_namespaces
@@ -223,7 +221,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /config/history:
+  '/config/history':
     get:
       summary: Config change history
       operationId: get_config_history
@@ -235,7 +233,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /config/rollback:
+  '/config/rollback':
     post:
       summary: Rollback config
       operationId: post_config_rollback
@@ -255,7 +253,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /config/export:
+  '/config/export':
     post:
       summary: Export config
       operationId: post_config_export
@@ -275,7 +273,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /config/import:
+  '/config/import':
     post:
       summary: Import config
       operationId: post_config_import
@@ -295,7 +293,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /config/validate:
+  '/config/validate':
     post:
       summary: Validate config schema
       operationId: post_config_validate

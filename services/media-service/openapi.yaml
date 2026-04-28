@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/media
     description: Staging
 paths:
-  /media/assets:
+  '/media/assets':
     get:
       summary: List assets
       operationId: get_media_assets
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/assets/{assetId}:
+  '/media/assets/{assetId}':
     get:
       summary: Get asset
       operationId: get_media_assets_assetid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/assets/{assetId}/transform:
+  '/media/assets/{assetId}/transform':
     post:
       summary: Transform media
       operationId: post_media_assets_assetid_transform
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/assets/{assetId}/optimise:
+  '/media/assets/{assetId}/optimise':
     post:
       summary: Optimise asset
       operationId: post_media_assets_assetid_optimise
@@ -171,7 +171,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/assets/{assetId}/cdn-url:
+  '/media/assets/{assetId}/cdn-url':
     get:
       summary: Get CDN URL
       operationId: get_media_assets_assetid_cdn_url
@@ -183,7 +183,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/upload:
+  '/media/upload':
     post:
       summary: Upload media
       operationId: post_media_upload
@@ -203,7 +203,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/upload/presigned:
+  '/media/upload/presigned':
     post:
       summary: Get presigned upload URL
       operationId: post_media_upload_presigned
@@ -223,7 +223,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/collections:
+  '/media/collections':
     get:
       summary: List media collections
       operationId: get_media_collections
@@ -235,7 +235,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/collections:
     post:
       summary: Create collection
       operationId: post_media_collections
@@ -255,7 +254,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/assets/{assetId}/tags:
+  '/media/assets/{assetId}/tags':
     get:
       summary: Get asset tags
       operationId: get_media_assets_assetid_tags
@@ -267,7 +266,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/assets/{assetId}/tags:
     post:
       summary: Add tags to asset
       operationId: post_media_assets_assetid_tags
@@ -287,7 +285,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/search:
+  '/media/search':
     get:
       summary: Search media
       operationId: get_media_search
@@ -299,7 +297,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /media/usage:
+  '/media/usage':
     get:
       summary: Get storage usage
       operationId: get_media_usage

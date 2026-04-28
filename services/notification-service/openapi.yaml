@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/notifications
     description: Staging
 paths:
-  /notifications:
+  '/notifications':
     get:
       summary: List notifications
       operationId: get_notifications
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/{notificationId}:
+  '/notifications/{notificationId}':
     get:
       summary: Get notification
       operationId: get_notifications_notificationid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/send:
+  '/notifications/send':
     post:
       summary: Send notification
       operationId: post_notifications_send
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/send/bulk:
+  '/notifications/send/bulk':
     post:
       summary: Send bulk notifications
       operationId: post_notifications_send_bulk
@@ -179,7 +179,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/templates:
+  '/notifications/templates':
     get:
       summary: List templates
       operationId: get_notifications_templates
@@ -191,7 +191,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/templates:
     post:
       summary: Create template
       operationId: post_notifications_templates
@@ -211,7 +210,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/templates/{templateId}:
+  '/notifications/templates/{templateId}':
     get:
       summary: Get template
       operationId: get_notifications_templates_templateid
@@ -223,7 +222,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/templates/{templateId}:
     put:
       summary: Update template
       operationId: put_notifications_templates_templateid
@@ -243,7 +241,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/preferences:
+  '/notifications/preferences':
     get:
       summary: Get notification preferences
       operationId: get_notifications_preferences
@@ -255,7 +253,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/preferences:
     put:
       summary: Update preferences
       operationId: put_notifications_preferences
@@ -275,7 +272,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/channels:
+  '/notifications/channels':
     get:
       summary: List notification channels
       operationId: get_notifications_channels
@@ -287,7 +284,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/subscriptions:
+  '/notifications/subscriptions':
     post:
       summary: Subscribe to notifications
       operationId: post_notifications_subscriptions
@@ -307,7 +304,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/unsubscribe:
+  '/notifications/unsubscribe':
     post:
       summary: Unsubscribe
       operationId: post_notifications_unsubscribe
@@ -327,7 +324,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /notifications/logs:
+  '/notifications/logs':
     get:
       summary: Notification delivery logs
       operationId: get_notifications_logs

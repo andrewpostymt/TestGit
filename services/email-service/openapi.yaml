@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/email
     description: Staging
 paths:
-  /email/messages:
+  '/email/messages':
     get:
       summary: List emails
       operationId: get_email_messages
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/messages/{emailId}:
+  '/email/messages/{emailId}':
     get:
       summary: Get email
       operationId: get_email_messages_emailid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/send:
+  '/email/send':
     post:
       summary: Send email
       operationId: post_email_send
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/send/bulk:
+  '/email/send/bulk':
     post:
       summary: Send bulk email
       operationId: post_email_send_bulk
@@ -179,7 +179,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/templates:
+  '/email/templates':
     get:
       summary: List email templates
       operationId: get_email_templates
@@ -191,7 +191,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/templates:
     post:
       summary: Create template
       operationId: post_email_templates
@@ -211,7 +210,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/templates/{templateId}:
+  '/email/templates/{templateId}':
     get:
       summary: Get template
       operationId: get_email_templates_templateid
@@ -223,7 +222,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/templates/{templateId}:
     put:
       summary: Update template
       operationId: put_email_templates_templateid
@@ -243,7 +241,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/templates/{templateId}/preview:
+  '/email/templates/{templateId}/preview':
     post:
       summary: Preview template
       operationId: post_email_templates_templateid_preview
@@ -263,7 +261,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/domains:
+  '/email/domains':
     get:
       summary: List sending domains
       operationId: get_email_domains
@@ -275,7 +273,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/domains:
     post:
       summary: Add sending domain
       operationId: post_email_domains
@@ -295,7 +292,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/suppressions:
+  '/email/suppressions':
     get:
       summary: List suppressions
       operationId: get_email_suppressions
@@ -307,7 +304,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/suppressions:
     post:
       summary: Add suppression
       operationId: post_email_suppressions
@@ -327,7 +323,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/analytics:
+  '/email/analytics':
     get:
       summary: Email analytics
       operationId: get_email_analytics
@@ -339,7 +335,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/campaigns:
+  '/email/campaigns':
     get:
       summary: List campaigns
       operationId: get_email_campaigns
@@ -351,7 +347,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /email/campaigns:
     post:
       summary: Create campaign
       operationId: post_email_campaigns

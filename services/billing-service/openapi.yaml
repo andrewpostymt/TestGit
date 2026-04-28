@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/billing
     description: Staging
 paths:
-  /billing/invoices:
+  '/billing/invoices':
     get:
       summary: List invoices
       operationId: get_billing_invoices
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/invoices/{invoiceId}:
+  '/billing/invoices/{invoiceId}':
     get:
       summary: Get invoice
       operationId: get_billing_invoices_invoiceid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/invoices/{invoiceId}/send:
+  '/billing/invoices/{invoiceId}/send':
     post:
       summary: Send invoice
       operationId: post_billing_invoices_invoiceid_send
@@ -151,7 +151,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/invoices/{invoiceId}/pay:
+  '/billing/invoices/{invoiceId}/pay':
     post:
       summary: Pay invoice
       operationId: post_billing_invoices_invoiceid_pay
@@ -171,7 +171,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/invoices/{invoiceId}/void:
+  '/billing/invoices/{invoiceId}/void':
     post:
       summary: Void invoice
       operationId: post_billing_invoices_invoiceid_void
@@ -183,7 +183,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/invoices/{invoiceId}/credit-note:
+  '/billing/invoices/{invoiceId}/credit-note':
     post:
       summary: Create credit note
       operationId: post_billing_invoices_invoiceid_credit_note
@@ -203,7 +203,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/tax-rates:
+  '/billing/tax-rates':
     get:
       summary: List tax rates
       operationId: get_billing_tax_rates
@@ -215,7 +215,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/tax-rates:
     post:
       summary: Create tax rate
       operationId: post_billing_tax_rates
@@ -235,7 +234,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/tax/calculate:
+  '/billing/tax/calculate':
     post:
       summary: Calculate tax
       operationId: post_billing_tax_calculate
@@ -255,7 +254,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/payment-terms:
+  '/billing/payment-terms':
     get:
       summary: List payment terms
       operationId: get_billing_payment_terms
@@ -267,7 +266,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/overdue:
+  '/billing/overdue':
     get:
       summary: Get overdue invoices
       operationId: get_billing_overdue
@@ -279,7 +278,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/statements:
+  '/billing/statements':
     get:
       summary: Get account statements
       operationId: get_billing_statements
@@ -291,7 +290,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /billing/reconciliation:
+  '/billing/reconciliation':
     post:
       summary: Reconcile billing
       operationId: post_billing_reconciliation

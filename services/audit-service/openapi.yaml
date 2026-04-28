@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/audit
     description: Staging
 paths:
-  /audit/events:
+  '/audit/events':
     get:
       summary: List events
       operationId: get_audit_events
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/events/{eventId}:
+  '/audit/events/{eventId}':
     get:
       summary: Get event
       operationId: get_audit_events_eventid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/logs:
+  '/audit/logs':
     get:
       summary: Get audit logs
       operationId: get_audit_logs
@@ -151,7 +151,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/logs/export:
+  '/audit/logs/export':
     post:
       summary: Export audit logs
       operationId: post_audit_logs_export
@@ -171,7 +171,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/actors:
+  '/audit/actors':
     get:
       summary: List actors
       operationId: get_audit_actors
@@ -183,7 +183,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/actions:
+  '/audit/actions':
     get:
       summary: List action types
       operationId: get_audit_actions
@@ -195,7 +195,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/resources:
+  '/audit/resources':
     get:
       summary: List resource types
       operationId: get_audit_resources
@@ -207,7 +207,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/compliance/report:
+  '/audit/compliance/report':
     post:
       summary: Generate compliance report
       operationId: post_audit_compliance_report
@@ -227,7 +227,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/retention:
+  '/audit/retention':
     get:
       summary: Get retention policy
       operationId: get_audit_retention
@@ -239,7 +239,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/retention:
     put:
       summary: Update retention policy
       operationId: put_audit_retention
@@ -259,7 +258,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/alerts:
+  '/audit/alerts':
     get:
       summary: List audit alerts
       operationId: get_audit_alerts
@@ -271,7 +270,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/alerts:
     post:
       summary: Create audit alert
       operationId: post_audit_alerts
@@ -291,7 +289,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /audit/search:
+  '/audit/search':
     post:
       summary: Search audit log
       operationId: post_audit_search

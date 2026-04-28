@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/recommendations
     description: Staging
 paths:
-  /recommendations:
+  '/recommendations':
     get:
       summary: List recommendations
       operationId: get_recommendations
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /recommendations/{recommendationId}:
+  '/recommendations/{recommendationId}':
     get:
       summary: Get recommendation
       operationId: get_recommendations_recommendationid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /recommendations/products/{productId}/similar:
+  '/recommendations/products/{productId}/similar':
     get:
       summary: Get similar products
       operationId: get_recommendations_products_productid_similar
@@ -151,7 +151,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /recommendations/users/{userId}/personalised:
+  '/recommendations/users/{userId}/personalised':
     get:
       summary: Get personalised recommendations
       operationId: get_recommendations_users_userid_personalised
@@ -163,7 +163,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /recommendations/trending:
+  '/recommendations/trending':
     get:
       summary: Get trending products
       operationId: get_recommendations_trending
@@ -175,7 +175,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /recommendations/new-arrivals:
+  '/recommendations/new-arrivals':
     get:
       summary: Get new arrivals
       operationId: get_recommendations_new_arrivals
@@ -187,7 +187,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /recommendations/bestsellers:
+  '/recommendations/bestsellers':
     get:
       summary: Get bestsellers
       operationId: get_recommendations_bestsellers
@@ -199,7 +199,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /recommendations/bundles:
+  '/recommendations/bundles':
     get:
       summary: Get product bundles
       operationId: get_recommendations_bundles
@@ -211,7 +211,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /recommendations/cross-sell:
+  '/recommendations/cross-sell':
     get:
       summary: Get cross-sell recommendations
       operationId: get_recommendations_cross_sell
@@ -223,7 +223,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /recommendations/upsell:
+  '/recommendations/upsell':
     get:
       summary: Get upsell recommendations
       operationId: get_recommendations_upsell
@@ -235,7 +235,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /recommendations/models:
+  '/recommendations/models':
     get:
       summary: List recommendation models
       operationId: get_recommendations_models
@@ -247,7 +247,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /recommendations/feedback:
+  '/recommendations/feedback':
     post:
       summary: Submit recommendation feedback
       operationId: post_recommendations_feedback

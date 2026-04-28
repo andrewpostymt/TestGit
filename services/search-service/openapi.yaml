@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/search
     description: Staging
 paths:
-  /search/indices:
+  '/search/indices':
     get:
       summary: List indexs
       operationId: get_search_indices
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search/indices/{indexId}:
+  '/search/indices/{indexId}':
     get:
       summary: Get index
       operationId: get_search_indices_indexid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search:
+  '/search':
     get:
       summary: Global search
       operationId: get_search
@@ -151,7 +151,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search/products:
+  '/search/products':
     get:
       summary: Search products
       operationId: get_search_products
@@ -163,7 +163,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search/orders:
+  '/search/orders':
     get:
       summary: Search orders
       operationId: get_search_orders
@@ -175,7 +175,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search/customers:
+  '/search/customers':
     get:
       summary: Search customers
       operationId: get_search_customers
@@ -187,7 +187,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search/suggestions:
+  '/search/suggestions':
     get:
       summary: Get search suggestions
       operationId: get_search_suggestions
@@ -199,7 +199,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search/facets:
+  '/search/facets':
     post:
       summary: Get search facets
       operationId: post_search_facets
@@ -219,7 +219,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search/indices/{indexId}/rebuild:
+  '/search/indices/{indexId}/rebuild':
     post:
       summary: Rebuild search index
       operationId: post_search_indices_indexid_rebuild
@@ -231,7 +231,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search/synonyms:
+  '/search/synonyms':
     get:
       summary: List synonyms
       operationId: get_search_synonyms
@@ -243,7 +243,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search/synonyms:
     post:
       summary: Add synonyms
       operationId: post_search_synonyms
@@ -263,7 +262,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search/analytics:
+  '/search/analytics':
     get:
       summary: Search analytics
       operationId: get_search_analytics
@@ -275,7 +274,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /search/settings:
+  '/search/settings':
     put:
       summary: Update search settings
       operationId: put_search_settings

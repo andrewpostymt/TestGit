@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/customer-service
     description: Staging
 paths:
-  /tickets:
+  '/tickets':
     get:
       summary: List tickets
       operationId: get_tickets
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tickets/{ticketId}:
+  '/tickets/{ticketId}':
     get:
       summary: Get ticket
       operationId: get_tickets_ticketid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tickets/{ticketId}/assign:
+  '/tickets/{ticketId}/assign':
     post:
       summary: Assign ticket
       operationId: post_tickets_ticketid_assign
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tickets/{ticketId}/escalate:
+  '/tickets/{ticketId}/escalate':
     post:
       summary: Escalate ticket
       operationId: post_tickets_ticketid_escalate
@@ -179,7 +179,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tickets/{ticketId}/close:
+  '/tickets/{ticketId}/close':
     post:
       summary: Close ticket
       operationId: post_tickets_ticketid_close
@@ -191,7 +191,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tickets/{ticketId}/reopen:
+  '/tickets/{ticketId}/reopen':
     post:
       summary: Reopen ticket
       operationId: post_tickets_ticketid_reopen
@@ -203,7 +203,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tickets/{ticketId}/messages:
+  '/tickets/{ticketId}/messages':
     get:
       summary: List ticket messages
       operationId: get_tickets_ticketid_messages
@@ -215,7 +215,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tickets/{ticketId}/messages:
     post:
       summary: Add message
       operationId: post_tickets_ticketid_messages
@@ -235,7 +234,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /tickets/{ticketId}/attachments:
+  '/tickets/{ticketId}/attachments':
     post:
       summary: Upload attachment
       operationId: post_tickets_ticketid_attachments
@@ -255,7 +254,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /knowledge-base:
+  '/knowledge-base':
     get:
       summary: List articles
       operationId: get_knowledge_base
@@ -267,7 +266,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /knowledge-base:
     post:
       summary: Create article
       operationId: post_knowledge_base
@@ -287,7 +285,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /knowledge-base/{articleId}:
+  '/knowledge-base/{articleId}':
     get:
       summary: Get article
       operationId: get_knowledge_base_articleid
@@ -299,7 +297,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /sla/policies:
+  '/sla/policies':
     get:
       summary: List SLA policies
       operationId: get_sla_policies
@@ -311,7 +309,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /agents:
+  '/agents':
     get:
       summary: List support agents
       operationId: get_agents
@@ -323,7 +321,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /queues:
+  '/queues':
     get:
       summary: List support queues
       operationId: get_queues

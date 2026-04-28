@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/checkout
     description: Staging
 paths:
-  /checkout/sessions:
+  '/checkout/sessions':
     get:
       summary: List checkouts
       operationId: get_checkout_sessions
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/sessions/{checkoutId}:
+  '/checkout/sessions/{checkoutId}':
     get:
       summary: Get checkout
       operationId: get_checkout_sessions_checkoutid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/sessions/{sessionId}/shipping:
+  '/checkout/sessions/{sessionId}/shipping':
     put:
       summary: Set shipping method
       operationId: put_checkout_sessions_sessionid_shipping
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/sessions/{sessionId}/payment:
+  '/checkout/sessions/{sessionId}/payment':
     put:
       summary: Set payment method
       operationId: put_checkout_sessions_sessionid_payment
@@ -179,7 +179,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/sessions/{sessionId}/address:
+  '/checkout/sessions/{sessionId}/address':
     put:
       summary: Set shipping address
       operationId: put_checkout_sessions_sessionid_address
@@ -199,7 +199,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/sessions/{sessionId}/confirm:
+  '/checkout/sessions/{sessionId}/confirm':
     post:
       summary: Confirm checkout
       operationId: post_checkout_sessions_sessionid_confirm
@@ -211,7 +211,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/sessions/{sessionId}/summary:
+  '/checkout/sessions/{sessionId}/summary':
     get:
       summary: Get checkout summary
       operationId: get_checkout_sessions_sessionid_summary
@@ -223,7 +223,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/sessions/{sessionId}/abandon:
+  '/checkout/sessions/{sessionId}/abandon':
     post:
       summary: Abandon checkout
       operationId: post_checkout_sessions_sessionid_abandon
@@ -235,7 +235,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/express:
+  '/checkout/express':
     post:
       summary: Express checkout
       operationId: post_checkout_express
@@ -255,7 +255,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/address/validate:
+  '/checkout/address/validate':
     post:
       summary: Validate address
       operationId: post_checkout_address_validate
@@ -275,7 +275,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/taxes/calculate:
+  '/checkout/taxes/calculate':
     post:
       summary: Calculate taxes
       operationId: post_checkout_taxes_calculate
@@ -295,7 +295,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/promotions/validate:
+  '/checkout/promotions/validate':
     post:
       summary: Validate promotion code
       operationId: post_checkout_promotions_validate
@@ -315,7 +315,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/gift-wrap:
+  '/checkout/gift-wrap':
     post:
       summary: Add gift wrapping
       operationId: post_checkout_gift_wrap
@@ -335,7 +335,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /checkout/sessions/{sessionId}/notes:
+  '/checkout/sessions/{sessionId}/notes':
     put:
       summary: Add order notes
       operationId: put_checkout_sessions_sessionid_notes

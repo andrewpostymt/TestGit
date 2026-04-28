@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/files
     description: Staging
 paths:
-  /files:
+  '/files':
     get:
       summary: List files
       operationId: get_files
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/{fileId}:
+  '/files/{fileId}':
     get:
       summary: Get file
       operationId: get_files_fileid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/{fileId}/download:
+  '/files/{fileId}/download':
     get:
       summary: Download file
       operationId: get_files_fileid_download
@@ -151,7 +151,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/{fileId}/share:
+  '/files/{fileId}/share':
     post:
       summary: Share file
       operationId: post_files_fileid_share
@@ -171,7 +171,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/upload/presigned:
+  '/files/upload/presigned':
     post:
       summary: Get presigned upload URL
       operationId: post_files_upload_presigned
@@ -191,7 +191,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/upload/multipart:
+  '/files/upload/multipart':
     post:
       summary: Initiate multipart upload
       operationId: post_files_upload_multipart
@@ -211,7 +211,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/folders:
+  '/files/folders':
     get:
       summary: List folders
       operationId: get_files_folders
@@ -223,7 +223,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/folders:
     post:
       summary: Create folder
       operationId: post_files_folders
@@ -243,7 +242,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/{fileId}/move:
+  '/files/{fileId}/move':
     post:
       summary: Move file
       operationId: post_files_fileid_move
@@ -263,7 +262,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/{fileId}/copy:
+  '/files/{fileId}/copy':
     post:
       summary: Copy file
       operationId: post_files_fileid_copy
@@ -283,7 +282,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/{fileId}/versions:
+  '/files/{fileId}/versions':
     get:
       summary: List file versions
       operationId: get_files_fileid_versions
@@ -295,7 +294,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/search:
+  '/files/search':
     get:
       summary: Search files
       operationId: get_files_search
@@ -307,7 +306,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/{fileId}/thumbnail:
+  '/files/{fileId}/thumbnail':
     get:
       summary: Get file thumbnail
       operationId: get_files_fileid_thumbnail
@@ -319,7 +318,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /files/bulk/delete:
+  '/files/bulk/delete':
     post:
       summary: Bulk delete files
       operationId: post_files_bulk_delete

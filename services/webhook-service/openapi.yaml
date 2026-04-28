@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/webhooks
     description: Staging
 paths:
-  /webhooks:
+  '/webhooks':
     get:
       summary: List webhooks
       operationId: get_webhooks
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /webhooks/{webhookId}:
+  '/webhooks/{webhookId}':
     get:
       summary: Get webhook
       operationId: get_webhooks_webhookid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /webhooks/{webhookId}/test:
+  '/webhooks/{webhookId}/test':
     post:
       summary: Send test event
       operationId: post_webhooks_webhookid_test
@@ -151,7 +151,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /webhooks/{webhookId}/deliveries:
+  '/webhooks/{webhookId}/deliveries':
     get:
       summary: List deliveries
       operationId: get_webhooks_webhookid_deliveries
@@ -163,7 +163,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /webhooks/{webhookId}/deliveries/{deliveryId}/retry:
+  '/webhooks/{webhookId}/deliveries/{deliveryId}/retry':
     post:
       summary: Retry delivery
       operationId: post_webhooks_webhookid_deliveries_deliveryid_retry
@@ -175,7 +175,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /webhooks/events:
+  '/webhooks/events':
     get:
       summary: List event types
       operationId: get_webhooks_events
@@ -187,7 +187,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /webhooks/subscriptions:
+  '/webhooks/subscriptions':
     get:
       summary: List event subscriptions
       operationId: get_webhooks_subscriptions
@@ -199,7 +199,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /webhooks/subscriptions:
     post:
       summary: Create subscription
       operationId: post_webhooks_subscriptions
@@ -219,7 +218,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /webhooks/logs:
+  '/webhooks/logs':
     get:
       summary: Webhook logs
       operationId: get_webhooks_logs
@@ -231,7 +230,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /webhooks/signatures/verify:
+  '/webhooks/signatures/verify':
     post:
       summary: Verify webhook signature
       operationId: post_webhooks_signatures_verify
@@ -251,7 +250,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /webhooks/endpoints:
+  '/webhooks/endpoints':
     get:
       summary: List webhook endpoints
       operationId: get_webhooks_endpoints

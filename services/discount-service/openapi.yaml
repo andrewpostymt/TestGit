@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/discounts
     description: Staging
 paths:
-  /discounts:
+  '/discounts':
     get:
       summary: List discounts
       operationId: get_discounts
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /discounts/{discountId}:
+  '/discounts/{discountId}':
     get:
       summary: Get discount
       operationId: get_discounts_discountid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /discounts/{discountId}/apply:
+  '/discounts/{discountId}/apply':
     post:
       summary: Apply discount
       operationId: post_discounts_discountid_apply
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /discounts/{discountId}/usage:
+  '/discounts/{discountId}/usage':
     get:
       summary: Get discount usage
       operationId: get_discounts_discountid_usage
@@ -171,7 +171,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /discounts/{discountId}/activate:
+  '/discounts/{discountId}/activate':
     post:
       summary: Activate discount
       operationId: post_discounts_discountid_activate
@@ -183,7 +183,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /discounts/{discountId}/deactivate:
+  '/discounts/{discountId}/deactivate':
     post:
       summary: Deactivate discount
       operationId: post_discounts_discountid_deactivate
@@ -195,7 +195,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /coupons:
+  '/coupons':
     get:
       summary: List coupon codes
       operationId: get_coupons
@@ -207,7 +207,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /coupons:
     post:
       summary: Create coupon
       operationId: post_coupons
@@ -227,7 +226,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /coupons/{couponId}:
+  '/coupons/{couponId}':
     get:
       summary: Get coupon
       operationId: get_coupons_couponid
@@ -239,7 +238,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /coupons/validate:
+  '/coupons/validate':
     post:
       summary: Validate coupon
       operationId: post_coupons_validate
@@ -259,7 +258,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /coupons/bulk:
+  '/coupons/bulk':
     post:
       summary: Generate bulk coupons
       operationId: post_coupons_bulk
@@ -279,7 +278,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /promotions:
+  '/promotions':
     get:
       summary: List promotions
       operationId: get_promotions
@@ -291,7 +290,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /promotions:
     post:
       summary: Create promotion
       operationId: post_promotions
@@ -311,7 +309,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /promotions/{promotionId}/schedule:
+  '/promotions/{promotionId}/schedule':
     put:
       summary: Schedule promotion
       operationId: put_promotions_promotionid_schedule
@@ -331,7 +329,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /discounts/analytics:
+  '/discounts/analytics':
     get:
       summary: Discount analytics
       operationId: get_discounts_analytics

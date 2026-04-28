@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/inventory
     description: Staging
 paths:
-  /inventory/items:
+  '/inventory/items':
     get:
       summary: List stocks
       operationId: get_inventory_items
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/items/{stockId}:
+  '/inventory/items/{stockId}':
     get:
       summary: Get stock
       operationId: get_inventory_items_stockid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/items/{itemId}/adjust:
+  '/inventory/items/{itemId}/adjust':
     post:
       summary: Adjust stock level
       operationId: post_inventory_items_itemid_adjust
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/items/{itemId}/reserve:
+  '/inventory/items/{itemId}/reserve':
     post:
       summary: Reserve stock
       operationId: post_inventory_items_itemid_reserve
@@ -179,7 +179,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/items/{itemId}/release:
+  '/inventory/items/{itemId}/release':
     post:
       summary: Release reserved stock
       operationId: post_inventory_items_itemid_release
@@ -199,7 +199,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/locations:
+  '/inventory/locations':
     get:
       summary: List warehouse locations
       operationId: get_inventory_locations
@@ -211,7 +211,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/locations:
     post:
       summary: Create location
       operationId: post_inventory_locations
@@ -231,7 +230,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/transfers:
+  '/inventory/transfers':
     get:
       summary: List stock transfers
       operationId: get_inventory_transfers
@@ -243,7 +242,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/transfers:
     post:
       summary: Create stock transfer
       operationId: post_inventory_transfers
@@ -263,7 +261,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/alerts:
+  '/inventory/alerts':
     get:
       summary: Get low stock alerts
       operationId: get_inventory_alerts
@@ -275,7 +273,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/replenishment:
+  '/inventory/replenishment':
     get:
       summary: Get replenishment orders
       operationId: get_inventory_replenishment
@@ -287,7 +285,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/replenishment:
     post:
       summary: Create replenishment order
       operationId: post_inventory_replenishment
@@ -307,7 +304,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/counts:
+  '/inventory/counts':
     get:
       summary: List stock counts
       operationId: get_inventory_counts
@@ -319,7 +316,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/counts:
     post:
       summary: Create stock count
       operationId: post_inventory_counts
@@ -339,7 +335,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/forecast:
+  '/inventory/forecast':
     get:
       summary: Inventory forecast
       operationId: get_inventory_forecast
@@ -351,7 +347,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /inventory/reports:
+  '/inventory/reports':
     get:
       summary: Inventory reports
       operationId: get_inventory_reports

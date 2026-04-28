@@ -12,7 +12,7 @@ servers:
   - url: https://staging-api.example.com/v1/rate-limits
     description: Staging
 paths:
-  /rate-limits/policies:
+  '/rate-limits/policies':
     get:
       summary: List policys
       operationId: get_rate_limits_policies
@@ -54,7 +54,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /rate-limits/policies/{policyId}:
+  '/rate-limits/policies/{policyId}':
     get:
       summary: Get policy
       operationId: get_rate_limits_policies_policyid
@@ -139,7 +139,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /rate-limits/check:
+  '/rate-limits/check':
     post:
       summary: Check rate limit
       operationId: post_rate_limits_check
@@ -159,7 +159,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /rate-limits/quotas:
+  '/rate-limits/quotas':
     get:
       summary: List quotas
       operationId: get_rate_limits_quotas
@@ -171,7 +171,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /rate-limits/quotas/{quotaId}:
+  '/rate-limits/quotas/{quotaId}':
     put:
       summary: Update quota
       operationId: put_rate_limits_quotas_quotaid
@@ -191,7 +191,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /rate-limits/usage:
+  '/rate-limits/usage':
     get:
       summary: Get usage statistics
       operationId: get_rate_limits_usage
@@ -203,7 +203,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /rate-limits/reset:
+  '/rate-limits/reset':
     post:
       summary: Reset rate limit counter
       operationId: post_rate_limits_reset
@@ -223,7 +223,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /rate-limits/allowlist:
+  '/rate-limits/allowlist':
     get:
       summary: Get allowlist
       operationId: get_rate_limits_allowlist
@@ -235,7 +235,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /rate-limits/allowlist:
     post:
       summary: Add to allowlist
       operationId: post_rate_limits_allowlist
@@ -255,7 +254,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /rate-limits/blocklist:
+  '/rate-limits/blocklist':
     get:
       summary: Get blocklist
       operationId: get_rate_limits_blocklist
@@ -267,7 +266,6 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /rate-limits/blocklist:
     post:
       summary: Add to blocklist
       operationId: post_rate_limits_blocklist
@@ -287,7 +285,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not Found
-  /rate-limits/analytics:
+  '/rate-limits/analytics':
     get:
       summary: Rate limit analytics
       operationId: get_rate_limits_analytics
