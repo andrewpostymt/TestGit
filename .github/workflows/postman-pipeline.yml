@@ -3,8 +3,12 @@ name: Postman Pipeline
 # Runs the full CSE pipeline against the monorepo:
 #   1. Bootstrap  — uploads each service's OpenAPI spec to Postman and
 #                   generates baseline/smoke/contract collections
-#   2. Docs       — generates natural-language descriptions for every
+#   2. Repo Sync  — exports each collection to .postman/collections/ YAML stubs
+#                   and writes .postman/resources.yaml; runs sequentially
+#                   (max-parallel: 1) to avoid push conflicts
+#   3. Docs       — generates natural-language descriptions for every
 #                   collection in the workspace using the agent-docs action
+#                   in git-mode; commits to a feature branch and opens a PR
 #
 # Required secrets:  POSTMAN_API_KEY
 # Optional variables: POSTMAN_WORKSPACE_ID  (leave unset to auto-create)
@@ -18,7 +22,7 @@ on:
           Leave empty to create a new workspace from order-service.
         required: false
       dry-run:
-        description: 'Run docs step in dry-run mode (no writes to Postman)'
+        description: 'Run docs step in dry-run mode (no PR opened)'
         required: false
         default: 'false'
 
@@ -122,17 +126,89 @@ jobs:
           echo "collections:   ${{ steps.bootstrap.outputs.collections-json }}"
 
   # ---------------------------------------------------------------------------
-  # Phase 2 — Generate documentation
+  # Phase 2 — Repo sync (sequential matrix)
   #
-  # Runs after all bootstrap jobs complete. Iterates over every collection
-  # in the workspace and writes natural-language descriptions via the
-  # agent-docs action (template mode by default; set agent-mode: 'true'
-  # in the action inputs to use the Postman AI agent instead).
+  # Exports each service's collections to .postman/collections/<service>/
+  # YAML stubs and writes/updates .postman/resources.yaml so Phase 3 can
+  # run in git-mode.  max-parallel: 1 ensures each job completes its
+  # commit-and-push before the next job checks out the updated branch.
+  # ---------------------------------------------------------------------------
+  repo-sync:
+    name: Repo sync ${{ matrix.service }}
+    needs: [bootstrap-anchor, bootstrap-services]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        service:
+          - order-service
+          - user-service
+          - auth-service
+          - product-service
+          - payment-service
+          - inventory-service
+          - notification-service
+          - shipping-service
+          - review-service
+          - search-service
+          - analytics-service
+          - customer-service
+          - catalog-service
+          - cart-service
+          - checkout-service
+          - recommendation-service
+          - subscription-service
+          - billing-service
+          - admin-service
+          - webhook-service
+          - file-service
+          - email-service
+          - sms-service
+          - audit-service
+          - config-service
+          - feature-flag-service
+          - event-service
+          - workflow-service
+          - document-service
+          - media-service
+          - localisation-service
+          - tax-service
+          - discount-service
+          - loyalty-service
+          - rate-limit-service
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Repo sync ${{ matrix.service }}
+        uses: postman-cs/postman-repo-sync-action@main
+        with:
+          project-name:         ${{ matrix.service }}
+          workspace-id:         ${{ needs.bootstrap-anchor.outputs.workspace-id }}
+          postman-api-key:      ${{ secrets.POSTMAN_API_KEY }}
+          github-token:         ${{ secrets.GITHUB_TOKEN }}
+          generate-ci-workflow: 'false'
+
+  # ---------------------------------------------------------------------------
+  # Phase 3 — Generate documentation (git-mode)
+  #
+  # Runs after all repo-sync jobs complete. Reads .postman/resources.yaml to
+  # resolve every collection, generates natural-language descriptions via
+  # the agent-docs action, commits the patched YAML files to a feature
+  # branch, and opens a GitHub PR against main for review.
+  # After the PR is merged, re-run this workflow with apply-from-repo to
+  # push the approved descriptions back to the live Postman collections.
   # ---------------------------------------------------------------------------
   generate-docs:
     name: Generate collection documentation
-    needs: [bootstrap-anchor, bootstrap-services]
+    needs: [bootstrap-anchor, repo-sync]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
 
@@ -142,11 +218,14 @@ jobs:
         with:
           postman-api-key:    ${{ secrets.POSTMAN_API_KEY }}
           workspace-id:       ${{ needs.bootstrap-anchor.outputs.workspace-id }}
+          git-mode:           'true'
+          github-token:       ${{ secrets.GITHUB_TOKEN }}
           overwrite-existing: 'true'
           dry-run:            ${{ inputs.dry-run }}
 
       - name: Print docs results
         run: |
+          echo "branch-name:         ${{ steps.docs.outputs.branch-name }}"
           echo "collections-updated: ${{ steps.docs.outputs.collections-updated }}"
           echo "collections-skipped: ${{ steps.docs.outputs.collections-skipped }}"
           echo ""
