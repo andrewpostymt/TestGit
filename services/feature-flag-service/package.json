@@ -1,0 +1,5 @@
+{
+  "name": "@example/feature-flag-service",
+  "version": "1.0.0",
+  "description": "Feature toggle management with gradual rollout and A/B testing support."
+}

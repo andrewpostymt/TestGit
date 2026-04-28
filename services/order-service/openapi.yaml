@@ -1,0 +1,5264 @@
+openapi: 3.1.0
+info:
+  title: Order Service
+  description: Comprehensive order management API covering the full order lifecycle — creation through fulfillment, returns, analytics, and automation.
+  version: 3.2.0
+  contact:
+    name: Platform Engineering
+    email: platform@example.com
+servers:
+  - url: https://api.example.com/v1
+    description: Production
+  - url: https://staging-api.example.com/v1
+    description: Staging
+paths:
+  '/orders':
+    get:
+      summary: List orders
+      operationId: get_orders
+      tags: [Orders]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create order
+      operationId: post_orders
+      tags: [Orders]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}':
+    get:
+      summary: Get order
+      operationId: get_orders_orderid
+      tags: [Orders]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update order
+      operationId: put_orders_orderid
+      tags: [Orders]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    patch:
+      summary: Partially update order
+      operationId: patch_orders_orderid
+      tags: [Orders]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete order
+      operationId: delete_orders_orderid
+      tags: [Orders]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/archive':
+    post:
+      summary: Archive order
+      operationId: post_orders_orderid_archive
+      tags: [Orders]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/restore':
+    post:
+      summary: Restore archived order
+      operationId: post_orders_orderid_restore
+      tags: [Orders]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/duplicate':
+    post:
+      summary: Duplicate order
+      operationId: post_orders_orderid_duplicate
+      tags: [Orders]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/export':
+    post:
+      summary: Export orders
+      operationId: post_orders_export
+      tags: [Orders]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/import':
+    post:
+      summary: Import orders
+      operationId: post_orders_import
+      tags: [Orders]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/search':
+    post:
+      summary: Search orders
+      operationId: post_orders_search
+      tags: [Orders]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/filter':
+    get:
+      summary: Filter orders
+      operationId: get_orders_filter
+      tags: [Orders]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/bulk':
+    post:
+      summary: Bulk create orders
+      operationId: post_orders_bulk
+      tags: [Orders]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/bulk/update':
+    patch:
+      summary: Bulk update orders
+      operationId: patch_orders_bulk_update
+      tags: [Orders]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/bulk/delete':
+    post:
+      summary: Bulk delete orders
+      operationId: post_orders_bulk_delete
+      tags: [Orders]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/validate':
+    post:
+      summary: Validate order
+      operationId: post_orders_orderid_validate
+      tags: [Orders]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/preview':
+    get:
+      summary: Preview order
+      operationId: get_orders_orderid_preview
+      tags: [Orders]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/estimate':
+    post:
+      summary: Estimate order costs
+      operationId: post_orders_orderid_estimate
+      tags: [Orders]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/summary':
+    get:
+      summary: Order summary statistics
+      operationId: get_orders_summary
+      tags: [Orders]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items':
+    get:
+      summary: List order items
+      operationId: get_orders_orderid_items
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Add item to order
+      operationId: post_orders_orderid_items
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}':
+    get:
+      summary: Get order item
+      operationId: get_orders_orderid_items_itemid
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update order item
+      operationId: put_orders_orderid_items_itemid
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Remove order item
+      operationId: delete_orders_orderid_items_itemid
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/bulk':
+    post:
+      summary: Bulk add items
+      operationId: post_orders_orderid_items_bulk
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/bulk/update':
+    patch:
+      summary: Bulk update items
+      operationId: patch_orders_orderid_items_bulk_update
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/bulk/remove':
+    post:
+      summary: Bulk remove items
+      operationId: post_orders_orderid_items_bulk_remove
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/reorder':
+    post:
+      summary: Reorder items
+      operationId: post_orders_orderid_items_reorder
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}/substitute':
+    post:
+      summary: Substitute item
+      operationId: post_orders_orderid_items_itemid_substitute
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}/availability':
+    get:
+      summary: Check item availability
+      operationId: get_orders_orderid_items_itemid_availability
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}/pricing':
+    get:
+      summary: Get item pricing
+      operationId: get_orders_orderid_items_itemid_pricing
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}/discount':
+    post:
+      summary: Apply item discount
+      operationId: post_orders_orderid_items_itemid_discount
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}/tax':
+    get:
+      summary: Calculate item tax
+      operationId: get_orders_orderid_items_itemid_tax
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}/shipping-rate':
+    get:
+      summary: Get item shipping rate
+      operationId: get_orders_orderid_items_itemid_shipping_rate
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}/weight':
+    get:
+      summary: Get item weight
+      operationId: get_orders_orderid_items_itemid_weight
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}/dimensions':
+    get:
+      summary: Get item dimensions
+      operationId: get_orders_orderid_items_itemid_dimensions
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}/images':
+    get:
+      summary: Get item images
+      operationId: get_orders_orderid_items_itemid_images
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}/notes':
+    get:
+      summary: Get item notes
+      operationId: get_orders_orderid_items_itemid_notes
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/items/{itemId}/metadata':
+    get:
+      summary: Get item metadata
+      operationId: get_orders_orderid_items_itemid_metadata
+      tags: [Order Items]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/status':
+    get:
+      summary: Get order status
+      operationId: get_orders_orderid_status
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update order status
+      operationId: put_orders_orderid_status
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/status/history':
+    get:
+      summary: Get status history
+      operationId: get_orders_orderid_status_history
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/status/transitions':
+    get:
+      summary: Get valid status transitions
+      operationId: get_orders_orderid_status_transitions
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/cancel':
+    post:
+      summary: Cancel order
+      operationId: post_orders_orderid_cancel
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/approve':
+    post:
+      summary: Approve order
+      operationId: post_orders_orderid_approve
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/reject':
+    post:
+      summary: Reject order
+      operationId: post_orders_orderid_reject
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/hold':
+    post:
+      summary: Place order on hold
+      operationId: post_orders_orderid_hold
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/release':
+    post:
+      summary: Release order from hold
+      operationId: post_orders_orderid_release
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/escalate':
+    post:
+      summary: Escalate order
+      operationId: post_orders_orderid_escalate
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/assign':
+    post:
+      summary: Assign order
+      operationId: post_orders_orderid_assign
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/reassign':
+    post:
+      summary: Reassign order
+      operationId: post_orders_orderid_reassign
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/status/comment':
+    post:
+      summary: Add status comment
+      operationId: post_orders_orderid_status_comment
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/notify':
+    post:
+      summary: Send order notification
+      operationId: post_orders_orderid_notify
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/events':
+    get:
+      summary: Get order events
+      operationId: get_orders_orderid_events
+      tags: [Order Status]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments':
+    get:
+      summary: List fulfillments
+      operationId: get_orders_orderid_fulfillments
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create fulfillment
+      operationId: post_orders_orderid_fulfillments
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}':
+    get:
+      summary: Get fulfillment
+      operationId: get_orders_orderid_fulfillments_fulfillmentid
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update fulfillment
+      operationId: put_orders_orderid_fulfillments_fulfillmentid
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/cancel':
+    post:
+      summary: Cancel fulfillment
+      operationId: post_orders_orderid_fulfillments_fulfillmentid_cancel
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/partial':
+    post:
+      summary: Create partial fulfillment
+      operationId: post_orders_orderid_fulfillments_partial
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/split':
+    post:
+      summary: Split fulfillment
+      operationId: post_orders_orderid_fulfillments_split
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/merge':
+    post:
+      summary: Merge fulfillments
+      operationId: post_orders_orderid_fulfillments_merge
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/tracking':
+    get:
+      summary: Get tracking info
+      operationId: get_orders_orderid_fulfillments_fulfillmentid_tracking
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/tracking/history':
+    get:
+      summary: Get tracking history
+      operationId: get_orders_orderid_fulfillments_fulfillmentid_tracking_history
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/label':
+    post:
+      summary: Generate carrier label
+      operationId: post_orders_orderid_fulfillments_fulfillmentid_label
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/packing-slip':
+    get:
+      summary: Get packing slip
+      operationId: get_orders_orderid_fulfillments_fulfillmentid_packing_slip
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/manifest':
+    get:
+      summary: Get manifest
+      operationId: get_orders_orderid_fulfillments_fulfillmentid_manifest
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/pick-list':
+    get:
+      summary: Get pick list
+      operationId: get_orders_orderid_fulfillments_fulfillmentid_pick_list
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/pack-list':
+    get:
+      summary: Get pack list
+      operationId: get_orders_orderid_fulfillments_fulfillmentid_pack_list
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/ship':
+    post:
+      summary: Mark as shipped
+      operationId: post_orders_orderid_fulfillments_fulfillmentid_ship
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/deliver':
+    post:
+      summary: Mark as delivered
+      operationId: post_orders_orderid_fulfillments_fulfillmentid_deliver
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/return':
+    post:
+      summary: Create return from fulfillment
+      operationId: post_orders_orderid_fulfillments_fulfillmentid_return
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/exchange':
+    post:
+      summary: Create exchange
+      operationId: post_orders_orderid_fulfillments_fulfillmentid_exchange
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fulfillments/{fulfillmentId}/reship':
+    post:
+      summary: Reship fulfillment
+      operationId: post_orders_orderid_fulfillments_fulfillmentid_reship
+      tags: [Fulfillment]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fulfillmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments':
+    get:
+      summary: List order payments
+      operationId: get_orders_orderid_payments
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Add payment
+      operationId: post_orders_orderid_payments
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/{paymentId}':
+    get:
+      summary: Get payment
+      operationId: get_orders_orderid_payments_paymentid
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update payment
+      operationId: put_orders_orderid_payments_paymentid
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/{paymentId}/void':
+    post:
+      summary: Void payment
+      operationId: post_orders_orderid_payments_paymentid_void
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/{paymentId}/capture':
+    post:
+      summary: Capture payment
+      operationId: post_orders_orderid_payments_paymentid_capture
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/{paymentId}/refund':
+    post:
+      summary: Refund payment
+      operationId: post_orders_orderid_payments_paymentid_refund
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/{paymentId}/partial-refund':
+    post:
+      summary: Partial refund
+      operationId: post_orders_orderid_payments_paymentid_partial_refund
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/history':
+    get:
+      summary: Payment history
+      operationId: get_orders_orderid_payments_history
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/methods':
+    get:
+      summary: List payment methods
+      operationId: get_orders_orderid_payments_methods
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/{paymentId}/authorize':
+    post:
+      summary: Authorize payment
+      operationId: post_orders_orderid_payments_paymentid_authorize
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/{paymentId}/charge':
+    post:
+      summary: Charge payment
+      operationId: post_orders_orderid_payments_paymentid_charge
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/{paymentId}/dispute':
+    post:
+      summary: File dispute
+      operationId: post_orders_orderid_payments_paymentid_dispute
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/{paymentId}/dispute/evidence':
+    post:
+      summary: Submit dispute evidence
+      operationId: post_orders_orderid_payments_paymentid_dispute_evidence
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/reconcile':
+    post:
+      summary: Reconcile payments
+      operationId: post_orders_orderid_payments_reconcile
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/invoice':
+    get:
+      summary: Get order invoice
+      operationId: get_orders_orderid_invoice
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/receipt':
+    get:
+      summary: Get order receipt
+      operationId: get_orders_orderid_receipt
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/credit':
+    post:
+      summary: Apply credit
+      operationId: post_orders_orderid_payments_credit
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/adjustment':
+    post:
+      summary: Create price adjustment
+      operationId: post_orders_orderid_payments_adjustment
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/payments/balance':
+    get:
+      summary: Get order balance
+      operationId: get_orders_orderid_payments_balance
+      tags: [Payments]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/returns':
+    get:
+      summary: List returns
+      operationId: get_orders_orderid_returns
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create return request
+      operationId: post_orders_orderid_returns
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/returns/{returnId}':
+    get:
+      summary: Get return
+      operationId: get_orders_orderid_returns_returnid
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: returnId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update return
+      operationId: put_orders_orderid_returns_returnid
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: returnId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/returns/{returnId}/approve':
+    post:
+      summary: Approve return
+      operationId: post_orders_orderid_returns_returnid_approve
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: returnId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/returns/{returnId}/reject':
+    post:
+      summary: Reject return
+      operationId: post_orders_orderid_returns_returnid_reject
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: returnId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/returns/{returnId}/receive':
+    post:
+      summary: Mark return received
+      operationId: post_orders_orderid_returns_returnid_receive
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: returnId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/returns/{returnId}/inspect':
+    post:
+      summary: Inspect returned items
+      operationId: post_orders_orderid_returns_returnid_inspect
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: returnId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/returns/{returnId}/restock':
+    post:
+      summary: Restock returned items
+      operationId: post_orders_orderid_returns_returnid_restock
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: returnId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/returns/{returnId}/refund':
+    post:
+      summary: Issue return refund
+      operationId: post_orders_orderid_returns_returnid_refund
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: returnId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/returns/{returnId}/exchange':
+    post:
+      summary: Create return exchange
+      operationId: post_orders_orderid_returns_returnid_exchange
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: returnId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/returns/{returnId}/label':
+    post:
+      summary: Generate return label
+      operationId: post_orders_orderid_returns_returnid_label
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: returnId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/returns/{returnId}/history':
+    get:
+      summary: Return history
+      operationId: get_orders_orderid_returns_returnid_history
+      tags: [Returns]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: returnId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/returns/policy':
+    get:
+      summary: Get return policy
+      operationId: get_returns_policy
+      tags: [Returns]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/returns/analytics':
+    get:
+      summary: Return analytics
+      operationId: get_returns_analytics
+      tags: [Returns]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping':
+    get:
+      summary: Get shipping details
+      operationId: get_orders_orderid_shipping
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update shipping details
+      operationId: put_orders_orderid_shipping
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/options':
+    get:
+      summary: Get shipping options
+      operationId: get_orders_orderid_shipping_options
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/rates':
+    post:
+      summary: Calculate shipping rates
+      operationId: post_orders_orderid_shipping_rates
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/select':
+    post:
+      summary: Select shipping method
+      operationId: post_orders_orderid_shipping_select
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/tracking':
+    get:
+      summary: Get shipping tracking
+      operationId: get_orders_orderid_shipping_tracking
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/tracking/events':
+    get:
+      summary: Get tracking events
+      operationId: get_orders_orderid_shipping_tracking_events
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/pickup':
+    post:
+      summary: Schedule carrier pickup
+      operationId: post_orders_orderid_shipping_pickup
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/address/validate':
+    post:
+      summary: Validate shipping address
+      operationId: post_orders_orderid_shipping_address_validate
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/estimate':
+    get:
+      summary: Get delivery estimate
+      operationId: get_orders_orderid_shipping_estimate
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/insurance':
+    post:
+      summary: Add shipping insurance
+      operationId: post_orders_orderid_shipping_insurance
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/signature':
+    put:
+      summary: Set signature requirement
+      operationId: put_orders_orderid_shipping_signature
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/special-handling':
+    put:
+      summary: Set special handling
+      operationId: put_orders_orderid_shipping_special_handling
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/customs':
+    post:
+      summary: Create customs declaration
+      operationId: post_orders_orderid_shipping_customs
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/duties':
+    get:
+      summary: Calculate duties
+      operationId: get_orders_orderid_shipping_duties
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/taxes':
+    get:
+      summary: Calculate shipping taxes
+      operationId: get_orders_orderid_shipping_taxes
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/hazmat':
+    put:
+      summary: Set hazmat flags
+      operationId: put_orders_orderid_shipping_hazmat
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/fragile':
+    put:
+      summary: Set fragile flag
+      operationId: put_orders_orderid_shipping_fragile
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/temperature':
+    put:
+      summary: Set temperature requirements
+      operationId: put_orders_orderid_shipping_temperature
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/shipping/white-glove':
+    put:
+      summary: Set white-glove delivery
+      operationId: put_orders_orderid_shipping_white_glove
+      tags: [Shipping]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/documents':
+    get:
+      summary: List order documents
+      operationId: get_orders_orderid_documents
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Upload document
+      operationId: post_orders_orderid_documents
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/documents/{documentId}':
+    get:
+      summary: Get document
+      operationId: get_orders_orderid_documents_documentid
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: documentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update document
+      operationId: put_orders_orderid_documents_documentid
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: documentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete document
+      operationId: delete_orders_orderid_documents_documentid
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: documentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/documents/invoice/generate':
+    post:
+      summary: Generate invoice
+      operationId: post_orders_orderid_documents_invoice_generate
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/documents/receipt/generate':
+    post:
+      summary: Generate receipt
+      operationId: post_orders_orderid_documents_receipt_generate
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/documents/packing-slip/generate':
+    post:
+      summary: Generate packing slip
+      operationId: post_orders_orderid_documents_packing_slip_generate
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/documents/label/generate':
+    post:
+      summary: Generate shipping label
+      operationId: post_orders_orderid_documents_label_generate
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/documents/manifest/generate':
+    post:
+      summary: Generate manifest
+      operationId: post_orders_orderid_documents_manifest_generate
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/documents/{documentId}/send':
+    post:
+      summary: Send document
+      operationId: post_orders_orderid_documents_documentid_send
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: documentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/documents/{documentId}/download':
+    get:
+      summary: Download document
+      operationId: get_orders_orderid_documents_documentid_download
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: documentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/documents/templates':
+    get:
+      summary: List document templates
+      operationId: get_documents_templates
+      tags: [Documents]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/documents/settings':
+    get:
+      summary: Get document settings
+      operationId: get_documents_settings
+      tags: [Documents]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/documents/history':
+    get:
+      summary: Document history
+      operationId: get_orders_orderid_documents_history
+      tags: [Documents]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/metrics':
+    get:
+      summary: Get order metrics
+      operationId: get_analytics_orders_metrics
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/revenue':
+    get:
+      summary: Revenue analytics
+      operationId: get_analytics_orders_revenue
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/fulfillment':
+    get:
+      summary: Fulfillment metrics
+      operationId: get_analytics_orders_fulfillment
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/returns':
+    get:
+      summary: Return metrics
+      operationId: get_analytics_orders_returns
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/customers':
+    get:
+      summary: Customer analytics
+      operationId: get_analytics_orders_customers
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/products':
+    get:
+      summary: Product analytics
+      operationId: get_analytics_orders_products
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/geographic':
+    get:
+      summary: Geographic analytics
+      operationId: get_analytics_orders_geographic
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/time-series':
+    get:
+      summary: Time series data
+      operationId: get_analytics_orders_time_series
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/cohorts':
+    get:
+      summary: Cohort analysis
+      operationId: get_analytics_orders_cohorts
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/forecast':
+    get:
+      summary: Order forecast
+      operationId: get_analytics_orders_forecast
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/anomalies':
+    get:
+      summary: Anomaly detection
+      operationId: get_analytics_orders_anomalies
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/benchmarks':
+    get:
+      summary: Performance benchmarks
+      operationId: get_analytics_orders_benchmarks
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/reports/export':
+    post:
+      summary: Export analytics report
+      operationId: post_analytics_orders_reports_export
+      tags: [Analytics]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/reports/schedule':
+    post:
+      summary: Schedule recurring report
+      operationId: post_analytics_orders_reports_schedule
+      tags: [Analytics]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/analytics/orders/reports/history':
+    get:
+      summary: Report history
+      operationId: get_analytics_orders_reports_history
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/notifications':
+    get:
+      summary: List notifications
+      operationId: get_notifications
+      tags: [Notifications]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create notification
+      operationId: post_notifications
+      tags: [Notifications]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/notifications/{notificationId}':
+    put:
+      summary: Update notification
+      operationId: put_notifications_notificationid
+      tags: [Notifications]
+      parameters:
+        - name: notificationId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete notification
+      operationId: delete_notifications_notificationid
+      tags: [Notifications]
+      parameters:
+        - name: notificationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/notifications/{notificationId}/send':
+    post:
+      summary: Send notification
+      operationId: post_notifications_notificationid_send
+      tags: [Notifications]
+      parameters:
+        - name: notificationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/notifications/history':
+    get:
+      summary: Notification history
+      operationId: get_notifications_history
+      tags: [Notifications]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/notifications/templates':
+    get:
+      summary: Notification templates
+      operationId: get_notifications_templates
+      tags: [Notifications]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/notifications/settings':
+    get:
+      summary: Notification settings
+      operationId: get_notifications_settings
+      tags: [Notifications]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/notifications/test':
+    post:
+      summary: Send test notification
+      operationId: post_notifications_test
+      tags: [Notifications]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/notifications/logs':
+    get:
+      summary: Notification logs
+      operationId: get_notifications_logs
+      tags: [Notifications]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/tags':
+    get:
+      summary: List order tags
+      operationId: get_orders_orderid_tags
+      tags: [Tags & Notes]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Add tag to order
+      operationId: post_orders_orderid_tags
+      tags: [Tags & Notes]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/tags/{tag}':
+    delete:
+      summary: Remove tag from order
+      operationId: delete_orders_orderid_tags_tag
+      tags: [Tags & Notes]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tag
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/notes':
+    get:
+      summary: List order notes
+      operationId: get_orders_orderid_notes
+      tags: [Tags & Notes]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Add note to order
+      operationId: post_orders_orderid_notes
+      tags: [Tags & Notes]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/notes/{noteId}':
+    put:
+      summary: Update note
+      operationId: put_orders_orderid_notes_noteid
+      tags: [Tags & Notes]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete note
+      operationId: delete_orders_orderid_notes_noteid
+      tags: [Tags & Notes]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/notes/{noteId}/pin':
+    post:
+      summary: Pin note
+      operationId: post_orders_orderid_notes_noteid_pin
+      tags: [Tags & Notes]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/notes/search':
+    get:
+      summary: Search notes
+      operationId: get_orders_orderid_notes_search
+      tags: [Tags & Notes]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/notes/history':
+    get:
+      summary: Notes history
+      operationId: get_orders_orderid_notes_history
+      tags: [Tags & Notes]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/rules':
+    get:
+      summary: List automation rules
+      operationId: get_automation_rules
+      tags: [Automation]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create automation rule
+      operationId: post_automation_rules
+      tags: [Automation]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/rules/{ruleId}':
+    get:
+      summary: Get automation rule
+      operationId: get_automation_rules_ruleid
+      tags: [Automation]
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update automation rule
+      operationId: put_automation_rules_ruleid
+      tags: [Automation]
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete automation rule
+      operationId: delete_automation_rules_ruleid
+      tags: [Automation]
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/rules/{ruleId}/enable':
+    post:
+      summary: Enable rule
+      operationId: post_automation_rules_ruleid_enable
+      tags: [Automation]
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/rules/{ruleId}/disable':
+    post:
+      summary: Disable rule
+      operationId: post_automation_rules_ruleid_disable
+      tags: [Automation]
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/rules/{ruleId}/test':
+    post:
+      summary: Test automation rule
+      operationId: post_automation_rules_ruleid_test
+      tags: [Automation]
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/rules/{ruleId}/history':
+    get:
+      summary: Rule execution history
+      operationId: get_automation_rules_ruleid_history
+      tags: [Automation]
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/rules/{ruleId}/triggers':
+    get:
+      summary: Get rule triggers
+      operationId: get_automation_rules_ruleid_triggers
+      tags: [Automation]
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/rules/{ruleId}/actions':
+    get:
+      summary: Get rule actions
+      operationId: get_automation_rules_ruleid_actions
+      tags: [Automation]
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/rules/{ruleId}/conditions':
+    get:
+      summary: Get rule conditions
+      operationId: get_automation_rules_ruleid_conditions
+      tags: [Automation]
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/templates':
+    get:
+      summary: List rule templates
+      operationId: get_automation_templates
+      tags: [Automation]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/bulk-apply':
+    post:
+      summary: Bulk apply rules
+      operationId: post_automation_bulk_apply
+      tags: [Automation]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/automation/logs':
+    get:
+      summary: Automation logs
+      operationId: get_automation_logs
+      tags: [Automation]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/webhooks':
+    get:
+      summary: List webhooks
+      operationId: get_webhooks
+      tags: [Webhooks]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create webhook
+      operationId: post_webhooks
+      tags: [Webhooks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/webhooks/{webhookId}':
+    get:
+      summary: Get webhook
+      operationId: get_webhooks_webhookid
+      tags: [Webhooks]
+      parameters:
+        - name: webhookId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update webhook
+      operationId: put_webhooks_webhookid
+      tags: [Webhooks]
+      parameters:
+        - name: webhookId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete webhook
+      operationId: delete_webhooks_webhookid
+      tags: [Webhooks]
+      parameters:
+        - name: webhookId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/webhooks/{webhookId}/test':
+    post:
+      summary: Test webhook
+      operationId: post_webhooks_webhookid_test
+      tags: [Webhooks]
+      parameters:
+        - name: webhookId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/webhooks/{webhookId}/history':
+    get:
+      summary: Webhook delivery history
+      operationId: get_webhooks_webhookid_history
+      tags: [Webhooks]
+      parameters:
+        - name: webhookId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/webhooks/events':
+    get:
+      summary: List webhook event types
+      operationId: get_webhooks_events
+      tags: [Webhooks]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/webhooks/{webhookId}/signatures':
+    get:
+      summary: Get webhook signatures
+      operationId: get_webhooks_webhookid_signatures
+      tags: [Webhooks]
+      parameters:
+        - name: webhookId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/webhooks/{webhookId}/retry':
+    post:
+      summary: Retry failed deliveries
+      operationId: post_webhooks_webhookid_retry
+      tags: [Webhooks]
+      parameters:
+        - name: webhookId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/integrations':
+    get:
+      summary: List integrations
+      operationId: get_integrations
+      tags: [Integrations]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create integration
+      operationId: post_integrations
+      tags: [Integrations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/integrations/{integrationId}':
+    get:
+      summary: Get integration
+      operationId: get_integrations_integrationid
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update integration
+      operationId: put_integrations_integrationid
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete integration
+      operationId: delete_integrations_integrationid
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/integrations/{integrationId}/sync':
+    post:
+      summary: Sync integration
+      operationId: post_integrations_integrationid_sync
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/integrations/{integrationId}/logs':
+    get:
+      summary: Integration logs
+      operationId: get_integrations_integrationid_logs
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/integrations/{integrationId}/mappings':
+    get:
+      summary: Get field mappings
+      operationId: get_integrations_integrationid_mappings
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update field mappings
+      operationId: put_integrations_integrationid_mappings
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/integrations/{integrationId}/transform':
+    post:
+      summary: Transform data
+      operationId: post_integrations_integrationid_transform
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/integrations/{integrationId}/mappings/validate':
+    post:
+      summary: Validate mappings
+      operationId: post_integrations_integrationid_mappings_validate
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/integrations/{integrationId}/test':
+    post:
+      summary: Test integration
+      operationId: post_integrations_integrationid_test
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/integrations/{integrationId}/events':
+    get:
+      summary: Integration events
+      operationId: get_integrations_integrationid_events
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/integrations/{integrationId}/health':
+    get:
+      summary: Integration health check
+      operationId: get_integrations_integrationid_health
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/integrations/{integrationId}/metrics':
+    get:
+      summary: Integration metrics
+      operationId: get_integrations_integrationid_metrics
+      tags: [Integrations]
+      parameters:
+        - name: integrationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches':
+    get:
+      summary: List batch operations
+      operationId: get_batches
+      tags: [Batch Operations]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create batch operation
+      operationId: post_batches
+      tags: [Batch Operations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/{batchId}':
+    get:
+      summary: Get batch operation
+      operationId: get_batches_batchid
+      tags: [Batch Operations]
+      parameters:
+        - name: batchId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/{batchId}/cancel':
+    post:
+      summary: Cancel batch operation
+      operationId: post_batches_batchid_cancel
+      tags: [Batch Operations]
+      parameters:
+        - name: batchId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/{batchId}/status':
+    get:
+      summary: Get batch status
+      operationId: get_batches_batchid_status
+      tags: [Batch Operations]
+      parameters:
+        - name: batchId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/{batchId}/results':
+    get:
+      summary: Get batch results
+      operationId: get_batches_batchid_results
+      tags: [Batch Operations]
+      parameters:
+        - name: batchId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/{batchId}/errors':
+    get:
+      summary: Get batch errors
+      operationId: get_batches_batchid_errors
+      tags: [Batch Operations]
+      parameters:
+        - name: batchId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/{batchId}/retry':
+    post:
+      summary: Retry failed batch items
+      operationId: post_batches_batchid_retry
+      tags: [Batch Operations]
+      parameters:
+        - name: batchId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/{batchId}/progress':
+    get:
+      summary: Get batch progress
+      operationId: get_batches_batchid_progress
+      tags: [Batch Operations]
+      parameters:
+        - name: batchId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/schedule':
+    post:
+      summary: Schedule batch operation
+      operationId: post_batches_schedule
+      tags: [Batch Operations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/templates':
+    get:
+      summary: List batch templates
+      operationId: get_batches_templates
+      tags: [Batch Operations]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/history':
+    get:
+      summary: Batch history
+      operationId: get_batches_history
+      tags: [Batch Operations]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/export':
+    post:
+      summary: Bulk export
+      operationId: post_batches_export
+      tags: [Batch Operations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/import':
+    post:
+      summary: Bulk import
+      operationId: post_batches_import
+      tags: [Batch Operations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/batches/{batchId}/notifications':
+    get:
+      summary: Batch notifications
+      operationId: get_batches_batchid_notifications
+      tags: [Batch Operations]
+      parameters:
+        - name: batchId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/custom-fields':
+    get:
+      summary: List custom fields
+      operationId: get_custom_fields
+      tags: [Custom Fields]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create custom field
+      operationId: post_custom_fields
+      tags: [Custom Fields]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/custom-fields/{fieldId}':
+    get:
+      summary: Get custom field
+      operationId: get_custom_fields_fieldid
+      tags: [Custom Fields]
+      parameters:
+        - name: fieldId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update custom field
+      operationId: put_custom_fields_fieldid
+      tags: [Custom Fields]
+      parameters:
+        - name: fieldId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete custom field
+      operationId: delete_custom_fields_fieldid
+      tags: [Custom Fields]
+      parameters:
+        - name: fieldId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fields':
+    get:
+      summary: Get order field values
+      operationId: get_orders_orderid_fields
+      tags: [Custom Fields]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fields/{fieldId}':
+    put:
+      summary: Set field value
+      operationId: put_orders_orderid_fields_fieldid
+      tags: [Custom Fields]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fieldId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Clear field value
+      operationId: delete_orders_orderid_fields_fieldid
+      tags: [Custom Fields]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fieldId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/custom-fields/templates':
+    get:
+      summary: List field templates
+      operationId: get_custom_fields_templates
+      tags: [Custom Fields]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/orders/{orderId}/fields/validate':
+    post:
+      summary: Validate field values
+      operationId: post_orders_orderid_fields_validate
+      tags: [Custom Fields]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/audit/logs':
+    get:
+      summary: Get audit logs
+      operationId: get_audit_logs
+      tags: [Audit]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/audit/events':
+    get:
+      summary: Get audit events
+      operationId: get_audit_events
+      tags: [Audit]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/audit/summary':
+    get:
+      summary: Get audit summary
+      operationId: get_audit_summary
+      tags: [Audit]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/audit/export':
+    post:
+      summary: Export audit data
+      operationId: post_audit_export
+      tags: [Audit]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/audit/filter':
+    post:
+      summary: Filter audit logs
+      operationId: post_audit_filter
+      tags: [Audit]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/audit/retention':
+    get:
+      summary: Get retention policy
+      operationId: get_audit_retention
+      tags: [Audit]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/audit/alerts':
+    get:
+      summary: Get audit alerts
+      operationId: get_audit_alerts
+      tags: [Audit]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/audit/users':
+    get:
+      summary: Get user activity
+      operationId: get_audit_users
+      tags: [Audit]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/audit/actions':
+    get:
+      summary: Get action types
+      operationId: get_audit_actions
+      tags: [Audit]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  '/audit/compliance':
+    get:
+      summary: Get compliance report
+      operationId: get_audit_compliance
+      tags: [Audit]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - BearerAuth: []

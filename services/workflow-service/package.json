@@ -1,0 +1,5 @@
+{
+  "name": "@example/workflow-service",
+  "version": "1.0.0",
+  "description": "Business process automation, workflow definitions, and execution tracking."
+}

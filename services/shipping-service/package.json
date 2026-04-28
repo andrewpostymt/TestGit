@@ -1,0 +1,5 @@
+{
+  "name": "@example/shipping-service",
+  "version": "1.0.0",
+  "description": "Carrier integrations, rate calculation, label generation, and tracking."
+}

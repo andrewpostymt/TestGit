@@ -1,0 +1,5 @@
+{
+  "name": "@example/catalog-service",
+  "version": "1.0.0",
+  "description": "Product catalog, collections, categories, and merchandising rules."
+}

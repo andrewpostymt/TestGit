@@ -1,0 +1,326 @@
+openapi: 3.1.0
+info:
+  title: Billing Service
+  description: Invoice generation, tax calculation, credit notes, and payment terms.
+  version: 1.0.0
+  contact:
+    name: Platform Engineering
+    email: platform@example.com
+servers:
+  - url: https://api.example.com/v1/billing
+    description: Production
+  - url: https://staging-api.example.com/v1/billing
+    description: Staging
+paths:
+  /billing/invoices:
+    get:
+      summary: List invoices
+      operationId: get_billing_invoices
+      tags: [Billing]
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create invoice
+      operationId: post_billing_invoices
+      tags: [Billing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/invoices/{invoiceId}:
+    get:
+      summary: Get invoice
+      operationId: get_billing_invoices_invoiceid
+      tags: [Billing]
+      parameters:
+        - name: invoiceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update invoice
+      operationId: put_billing_invoices_invoiceid
+      tags: [Billing]
+      parameters:
+        - name: invoiceId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    patch:
+      summary: Partially update invoice
+      operationId: patch_billing_invoices_invoiceid
+      tags: [Billing]
+      parameters:
+        - name: invoiceId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete invoice
+      operationId: delete_billing_invoices_invoiceid
+      tags: [Billing]
+      parameters:
+        - name: invoiceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/invoices/{invoiceId}/send:
+    post:
+      summary: Send invoice
+      operationId: post_billing_invoices_invoiceid_send
+      tags: [Billing]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/invoices/{invoiceId}/pay:
+    post:
+      summary: Pay invoice
+      operationId: post_billing_invoices_invoiceid_pay
+      tags: [Billing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/invoices/{invoiceId}/void:
+    post:
+      summary: Void invoice
+      operationId: post_billing_invoices_invoiceid_void
+      tags: [Billing]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/invoices/{invoiceId}/credit-note:
+    post:
+      summary: Create credit note
+      operationId: post_billing_invoices_invoiceid_credit_note
+      tags: [Billing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/tax-rates:
+    get:
+      summary: List tax rates
+      operationId: get_billing_tax_rates
+      tags: [Billing]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/tax-rates:
+    post:
+      summary: Create tax rate
+      operationId: post_billing_tax_rates
+      tags: [Billing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/tax/calculate:
+    post:
+      summary: Calculate tax
+      operationId: post_billing_tax_calculate
+      tags: [Billing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/payment-terms:
+    get:
+      summary: List payment terms
+      operationId: get_billing_payment_terms
+      tags: [Billing]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/overdue:
+    get:
+      summary: Get overdue invoices
+      operationId: get_billing_overdue
+      tags: [Billing]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/statements:
+    get:
+      summary: Get account statements
+      operationId: get_billing_statements
+      tags: [Billing]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /billing/reconciliation:
+    post:
+      summary: Reconcile billing
+      operationId: post_billing_reconciliation
+      tags: [Billing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - BearerAuth: []

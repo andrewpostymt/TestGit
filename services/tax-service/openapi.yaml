@@ -1,0 +1,306 @@
+openapi: 3.1.0
+info:
+  title: Tax Service
+  description: Tax rate management, calculation, nexus determination, and filing.
+  version: 1.0.0
+  contact:
+    name: Platform Engineering
+    email: platform@example.com
+servers:
+  - url: https://api.example.com/v1/tax
+    description: Production
+  - url: https://staging-api.example.com/v1/tax
+    description: Staging
+paths:
+  /tax/rates:
+    get:
+      summary: List taxRates
+      operationId: get_tax_rates
+      tags: [Tax]
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create taxRate
+      operationId: post_tax_rates
+      tags: [Tax]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /tax/rates/{taxRateId}:
+    get:
+      summary: Get taxRate
+      operationId: get_tax_rates_taxrateid
+      tags: [Tax]
+      parameters:
+        - name: taxRateId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update taxRate
+      operationId: put_tax_rates_taxrateid
+      tags: [Tax]
+      parameters:
+        - name: taxRateId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    patch:
+      summary: Partially update taxRate
+      operationId: patch_tax_rates_taxrateid
+      tags: [Tax]
+      parameters:
+        - name: taxRateId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete taxRate
+      operationId: delete_tax_rates_taxrateid
+      tags: [Tax]
+      parameters:
+        - name: taxRateId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /tax/calculate:
+    post:
+      summary: Calculate tax
+      operationId: post_tax_calculate
+      tags: [Tax]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /tax/nexus:
+    get:
+      summary: List tax nexus
+      operationId: get_tax_nexus
+      tags: [Tax]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /tax/nexus:
+    post:
+      summary: Add nexus
+      operationId: post_tax_nexus
+      tags: [Tax]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /tax/exemptions:
+    get:
+      summary: List exemptions
+      operationId: get_tax_exemptions
+      tags: [Tax]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /tax/exemptions:
+    post:
+      summary: Create exemption
+      operationId: post_tax_exemptions
+      tags: [Tax]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /tax/reports:
+    get:
+      summary: Tax reports
+      operationId: get_tax_reports
+      tags: [Tax]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /tax/categories:
+    get:
+      summary: List tax categories
+      operationId: get_tax_categories
+      tags: [Tax]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /tax/jurisdictions:
+    get:
+      summary: List jurisdictions
+      operationId: get_tax_jurisdictions
+      tags: [Tax]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /tax/validate:
+    post:
+      summary: Validate tax ID
+      operationId: post_tax_validate
+      tags: [Tax]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /tax/filing:
+    get:
+      summary: List tax filings
+      operationId: get_tax_filing
+      tags: [Tax]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - BearerAuth: []

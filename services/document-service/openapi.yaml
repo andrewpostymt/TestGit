@@ -1,0 +1,378 @@
+openapi: 3.1.0
+info:
+  title: Document Service
+  description: Document generation, templating, signing, and version control.
+  version: 1.0.0
+  contact:
+    name: Platform Engineering
+    email: platform@example.com
+servers:
+  - url: https://api.example.com/v1/documents
+    description: Production
+  - url: https://staging-api.example.com/v1/documents
+    description: Staging
+paths:
+  /documents:
+    get:
+      summary: List documents
+      operationId: get_documents
+      tags: [Documents]
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create document
+      operationId: post_documents
+      tags: [Documents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/{documentId}:
+    get:
+      summary: Get document
+      operationId: get_documents_documentid
+      tags: [Documents]
+      parameters:
+        - name: documentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update document
+      operationId: put_documents_documentid
+      tags: [Documents]
+      parameters:
+        - name: documentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    patch:
+      summary: Partially update document
+      operationId: patch_documents_documentid
+      tags: [Documents]
+      parameters:
+        - name: documentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete document
+      operationId: delete_documents_documentid
+      tags: [Documents]
+      parameters:
+        - name: documentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/{documentId}/versions:
+    get:
+      summary: List document versions
+      operationId: get_documents_documentid_versions
+      tags: [Documents]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/{documentId}/versions:
+    post:
+      summary: Create new version
+      operationId: post_documents_documentid_versions
+      tags: [Documents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/{documentId}/download:
+    get:
+      summary: Download document
+      operationId: get_documents_documentid_download
+      tags: [Documents]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/{documentId}/sign:
+    post:
+      summary: Sign document
+      operationId: post_documents_documentid_sign
+      tags: [Documents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/{documentId}/signatures:
+    get:
+      summary: Get signatures
+      operationId: get_documents_documentid_signatures
+      tags: [Documents]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/{documentId}/share:
+    post:
+      summary: Share document
+      operationId: post_documents_documentid_share
+      tags: [Documents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/templates:
+    get:
+      summary: List document templates
+      operationId: get_documents_templates
+      tags: [Documents]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/templates:
+    post:
+      summary: Create template
+      operationId: post_documents_templates
+      tags: [Documents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/generate:
+    post:
+      summary: Generate document from template
+      operationId: post_documents_generate
+      tags: [Documents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/{documentId}/convert:
+    post:
+      summary: Convert document format
+      operationId: post_documents_documentid_convert
+      tags: [Documents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/{documentId}/archive:
+    post:
+      summary: Archive document
+      operationId: post_documents_documentid_archive
+      tags: [Documents]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/search:
+    get:
+      summary: Search documents
+      operationId: get_documents_search
+      tags: [Documents]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/folders:
+    get:
+      summary: List folders
+      operationId: get_documents_folders
+      tags: [Documents]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /documents/folders:
+    post:
+      summary: Create folder
+      operationId: post_documents_folders
+      tags: [Documents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - BearerAuth: []

@@ -1,0 +1,5 @@
+{
+  "name": "@example/review-service",
+  "version": "1.0.0",
+  "description": "Product and vendor reviews, ratings, and moderation workflows."
+}

@@ -1,0 +1,5 @@
+{
+  "name": "@example/event-service",
+  "version": "1.0.0",
+  "description": "Event streaming, pub/sub messaging, and event replay for async workflows."
+}

@@ -1,0 +1,5 @@
+{
+  "name": "@example/file-service",
+  "version": "1.0.0",
+  "description": "File upload, storage, CDN delivery, and media processing."
+}

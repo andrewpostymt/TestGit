@@ -1,0 +1,14 @@
+{
+  "name": "@example/ecommerce-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Example e-commerce monorepo with 38 microservices",
+  "workspaces": [
+    "services/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces"
+  }
+}

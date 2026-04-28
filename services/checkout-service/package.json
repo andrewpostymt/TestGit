@@ -1,0 +1,5 @@
+{
+  "name": "@example/checkout-service",
+  "version": "1.0.0",
+  "description": "Multi-step checkout flow, address management, and order confirmation."
+}

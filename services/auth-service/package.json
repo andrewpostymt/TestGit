@@ -1,0 +1,5 @@
+{
+  "name": "@example/auth-service",
+  "version": "1.0.0",
+  "description": "Authentication, authorization, OAuth2, tokens, and session management."
+}

@@ -1,0 +1,5 @@
+{
+  "name": "@example/recommendation-service",
+  "version": "1.0.0",
+  "description": "Personalised product recommendations using ML models."
+}

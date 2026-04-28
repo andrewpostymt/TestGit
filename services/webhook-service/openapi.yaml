@@ -1,0 +1,278 @@
+openapi: 3.1.0
+info:
+  title: Webhook Service
+  description: Outbound webhook management, delivery, retries, and event routing.
+  version: 1.0.0
+  contact:
+    name: Platform Engineering
+    email: platform@example.com
+servers:
+  - url: https://api.example.com/v1/webhooks
+    description: Production
+  - url: https://staging-api.example.com/v1/webhooks
+    description: Staging
+paths:
+  /webhooks:
+    get:
+      summary: List webhooks
+      operationId: get_webhooks
+      tags: [Webhooks]
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create webhook
+      operationId: post_webhooks
+      tags: [Webhooks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /webhooks/{webhookId}:
+    get:
+      summary: Get webhook
+      operationId: get_webhooks_webhookid
+      tags: [Webhooks]
+      parameters:
+        - name: webhookId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update webhook
+      operationId: put_webhooks_webhookid
+      tags: [Webhooks]
+      parameters:
+        - name: webhookId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    patch:
+      summary: Partially update webhook
+      operationId: patch_webhooks_webhookid
+      tags: [Webhooks]
+      parameters:
+        - name: webhookId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete webhook
+      operationId: delete_webhooks_webhookid
+      tags: [Webhooks]
+      parameters:
+        - name: webhookId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /webhooks/{webhookId}/test:
+    post:
+      summary: Send test event
+      operationId: post_webhooks_webhookid_test
+      tags: [Webhooks]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /webhooks/{webhookId}/deliveries:
+    get:
+      summary: List deliveries
+      operationId: get_webhooks_webhookid_deliveries
+      tags: [Webhooks]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /webhooks/{webhookId}/deliveries/{deliveryId}/retry:
+    post:
+      summary: Retry delivery
+      operationId: post_webhooks_webhookid_deliveries_deliveryid_retry
+      tags: [Webhooks]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /webhooks/events:
+    get:
+      summary: List event types
+      operationId: get_webhooks_events
+      tags: [Webhooks]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /webhooks/subscriptions:
+    get:
+      summary: List event subscriptions
+      operationId: get_webhooks_subscriptions
+      tags: [Webhooks]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /webhooks/subscriptions:
+    post:
+      summary: Create subscription
+      operationId: post_webhooks_subscriptions
+      tags: [Webhooks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /webhooks/logs:
+    get:
+      summary: Webhook logs
+      operationId: get_webhooks_logs
+      tags: [Webhooks]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /webhooks/signatures/verify:
+    post:
+      summary: Verify webhook signature
+      operationId: post_webhooks_signatures_verify
+      tags: [Webhooks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /webhooks/endpoints:
+    get:
+      summary: List webhook endpoints
+      operationId: get_webhooks_endpoints
+      tags: [Webhooks]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - BearerAuth: []

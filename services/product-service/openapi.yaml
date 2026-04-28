@@ -1,0 +1,438 @@
+openapi: 3.1.0
+info:
+  title: Product Service
+  description: Product catalog management, variants, pricing, and categorisation.
+  version: 1.0.0
+  contact:
+    name: Platform Engineering
+    email: platform@example.com
+servers:
+  - url: https://api.example.com/v1/products
+    description: Production
+  - url: https://staging-api.example.com/v1/products
+    description: Staging
+paths:
+  /products:
+    get:
+      summary: List products
+      operationId: get_products
+      tags: [Products]
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create product
+      operationId: post_products
+      tags: [Products]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}:
+    get:
+      summary: Get product
+      operationId: get_products_productid
+      tags: [Products]
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update product
+      operationId: put_products_productid
+      tags: [Products]
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    patch:
+      summary: Partially update product
+      operationId: patch_products_productid
+      tags: [Products]
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete product
+      operationId: delete_products_productid
+      tags: [Products]
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/variants:
+    get:
+      summary: List product variants
+      operationId: get_products_productid_variants
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/variants:
+    post:
+      summary: Create product variant
+      operationId: post_products_productid_variants
+      tags: [Products]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/images:
+    get:
+      summary: List product images
+      operationId: get_products_productid_images
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/images:
+    post:
+      summary: Upload product image
+      operationId: post_products_productid_images
+      tags: [Products]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/pricing:
+    get:
+      summary: Get product pricing
+      operationId: get_products_productid_pricing
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/pricing:
+    put:
+      summary: Update product pricing
+      operationId: put_products_productid_pricing
+      tags: [Products]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/inventory:
+    get:
+      summary: Get inventory levels
+      operationId: get_products_productid_inventory
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/tags:
+    get:
+      summary: Get product tags
+      operationId: get_products_productid_tags
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/related:
+    get:
+      summary: Get related products
+      operationId: get_products_productid_related
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/reviews:
+    get:
+      summary: Get product reviews
+      operationId: get_products_productid_reviews
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/categories:
+    get:
+      summary: List categories
+      operationId: get_products_categories
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/search:
+    get:
+      summary: Search products
+      operationId: get_products_search
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/publish:
+    post:
+      summary: Publish product
+      operationId: post_products_productid_publish
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/unpublish:
+    post:
+      summary: Unpublish product
+      operationId: post_products_productid_unpublish
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/import:
+    post:
+      summary: Import products
+      operationId: post_products_import
+      tags: [Products]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/export:
+    post:
+      summary: Export products
+      operationId: post_products_export
+      tags: [Products]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/bulk/update:
+    patch:
+      summary: Bulk update products
+      operationId: patch_products_bulk_update
+      tags: [Products]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/seo:
+    put:
+      summary: Update SEO metadata
+      operationId: put_products_productid_seo
+      tags: [Products]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /products/{productId}/attributes:
+    get:
+      summary: Get product attributes
+      operationId: get_products_productid_attributes
+      tags: [Products]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - BearerAuth: []

@@ -1,0 +1,5 @@
+{
+  "name": "@example/product-service",
+  "version": "1.0.0",
+  "description": "Product catalog management, variants, pricing, and categorisation."
+}

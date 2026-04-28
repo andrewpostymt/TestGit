@@ -1,0 +1,5 @@
+{
+  "name": "@example/rate-limit-service",
+  "version": "1.0.0",
+  "description": "API rate limiting rules, quota management, and throttle policies."
+}

@@ -1,0 +1,5 @@
+{
+  "name": "@example/cart-service",
+  "version": "1.0.0",
+  "description": "Shopping cart management, line items, promotions, and checkout preparation."
+}

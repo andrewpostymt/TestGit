@@ -1,0 +1,370 @@
+openapi: 3.1.0
+info:
+  title: Subscription Service
+  description: Recurring subscriptions, billing cycles, pausing, and upgrades.
+  version: 1.0.0
+  contact:
+    name: Platform Engineering
+    email: platform@example.com
+servers:
+  - url: https://api.example.com/v1/subscriptions
+    description: Production
+  - url: https://staging-api.example.com/v1/subscriptions
+    description: Staging
+paths:
+  /subscriptions:
+    get:
+      summary: List subscriptions
+      operationId: get_subscriptions
+      tags: [Subscriptions]
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create subscription
+      operationId: post_subscriptions
+      tags: [Subscriptions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/{subscriptionId}:
+    get:
+      summary: Get subscription
+      operationId: get_subscriptions_subscriptionid
+      tags: [Subscriptions]
+      parameters:
+        - name: subscriptionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update subscription
+      operationId: put_subscriptions_subscriptionid
+      tags: [Subscriptions]
+      parameters:
+        - name: subscriptionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    patch:
+      summary: Partially update subscription
+      operationId: patch_subscriptions_subscriptionid
+      tags: [Subscriptions]
+      parameters:
+        - name: subscriptionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete subscription
+      operationId: delete_subscriptions_subscriptionid
+      tags: [Subscriptions]
+      parameters:
+        - name: subscriptionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/{subscriptionId}/pause:
+    post:
+      summary: Pause subscription
+      operationId: post_subscriptions_subscriptionid_pause
+      tags: [Subscriptions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/{subscriptionId}/resume:
+    post:
+      summary: Resume subscription
+      operationId: post_subscriptions_subscriptionid_resume
+      tags: [Subscriptions]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/{subscriptionId}/cancel:
+    post:
+      summary: Cancel subscription
+      operationId: post_subscriptions_subscriptionid_cancel
+      tags: [Subscriptions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/{subscriptionId}/upgrade:
+    post:
+      summary: Upgrade subscription
+      operationId: post_subscriptions_subscriptionid_upgrade
+      tags: [Subscriptions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/{subscriptionId}/downgrade:
+    post:
+      summary: Downgrade subscription
+      operationId: post_subscriptions_subscriptionid_downgrade
+      tags: [Subscriptions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/{subscriptionId}/billing:
+    get:
+      summary: Get billing history
+      operationId: get_subscriptions_subscriptionid_billing
+      tags: [Subscriptions]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/{subscriptionId}/invoices:
+    get:
+      summary: Get invoices
+      operationId: get_subscriptions_subscriptionid_invoices
+      tags: [Subscriptions]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/{subscriptionId}/usage:
+    get:
+      summary: Get usage data
+      operationId: get_subscriptions_subscriptionid_usage
+      tags: [Subscriptions]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/plans:
+    get:
+      summary: List plans
+      operationId: get_subscriptions_plans
+      tags: [Subscriptions]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/plans/{planId}:
+    get:
+      summary: Get plan details
+      operationId: get_subscriptions_plans_planid
+      tags: [Subscriptions]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/trials:
+    get:
+      summary: List active trials
+      operationId: get_subscriptions_trials
+      tags: [Subscriptions]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/{subscriptionId}/payment-method:
+    put:
+      summary: Update payment method
+      operationId: put_subscriptions_subscriptionid_payment_method
+      tags: [Subscriptions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/analytics:
+    get:
+      summary: Subscription analytics
+      operationId: get_subscriptions_analytics
+      tags: [Subscriptions]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /subscriptions/{subscriptionId}/prorate:
+    post:
+      summary: Calculate proration
+      operationId: post_subscriptions_subscriptionid_prorate
+      tags: [Subscriptions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - BearerAuth: []

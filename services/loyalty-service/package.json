@@ -1,0 +1,5 @@
+{
+  "name": "@example/loyalty-service",
+  "version": "1.0.0",
+  "description": "Points, tiers, rewards, and customer loyalty programme management."
+}

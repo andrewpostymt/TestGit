@@ -1,0 +1,5 @@
+{
+  "name": "@example/audit-service",
+  "version": "1.0.0",
+  "description": "System-wide audit trail, compliance reporting, and event history."
+}

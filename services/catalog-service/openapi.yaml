@@ -1,0 +1,410 @@
+openapi: 3.1.0
+info:
+  title: Catalog Service
+  description: Product catalog, collections, categories, and merchandising rules.
+  version: 1.0.0
+  contact:
+    name: Platform Engineering
+    email: platform@example.com
+servers:
+  - url: https://api.example.com/v1/catalog
+    description: Production
+  - url: https://staging-api.example.com/v1/catalog
+    description: Staging
+paths:
+  /catalog/items:
+    get:
+      summary: List catalogs
+      operationId: get_catalog_items
+      tags: [Catalog]
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create catalog
+      operationId: post_catalog_items
+      tags: [Catalog]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/items/{catalogId}:
+    get:
+      summary: Get catalog
+      operationId: get_catalog_items_catalogid
+      tags: [Catalog]
+      parameters:
+        - name: catalogId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update catalog
+      operationId: put_catalog_items_catalogid
+      tags: [Catalog]
+      parameters:
+        - name: catalogId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    patch:
+      summary: Partially update catalog
+      operationId: patch_catalog_items_catalogid
+      tags: [Catalog]
+      parameters:
+        - name: catalogId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete catalog
+      operationId: delete_catalog_items_catalogid
+      tags: [Catalog]
+      parameters:
+        - name: catalogId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/collections:
+    get:
+      summary: List collections
+      operationId: get_catalog_collections
+      tags: [Catalog]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/collections:
+    post:
+      summary: Create collection
+      operationId: post_catalog_collections
+      tags: [Catalog]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/collections/{collectionId}:
+    get:
+      summary: Get collection
+      operationId: get_catalog_collections_collectionid
+      tags: [Catalog]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/collections/{collectionId}:
+    put:
+      summary: Update collection
+      operationId: put_catalog_collections_collectionid
+      tags: [Catalog]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/collections/{collectionId}/items:
+    get:
+      summary: List collection items
+      operationId: get_catalog_collections_collectionid_items
+      tags: [Catalog]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/categories:
+    get:
+      summary: List categories
+      operationId: get_catalog_categories
+      tags: [Catalog]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/categories:
+    post:
+      summary: Create category
+      operationId: post_catalog_categories
+      tags: [Catalog]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/categories/{categoryId}:
+    get:
+      summary: Get category
+      operationId: get_catalog_categories_categoryid
+      tags: [Catalog]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/categories/{categoryId}/tree:
+    get:
+      summary: Get category tree
+      operationId: get_catalog_categories_categoryid_tree
+      tags: [Catalog]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/rules:
+    get:
+      summary: List merchandising rules
+      operationId: get_catalog_rules
+      tags: [Catalog]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/rules:
+    post:
+      summary: Create merchandising rule
+      operationId: post_catalog_rules
+      tags: [Catalog]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/attributes:
+    get:
+      summary: List attributes
+      operationId: get_catalog_attributes
+      tags: [Catalog]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/attributes:
+    post:
+      summary: Create attribute
+      operationId: post_catalog_attributes
+      tags: [Catalog]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/import:
+    post:
+      summary: Import catalog
+      operationId: post_catalog_import
+      tags: [Catalog]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/export:
+    post:
+      summary: Export catalog
+      operationId: post_catalog_export
+      tags: [Catalog]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /catalog/publish:
+    post:
+      summary: Publish catalog changes
+      operationId: post_catalog_publish
+      tags: [Catalog]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - BearerAuth: []

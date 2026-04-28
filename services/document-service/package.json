@@ -1,0 +1,5 @@
+{
+  "name": "@example/document-service",
+  "version": "1.0.0",
+  "description": "Document generation, templating, signing, and version control."
+}

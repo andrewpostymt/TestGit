@@ -1,0 +1,346 @@
+openapi: 3.1.0
+info:
+  title: Analytics Service
+  description: Business intelligence, reporting, dashboards, and data export.
+  version: 1.0.0
+  contact:
+    name: Platform Engineering
+    email: platform@example.com
+servers:
+  - url: https://api.example.com/v1/analytics
+    description: Production
+  - url: https://staging-api.example.com/v1/analytics
+    description: Staging
+paths:
+  /analytics/reports:
+    get:
+      summary: List reports
+      operationId: get_analytics_reports
+      tags: [Analytics]
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create report
+      operationId: post_analytics_reports
+      tags: [Analytics]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/reports/{reportId}:
+    get:
+      summary: Get report
+      operationId: get_analytics_reports_reportid
+      tags: [Analytics]
+      parameters:
+        - name: reportId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update report
+      operationId: put_analytics_reports_reportid
+      tags: [Analytics]
+      parameters:
+        - name: reportId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    patch:
+      summary: Partially update report
+      operationId: patch_analytics_reports_reportid
+      tags: [Analytics]
+      parameters:
+        - name: reportId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete report
+      operationId: delete_analytics_reports_reportid
+      tags: [Analytics]
+      parameters:
+        - name: reportId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/dashboards:
+    get:
+      summary: List dashboards
+      operationId: get_analytics_dashboards
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/dashboards:
+    post:
+      summary: Create dashboard
+      operationId: post_analytics_dashboards
+      tags: [Analytics]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/dashboards/{dashboardId}:
+    get:
+      summary: Get dashboard
+      operationId: get_analytics_dashboards_dashboardid
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/metrics:
+    get:
+      summary: Get metrics
+      operationId: get_analytics_metrics
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/kpis:
+    get:
+      summary: Get KPIs
+      operationId: get_analytics_kpis
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/funnels:
+    get:
+      summary: Get funnel analysis
+      operationId: get_analytics_funnels
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/cohorts:
+    get:
+      summary: Get cohort analysis
+      operationId: get_analytics_cohorts
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/segments:
+    get:
+      summary: Get customer segments
+      operationId: get_analytics_segments
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/export:
+    post:
+      summary: Export analytics data
+      operationId: post_analytics_export
+      tags: [Analytics]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/schedule:
+    post:
+      summary: Schedule report
+      operationId: post_analytics_schedule
+      tags: [Analytics]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/alerts:
+    get:
+      summary: Get analytics alerts
+      operationId: get_analytics_alerts
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/forecast:
+    get:
+      summary: Get forecasts
+      operationId: get_analytics_forecast
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/attribution:
+    get:
+      summary: Get attribution data
+      operationId: get_analytics_attribution
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /analytics/ab-tests:
+    get:
+      summary: Get A/B test results
+      operationId: get_analytics_ab_tests
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - BearerAuth: []

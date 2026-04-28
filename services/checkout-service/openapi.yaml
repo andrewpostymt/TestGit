@@ -1,0 +1,370 @@
+openapi: 3.1.0
+info:
+  title: Checkout Service
+  description: Multi-step checkout flow, address management, and order confirmation.
+  version: 1.0.0
+  contact:
+    name: Platform Engineering
+    email: platform@example.com
+servers:
+  - url: https://api.example.com/v1/checkout
+    description: Production
+  - url: https://staging-api.example.com/v1/checkout
+    description: Staging
+paths:
+  /checkout/sessions:
+    get:
+      summary: List checkouts
+      operationId: get_checkout_sessions
+      tags: [Checkout]
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    post:
+      summary: Create checkout
+      operationId: post_checkout_sessions
+      tags: [Checkout]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/sessions/{checkoutId}:
+    get:
+      summary: Get checkout
+      operationId: get_checkout_sessions_checkoutid
+      tags: [Checkout]
+      parameters:
+        - name: checkoutId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    put:
+      summary: Update checkout
+      operationId: put_checkout_sessions_checkoutid
+      tags: [Checkout]
+      parameters:
+        - name: checkoutId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    patch:
+      summary: Partially update checkout
+      operationId: patch_checkout_sessions_checkoutid
+      tags: [Checkout]
+      parameters:
+        - name: checkoutId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete checkout
+      operationId: delete_checkout_sessions_checkoutid
+      tags: [Checkout]
+      parameters:
+        - name: checkoutId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/sessions/{sessionId}/shipping:
+    put:
+      summary: Set shipping method
+      operationId: put_checkout_sessions_sessionid_shipping
+      tags: [Checkout]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/sessions/{sessionId}/payment:
+    put:
+      summary: Set payment method
+      operationId: put_checkout_sessions_sessionid_payment
+      tags: [Checkout]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/sessions/{sessionId}/address:
+    put:
+      summary: Set shipping address
+      operationId: put_checkout_sessions_sessionid_address
+      tags: [Checkout]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/sessions/{sessionId}/confirm:
+    post:
+      summary: Confirm checkout
+      operationId: post_checkout_sessions_sessionid_confirm
+      tags: [Checkout]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/sessions/{sessionId}/summary:
+    get:
+      summary: Get checkout summary
+      operationId: get_checkout_sessions_sessionid_summary
+      tags: [Checkout]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/sessions/{sessionId}/abandon:
+    post:
+      summary: Abandon checkout
+      operationId: post_checkout_sessions_sessionid_abandon
+      tags: [Checkout]
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/express:
+    post:
+      summary: Express checkout
+      operationId: post_checkout_express
+      tags: [Checkout]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/address/validate:
+    post:
+      summary: Validate address
+      operationId: post_checkout_address_validate
+      tags: [Checkout]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/taxes/calculate:
+    post:
+      summary: Calculate taxes
+      operationId: post_checkout_taxes_calculate
+      tags: [Checkout]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/promotions/validate:
+    post:
+      summary: Validate promotion code
+      operationId: post_checkout_promotions_validate
+      tags: [Checkout]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/gift-wrap:
+    post:
+      summary: Add gift wrapping
+      operationId: post_checkout_gift_wrap
+      tags: [Checkout]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /checkout/sessions/{sessionId}/notes:
+    put:
+      summary: Add order notes
+      operationId: put_checkout_sessions_sessionid_notes
+      tags: [Checkout]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - BearerAuth: []

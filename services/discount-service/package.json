@@ -1,0 +1,5 @@
+{
+  "name": "@example/discount-service",
+  "version": "1.0.0",
+  "description": "Coupon codes, promotions, automatic discounts, and redemption tracking."
+}

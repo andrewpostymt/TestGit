@@ -1,0 +1,5 @@
+{
+  "name": "@example/webhook-service",
+  "version": "1.0.0",
+  "description": "Outbound webhook management, delivery, retries, and event routing."
+}

@@ -1,0 +1,5 @@
+{
+  "name": "@example/search-service",
+  "version": "1.0.0",
+  "description": "Full-text search, faceted filtering, and relevance tuning across all entities."
+}

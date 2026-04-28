@@ -1,0 +1,5 @@
+{
+  "name": "@example/admin-service",
+  "version": "1.0.0",
+  "description": "Platform administration, system configuration, and operator tools."
+}

@@ -1,0 +1,5 @@
+{
+  "name": "@example/subscription-service",
+  "version": "1.0.0",
+  "description": "Recurring subscriptions, billing cycles, pausing, and upgrades."
+}

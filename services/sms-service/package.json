@@ -1,0 +1,5 @@
+{
+  "name": "@example/sms-service",
+  "version": "1.0.0",
+  "description": "SMS sending, number management, and delivery reporting."
+}
