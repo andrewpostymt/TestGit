@@ -1,0 +1,44 @@
+workspace:
+  id: 6c627c6d-e3d1-4b99-bbac-3e5bbe2e10d3
+localResources:
+  environments:
+    - ../postman/environments/prod.postman_environment.json
+  specs:
+    - ../services/admin-service/openapi.yaml
+    - ../services/analytics-service/openapi.yaml
+    - ../services/audit-service/openapi.yaml
+    - ../services/auth-service/openapi.yaml
+    - ../services/billing-service/openapi.yaml
+    - ../services/cart-service/openapi.yaml
+    - ../services/catalog-service/openapi.yaml
+    - ../services/checkout-service/openapi.yaml
+    - ../services/config-service/openapi.yaml
+    - ../services/customer-service/openapi.yaml
+    - ../services/discount-service/openapi.yaml
+    - ../services/document-service/openapi.yaml
+    - ../services/email-service/openapi.yaml
+    - ../services/event-service/openapi.yaml
+    - ../services/feature-flag-service/openapi.yaml
+    - ../services/file-service/openapi.yaml
+    - ../services/inventory-service/openapi.yaml
+    - ../services/localisation-service/openapi.yaml
+    - ../services/loyalty-service/openapi.yaml
+    - ../services/media-service/openapi.yaml
+    - ../services/notification-service/openapi.yaml
+    - ../services/order-service/openapi.yaml
+    - ../services/payment-service/openapi.yaml
+    - ../services/product-service/openapi.yaml
+    - ../services/rate-limit-service/openapi.yaml
+    - ../services/recommendation-service/openapi.yaml
+    - ../services/review-service/openapi.yaml
+    - ../services/search-service/openapi.yaml
+    - ../services/shipping-service/openapi.yaml
+    - ../services/sms-service/openapi.yaml
+    - ../services/subscription-service/openapi.yaml
+    - ../services/tax-service/openapi.yaml
+    - ../services/user-service/openapi.yaml
+    - ../services/webhook-service/openapi.yaml
+    - ../services/workflow-service/openapi.yaml
+cloudResources:
+  environments:
+    ../postman/environments/prod.postman_environment.json: 48857926-aeacd7bd-de31-44c2-9c72-90b4a2fc0fde
