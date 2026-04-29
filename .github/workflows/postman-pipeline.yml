@@ -1,14 +1,14 @@
 name: Postman Pipeline
 
-# Runs the full CSE pipeline against the monorepo:
-#   1. Bootstrap  — uploads each service's OpenAPI spec to Postman and
-#                   generates baseline/smoke/contract collections
-#   2. Repo Sync  — exports each collection to .postman/collections/ YAML stubs
-#                   and writes .postman/resources.yaml; runs sequentially
-#                   (max-parallel: 1) to avoid push conflicts
-#   3. Docs       — generates natural-language descriptions for every
-#                   collection in the workspace using the agent-docs action
-#                   in git-mode; commits to a feature branch and opens a PR
+# Runs the full CSE pipeline against the monorepo using the canonical
+# onboarding action (bootstrap + repo sync combined) per service, then
+# generates natural-language collection documentation via git-mode PR.
+#
+# Phase 1a — Onboard anchor service (creates/joins the workspace)
+# Phase 1b — Onboard all remaining services (sequential, max-parallel: 1
+#             to avoid commit-and-push conflicts during repo sync)
+# Phase 2  — Generate docs for all collections in git-mode; commits
+#             descriptions to a feature branch and opens a GitHub PR
 #
 # Required secrets:  POSTMAN_API_KEY
 # Optional variables: POSTMAN_WORKSPACE_ID  (leave unset to auto-create)
@@ -29,113 +29,49 @@ on:
 jobs:
 
   # ---------------------------------------------------------------------------
-  # Phase 1a — Bootstrap order-service (the anchor job)
+  # Phase 1a — Onboard anchor service (order-service)
   #
-  # Creates (or joins) the workspace. All other bootstrap jobs depend on
-  # this job's workspace-id output so they all land in the same workspace.
+  # Runs bootstrap + repo sync for the anchor. Creates (or joins) the
+  # workspace and outputs the workspace-id for all subsequent jobs.
   # ---------------------------------------------------------------------------
-  bootstrap-anchor:
-    name: Bootstrap order-service
+  onboarding-anchor:
+    name: Onboard order-service
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     outputs:
-      workspace-id: ${{ steps.bootstrap.outputs.workspace-id }}
+      workspace-id: ${{ steps.onboard.outputs.workspace-id }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Bootstrap order-service
-        id: bootstrap
-        uses: postman-cs/postman-bootstrap-action@main
+      - name: Onboard order-service
+        id: onboard
+        uses: postman-cs/postman-api-onboarding-action@main
         with:
-          project-name:   order-service
-          spec-url:       https://raw.githubusercontent.com/andrewpostymt/TestGit/main/services/order-service/openapi.yaml
-          workspace-id:   ${{ inputs.workspace-id || vars.POSTMAN_WORKSPACE_ID }}
-          postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
+          project-name:         order-service
+          spec-url:             https://raw.githubusercontent.com/andrewpostymt/TestGit/main/services/order-service/openapi.yaml
+          workspace-id:         ${{ inputs.workspace-id || vars.POSTMAN_WORKSPACE_ID }}
+          postman-api-key:      ${{ secrets.POSTMAN_API_KEY }}
+          github-token:         ${{ secrets.GITHUB_TOKEN }}
+          generate-ci-workflow: 'false'
 
       - name: Print workspace info
         run: |
-          echo "workspace-id:   ${{ steps.bootstrap.outputs.workspace-id }}"
-          echo "workspace-name: ${{ steps.bootstrap.outputs.workspace-name }}"
-          echo "workspace-url:  ${{ steps.bootstrap.outputs.workspace-url }}"
-          echo "collections:    ${{ steps.bootstrap.outputs.collections-json }}"
+          echo "workspace-id:   ${{ steps.onboard.outputs.workspace-id }}"
+          echo "workspace-url:  ${{ steps.onboard.outputs.workspace-url }}"
+          echo "collections:    ${{ steps.onboard.outputs.collections-json }}"
 
   # ---------------------------------------------------------------------------
-  # Phase 1b — Bootstrap all remaining services (matrix)
+  # Phase 1b — Onboard all remaining services
   #
-  # Each job targets the same workspace created/identified in Phase 1a.
+  # Each job runs bootstrap + repo sync for one service, targeting the
+  # workspace created in Phase 1a. max-parallel: 1 ensures each commit-
+  # and-push from repo sync completes before the next job checks out.
   # fail-fast: false so one bad spec does not cancel the rest.
   # ---------------------------------------------------------------------------
-  bootstrap-services:
-    name: Bootstrap ${{ matrix.service }}
-    needs: bootstrap-anchor
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      max-parallel: 8
-      matrix:
-        service:
-          - user-service
-          - auth-service
-          - product-service
-          - payment-service
-          - inventory-service
-          - notification-service
-          - shipping-service
-          - review-service
-          - search-service
-          - analytics-service
-          - customer-service
-          - catalog-service
-          - cart-service
-          - checkout-service
-          - recommendation-service
-          - subscription-service
-          - billing-service
-          - admin-service
-          - webhook-service
-          - file-service
-          - email-service
-          - sms-service
-          - audit-service
-          - config-service
-          - feature-flag-service
-          - event-service
-          - workflow-service
-          - document-service
-          - media-service
-          - localisation-service
-          - tax-service
-          - discount-service
-          - loyalty-service
-          - rate-limit-service
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Bootstrap ${{ matrix.service }}
-        id: bootstrap
-        uses: postman-cs/postman-bootstrap-action@main
-        with:
-          project-name:   ${{ matrix.service }}
-          spec-url:       https://raw.githubusercontent.com/andrewpostymt/TestGit/main/services/${{ matrix.service }}/openapi.yaml
-          workspace-id:   ${{ needs.bootstrap-anchor.outputs.workspace-id }}
-          postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
-
-      - name: Print collection outputs
-        run: |
-          echo "service:       ${{ matrix.service }}"
-          echo "collections:   ${{ steps.bootstrap.outputs.collections-json }}"
-
-  # ---------------------------------------------------------------------------
-  # Phase 2 — Repo sync (sequential matrix)
-  #
-  # Exports each service's collections to .postman/collections/<service>/
-  # YAML stubs and writes/updates .postman/resources.yaml so Phase 3 can
-  # run in git-mode.  max-parallel: 1 ensures each job completes its
-  # commit-and-push before the next job checks out the updated branch.
-  # ---------------------------------------------------------------------------
-  repo-sync:
-    name: Repo sync ${{ matrix.service }}
-    needs: [bootstrap-anchor, bootstrap-services]
+  onboarding-services:
+    name: Onboard ${{ matrix.service }}
+    needs: onboarding-anchor
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -144,7 +80,6 @@ jobs:
       max-parallel: 1
       matrix:
         service:
-          - order-service
           - user-service
           - auth-service
           - product-service
@@ -183,28 +118,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Repo sync ${{ matrix.service }}
-        uses: postman-cs/postman-repo-sync-action@main
+      - name: Onboard ${{ matrix.service }}
+        id: onboard
+        uses: postman-cs/postman-api-onboarding-action@main
         with:
           project-name:         ${{ matrix.service }}
-          workspace-id:         ${{ needs.bootstrap-anchor.outputs.workspace-id }}
+          spec-url:             https://raw.githubusercontent.com/andrewpostymt/TestGit/main/services/${{ matrix.service }}/openapi.yaml
+          workspace-id:         ${{ needs.onboarding-anchor.outputs.workspace-id }}
           postman-api-key:      ${{ secrets.POSTMAN_API_KEY }}
           github-token:         ${{ secrets.GITHUB_TOKEN }}
           generate-ci-workflow: 'false'
 
+      - name: Print collection outputs
+        run: |
+          echo "service:     ${{ matrix.service }}"
+          echo "collections: ${{ steps.onboard.outputs.collections-json }}"
+          echo "mock-url:    ${{ steps.onboard.outputs.mock-url }}"
+          echo "monitor-id:  ${{ steps.onboard.outputs.monitor-id }}"
+
   # ---------------------------------------------------------------------------
-  # Phase 3 — Generate documentation (git-mode)
+  # Phase 2 — Generate documentation (git-mode)
   #
-  # Runs after all repo-sync jobs complete. Reads .postman/resources.yaml to
-  # resolve every collection, generates natural-language descriptions via
-  # the agent-docs action, commits the patched YAML files to a feature
+  # Runs after all onboarding jobs complete. Reads .postman/resources.yaml
+  # (written by repo sync in Phase 1) to resolve every collection, generates
+  # natural-language descriptions, commits patched YAML files to a feature
   # branch, and opens a GitHub PR against main for review.
-  # After the PR is merged, re-run this workflow with apply-from-repo to
-  # push the approved descriptions back to the live Postman collections.
   # ---------------------------------------------------------------------------
   generate-docs:
     name: Generate collection documentation
-    needs: [bootstrap-anchor, repo-sync]
+    needs: [onboarding-anchor, onboarding-services]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -217,7 +159,7 @@ jobs:
         uses: andrewpostymt/postman-agent-docs-action@main
         with:
           postman-api-key:    ${{ secrets.POSTMAN_API_KEY }}
-          workspace-id:       ${{ needs.bootstrap-anchor.outputs.workspace-id }}
+          workspace-id:       ${{ needs.onboarding-anchor.outputs.workspace-id }}
           git-mode:           'true'
           github-token:       ${{ secrets.GITHUB_TOKEN }}
           overwrite-existing: 'true'
