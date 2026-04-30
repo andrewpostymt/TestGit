@@ -1,0 +1,27 @@
+name: Apply Postman Docs
+
+# Triggered when a postman-docs/* branch is merged into main and YAML
+# collection files change. Reads the approved descriptions from
+# .postman/collections/ and PUTs them back to the live Postman collections
+# via apply-from-repo mode.
+#
+# Required secrets: POSTMAN_API_KEY
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.postman/collections/**'
+
+jobs:
+  apply:
+    name: Apply descriptions to Postman
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Apply descriptions from repo to Postman
+        uses: andrewpostymt/postman-agent-docs-action@main
+        with:
+          postman-api-key:  ${{ secrets.POSTMAN_API_KEY }}
+          apply-from-repo:  'true'
