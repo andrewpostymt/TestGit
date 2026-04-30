@@ -1,0 +1,4 @@
+type: folder
+name: temperature
+items:
+  - ref: ./Set temperature requirements.request.yaml

@@ -1,0 +1,8 @@
+type: folder
+name: '{documentId}'
+items:
+  - ref: ./send/folder.yaml
+  - ref: ./download/folder.yaml
+  - ref: ./Get document.request.yaml
+  - ref: ./Update document.request.yaml
+  - ref: ./Delete document.request.yaml

@@ -1,0 +1,4 @@
+type: folder
+name: generate
+items:
+  - ref: ./Generate manifest.request.yaml

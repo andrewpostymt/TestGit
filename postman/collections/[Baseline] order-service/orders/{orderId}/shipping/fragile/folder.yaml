@@ -1,0 +1,4 @@
+type: folder
+name: fragile
+items:
+  - ref: ./Set fragile flag.request.yaml

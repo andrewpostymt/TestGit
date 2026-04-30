@@ -1,0 +1,12 @@
+type: folder
+name: payments
+items:
+  - ref: ./{paymentId}/folder.yaml
+  - ref: ./history/folder.yaml
+  - ref: ./methods/folder.yaml
+  - ref: ./reconcile/folder.yaml
+  - ref: ./credit/folder.yaml
+  - ref: ./adjustment/folder.yaml
+  - ref: ./balance/folder.yaml
+  - ref: ./List order payments.request.yaml
+  - ref: ./Add payment.request.yaml

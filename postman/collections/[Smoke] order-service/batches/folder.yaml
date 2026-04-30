@@ -1,0 +1,11 @@
+type: folder
+name: batches
+items:
+  - ref: ./{batchId}/folder.yaml
+  - ref: ./schedule/folder.yaml
+  - ref: ./templates/folder.yaml
+  - ref: ./history/folder.yaml
+  - ref: ./export/folder.yaml
+  - ref: ./import/folder.yaml
+  - ref: ./List batch operations.request.yaml
+  - ref: ./Create batch operation.request.yaml

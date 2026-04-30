@@ -1,0 +1,9 @@
+type: folder
+name: fulfillments
+items:
+  - ref: ./{fulfillmentId}/folder.yaml
+  - ref: ./partial/folder.yaml
+  - ref: ./split/folder.yaml
+  - ref: ./merge/folder.yaml
+  - ref: ./List fulfillments.request.yaml
+  - ref: ./Create fulfillment.request.yaml

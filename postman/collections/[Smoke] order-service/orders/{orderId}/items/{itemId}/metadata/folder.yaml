@@ -1,0 +1,4 @@
+type: folder
+name: metadata
+items:
+  - ref: ./Get item metadata.request.yaml

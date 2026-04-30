@@ -1,0 +1,8 @@
+type: folder
+name: notes
+items:
+  - ref: ./{noteId}/folder.yaml
+  - ref: ./search/folder.yaml
+  - ref: ./history/folder.yaml
+  - ref: ./List order notes.request.yaml
+  - ref: ./Add note to order.request.yaml

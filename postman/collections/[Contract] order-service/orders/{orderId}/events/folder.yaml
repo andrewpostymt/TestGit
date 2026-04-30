@@ -1,0 +1,4 @@
+type: folder
+name: events
+items:
+  - ref: ./Get order events.request.yaml

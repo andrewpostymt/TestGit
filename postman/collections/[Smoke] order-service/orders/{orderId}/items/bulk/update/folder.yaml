@@ -1,0 +1,4 @@
+type: folder
+name: update
+items:
+  - ref: ./Bulk update items.request.yaml

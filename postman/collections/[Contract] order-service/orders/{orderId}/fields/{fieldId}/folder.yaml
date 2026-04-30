@@ -1,0 +1,5 @@
+type: folder
+name: '{fieldId}'
+items:
+  - ref: ./Set field value.request.yaml
+  - ref: ./Clear field value.request.yaml

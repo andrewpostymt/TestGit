@@ -1,0 +1,4 @@
+type: folder
+name: logs
+items:
+  - ref: ./Get audit logs.request.yaml

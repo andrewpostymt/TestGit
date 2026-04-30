@@ -1,0 +1,6 @@
+type: folder
+name: integrations
+items:
+  - ref: ./{integrationId}/folder.yaml
+  - ref: ./List integrations.request.yaml
+  - ref: ./Create integration.request.yaml

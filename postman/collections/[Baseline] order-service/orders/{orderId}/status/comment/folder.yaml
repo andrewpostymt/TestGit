@@ -1,0 +1,4 @@
+type: folder
+name: comment
+items:
+  - ref: ./Add status comment.request.yaml

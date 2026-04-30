@@ -1,0 +1,4 @@
+type: folder
+name: history
+items:
+  - ref: ./Webhook delivery history.request.yaml

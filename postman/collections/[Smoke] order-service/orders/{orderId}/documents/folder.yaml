@@ -1,0 +1,12 @@
+type: folder
+name: documents
+items:
+  - ref: ./{documentId}/folder.yaml
+  - ref: ./invoice/folder.yaml
+  - ref: ./receipt/folder.yaml
+  - ref: ./packing-slip/folder.yaml
+  - ref: ./label/folder.yaml
+  - ref: ./manifest/folder.yaml
+  - ref: ./history/folder.yaml
+  - ref: ./List order documents.request.yaml
+  - ref: ./Upload document.request.yaml

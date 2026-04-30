@@ -1,0 +1,4 @@
+type: folder
+name: duties
+items:
+  - ref: ./Calculate duties.request.yaml

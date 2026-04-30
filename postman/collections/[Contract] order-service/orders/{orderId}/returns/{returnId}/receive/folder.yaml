@@ -1,0 +1,4 @@
+type: folder
+name: receive
+items:
+  - ref: ./Mark return received.request.yaml

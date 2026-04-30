@@ -1,0 +1,13 @@
+type: folder
+name: audit
+items:
+  - ref: ./logs/folder.yaml
+  - ref: ./events/folder.yaml
+  - ref: ./summary/folder.yaml
+  - ref: ./export/folder.yaml
+  - ref: ./filter/folder.yaml
+  - ref: ./retention/folder.yaml
+  - ref: ./alerts/folder.yaml
+  - ref: ./users/folder.yaml
+  - ref: ./actions/folder.yaml
+  - ref: ./compliance/folder.yaml

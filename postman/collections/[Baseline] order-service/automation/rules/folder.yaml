@@ -1,0 +1,6 @@
+type: folder
+name: rules
+items:
+  - ref: ./{ruleId}/folder.yaml
+  - ref: ./List automation rules.request.yaml
+  - ref: ./Create automation rule.request.yaml

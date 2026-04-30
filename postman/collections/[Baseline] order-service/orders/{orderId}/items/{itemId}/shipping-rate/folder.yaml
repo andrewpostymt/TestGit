@@ -1,0 +1,4 @@
+type: folder
+name: shipping-rate
+items:
+  - ref: ./Get item shipping rate.request.yaml

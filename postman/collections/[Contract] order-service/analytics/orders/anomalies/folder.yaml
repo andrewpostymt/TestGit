@@ -1,0 +1,4 @@
+type: folder
+name: anomalies
+items:
+  - ref: ./Anomaly detection.request.yaml

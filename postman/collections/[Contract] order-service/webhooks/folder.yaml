@@ -1,0 +1,7 @@
+type: folder
+name: webhooks
+items:
+  - ref: ./{webhookId}/folder.yaml
+  - ref: ./events/folder.yaml
+  - ref: ./List webhooks.request.yaml
+  - ref: ./Create webhook.request.yaml

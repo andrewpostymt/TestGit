@@ -1,0 +1,4 @@
+type: folder
+name: metrics
+items:
+  - ref: ./Get order metrics.request.yaml

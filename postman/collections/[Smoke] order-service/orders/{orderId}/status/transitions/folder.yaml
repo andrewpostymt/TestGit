@@ -1,0 +1,4 @@
+type: folder
+name: transitions
+items:
+  - ref: ./Get valid status transitions.request.yaml

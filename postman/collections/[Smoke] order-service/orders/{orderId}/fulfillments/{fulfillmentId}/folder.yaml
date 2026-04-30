@@ -1,0 +1,17 @@
+type: folder
+name: '{fulfillmentId}'
+items:
+  - ref: ./cancel/folder.yaml
+  - ref: ./tracking/folder.yaml
+  - ref: ./label/folder.yaml
+  - ref: ./packing-slip/folder.yaml
+  - ref: ./manifest/folder.yaml
+  - ref: ./pick-list/folder.yaml
+  - ref: ./pack-list/folder.yaml
+  - ref: ./ship/folder.yaml
+  - ref: ./deliver/folder.yaml
+  - ref: ./return/folder.yaml
+  - ref: ./exchange/folder.yaml
+  - ref: ./reship/folder.yaml
+  - ref: ./Get fulfillment.request.yaml
+  - ref: ./Update fulfillment.request.yaml

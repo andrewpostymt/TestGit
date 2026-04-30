@@ -1,0 +1,4 @@
+type: folder
+name: remove
+items:
+  - ref: ./Bulk remove items.request.yaml

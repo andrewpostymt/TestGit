@@ -1,0 +1,6 @@
+type: folder
+name: mappings
+items:
+  - ref: ./validate/folder.yaml
+  - ref: ./Get field mappings.request.yaml
+  - ref: ./Update field mappings.request.yaml

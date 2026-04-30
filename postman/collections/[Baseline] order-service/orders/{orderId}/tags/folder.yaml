@@ -1,0 +1,6 @@
+type: folder
+name: tags
+items:
+  - ref: ./{tag}/folder.yaml
+  - ref: ./List order tags.request.yaml
+  - ref: ./Add tag to order.request.yaml

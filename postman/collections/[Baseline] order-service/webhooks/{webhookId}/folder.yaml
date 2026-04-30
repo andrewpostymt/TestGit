@@ -1,0 +1,10 @@
+type: folder
+name: '{webhookId}'
+items:
+  - ref: ./test/folder.yaml
+  - ref: ./history/folder.yaml
+  - ref: ./signatures/folder.yaml
+  - ref: ./retry/folder.yaml
+  - ref: ./Get webhook.request.yaml
+  - ref: ./Update webhook.request.yaml
+  - ref: ./Delete webhook.request.yaml

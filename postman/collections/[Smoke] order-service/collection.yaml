@@ -1,0 +1,32 @@
+$schema: https://schema.postman.com/json/draft-2020-12/collection/v3.0.0/
+type: collection
+name: '[Smoke] order-service'
+description: |-
+  Comprehensive order management API covering the full order lifecycle — creation through fulfillment, returns, analytics, and automation.
+
+  Contact Support:
+   Name: Platform Engineering
+   Email: platform@example.com
+id: 6ebb2ccf-0cdb-43ee-879b-65214e2d1c00
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{bearerToken}}'
+      type: string
+variables:
+  - key: baseUrl
+    value: https://api.example.com/v1
+items:
+  - ref: ./orders/folder.yaml
+  - ref: ./returns/folder.yaml
+  - ref: ./documents/folder.yaml
+  - ref: ./analytics/folder.yaml
+  - ref: ./notifications/folder.yaml
+  - ref: ./automation/folder.yaml
+  - ref: ./webhooks/folder.yaml
+  - ref: ./integrations/folder.yaml
+  - ref: ./batches/folder.yaml
+  - ref: ./custom-fields/folder.yaml
+  - ref: ./audit/folder.yaml
+  - ref: ./00 - Resolve Secrets.request.yaml

@@ -1,0 +1,4 @@
+type: folder
+name: logs
+items:
+  - ref: ./Notification logs.request.yaml

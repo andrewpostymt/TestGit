@@ -1,0 +1,17 @@
+type: folder
+name: '{itemId}'
+items:
+  - ref: ./substitute/folder.yaml
+  - ref: ./availability/folder.yaml
+  - ref: ./pricing/folder.yaml
+  - ref: ./discount/folder.yaml
+  - ref: ./tax/folder.yaml
+  - ref: ./shipping-rate/folder.yaml
+  - ref: ./weight/folder.yaml
+  - ref: ./dimensions/folder.yaml
+  - ref: ./images/folder.yaml
+  - ref: ./notes/folder.yaml
+  - ref: ./metadata/folder.yaml
+  - ref: ./Get order item.request.yaml
+  - ref: ./Update order item.request.yaml
+  - ref: ./Remove order item.request.yaml

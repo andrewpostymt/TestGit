@@ -1,0 +1,4 @@
+type: folder
+name: pick-list
+items:
+  - ref: ./Get pick list.request.yaml

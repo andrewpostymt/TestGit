@@ -1,0 +1,4 @@
+type: folder
+name: packing-slip
+items:
+  - ref: ./Get packing slip.request.yaml

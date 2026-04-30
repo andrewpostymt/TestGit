@@ -1,0 +1,6 @@
+type: folder
+name: '{noteId}'
+items:
+  - ref: ./pin/folder.yaml
+  - ref: ./Update note.request.yaml
+  - ref: ./Delete note.request.yaml

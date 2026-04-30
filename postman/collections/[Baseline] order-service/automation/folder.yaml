@@ -1,0 +1,7 @@
+type: folder
+name: automation
+items:
+  - ref: ./rules/folder.yaml
+  - ref: ./templates/folder.yaml
+  - ref: ./bulk-apply/folder.yaml
+  - ref: ./logs/folder.yaml

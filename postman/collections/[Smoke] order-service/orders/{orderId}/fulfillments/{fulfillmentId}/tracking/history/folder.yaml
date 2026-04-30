@@ -1,0 +1,4 @@
+type: folder
+name: history
+items:
+  - ref: ./Get tracking history.request.yaml

@@ -1,0 +1,4 @@
+type: folder
+name: inspect
+items:
+  - ref: ./Inspect returned items.request.yaml

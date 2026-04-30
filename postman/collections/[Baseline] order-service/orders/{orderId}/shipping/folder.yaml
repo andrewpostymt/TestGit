@@ -1,0 +1,22 @@
+type: folder
+name: shipping
+items:
+  - ref: ./options/folder.yaml
+  - ref: ./rates/folder.yaml
+  - ref: ./select/folder.yaml
+  - ref: ./tracking/folder.yaml
+  - ref: ./pickup/folder.yaml
+  - ref: ./address/folder.yaml
+  - ref: ./estimate/folder.yaml
+  - ref: ./insurance/folder.yaml
+  - ref: ./signature/folder.yaml
+  - ref: ./special-handling/folder.yaml
+  - ref: ./customs/folder.yaml
+  - ref: ./duties/folder.yaml
+  - ref: ./taxes/folder.yaml
+  - ref: ./hazmat/folder.yaml
+  - ref: ./fragile/folder.yaml
+  - ref: ./temperature/folder.yaml
+  - ref: ./white-glove/folder.yaml
+  - ref: ./Get shipping details.request.yaml
+  - ref: ./Update shipping details.request.yaml

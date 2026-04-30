@@ -1,0 +1,4 @@
+type: folder
+name: '{tag}'
+items:
+  - ref: ./Remove tag from order.request.yaml

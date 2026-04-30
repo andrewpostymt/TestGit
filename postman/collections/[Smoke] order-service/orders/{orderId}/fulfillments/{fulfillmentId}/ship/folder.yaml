@@ -1,0 +1,4 @@
+type: folder
+name: ship
+items:
+  - ref: ./Mark as shipped.request.yaml

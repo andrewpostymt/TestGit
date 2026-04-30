@@ -1,0 +1,4 @@
+type: folder
+name: duplicate
+items:
+  - ref: ./Duplicate order.request.yaml

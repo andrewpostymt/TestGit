@@ -1,0 +1,4 @@
+type: folder
+name: logs
+items:
+  - ref: ./Integration logs.request.yaml

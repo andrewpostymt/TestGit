@@ -1,0 +1,31 @@
+type: http
+name: Get tracking info
+url: '{{baseUrl}}/orders/:orderId/fulfillments/:fulfillmentId/tracking'
+method: GET
+pathVariables:
+  - key: orderId
+    value: string
+  - key: fulfillmentId
+    value: string
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

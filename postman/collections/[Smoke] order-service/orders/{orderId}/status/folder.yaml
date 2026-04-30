@@ -1,0 +1,8 @@
+type: folder
+name: status
+items:
+  - ref: ./history/folder.yaml
+  - ref: ./transitions/folder.yaml
+  - ref: ./comment/folder.yaml
+  - ref: ./Get order status.request.yaml
+  - ref: ./Update order status.request.yaml

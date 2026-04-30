@@ -1,0 +1,4 @@
+type: folder
+name: filter
+items:
+  - ref: ./Filter audit logs.request.yaml

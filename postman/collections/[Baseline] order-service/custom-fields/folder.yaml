@@ -1,0 +1,7 @@
+type: folder
+name: custom-fields
+items:
+  - ref: ./{fieldId}/folder.yaml
+  - ref: ./templates/folder.yaml
+  - ref: ./List custom fields.request.yaml
+  - ref: ./Create custom field.request.yaml

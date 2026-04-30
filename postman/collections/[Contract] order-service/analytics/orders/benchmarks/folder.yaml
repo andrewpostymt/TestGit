@@ -1,0 +1,4 @@
+type: folder
+name: benchmarks
+items:
+  - ref: ./Performance benchmarks.request.yaml

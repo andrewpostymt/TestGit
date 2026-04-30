@@ -1,0 +1,11 @@
+type: folder
+name: '{batchId}'
+items:
+  - ref: ./cancel/folder.yaml
+  - ref: ./status/folder.yaml
+  - ref: ./results/folder.yaml
+  - ref: ./errors/folder.yaml
+  - ref: ./retry/folder.yaml
+  - ref: ./progress/folder.yaml
+  - ref: ./notifications/folder.yaml
+  - ref: ./Get batch operation.request.yaml

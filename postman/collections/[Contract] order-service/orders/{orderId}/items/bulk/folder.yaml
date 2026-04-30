@@ -1,0 +1,6 @@
+type: folder
+name: bulk
+items:
+  - ref: ./update/folder.yaml
+  - ref: ./remove/folder.yaml
+  - ref: ./Bulk add items.request.yaml

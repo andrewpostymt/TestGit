@@ -1,0 +1,4 @@
+type: folder
+name: policy
+items:
+  - ref: ./Get return policy.request.yaml

@@ -1,0 +1,4 @@
+type: folder
+name: events
+items:
+  - ref: ./Get tracking events.request.yaml

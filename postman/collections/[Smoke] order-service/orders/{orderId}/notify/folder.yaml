@@ -1,0 +1,4 @@
+type: folder
+name: notify
+items:
+  - ref: ./Send order notification.request.yaml

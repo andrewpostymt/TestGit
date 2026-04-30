@@ -1,0 +1,4 @@
+type: folder
+name: adjustment
+items:
+  - ref: ./Create price adjustment.request.yaml

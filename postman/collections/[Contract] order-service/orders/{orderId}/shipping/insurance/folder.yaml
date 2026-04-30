@@ -1,0 +1,4 @@
+type: folder
+name: insurance
+items:
+  - ref: ./Add shipping insurance.request.yaml

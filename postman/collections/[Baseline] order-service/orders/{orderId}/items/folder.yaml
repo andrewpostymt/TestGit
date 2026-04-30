@@ -1,0 +1,8 @@
+type: folder
+name: items
+items:
+  - ref: ./{itemId}/folder.yaml
+  - ref: ./bulk/folder.yaml
+  - ref: ./reorder/folder.yaml
+  - ref: ./List order items.request.yaml
+  - ref: ./Add item to order.request.yaml

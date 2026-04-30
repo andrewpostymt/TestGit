@@ -1,0 +1,4 @@
+type: folder
+name: export
+items:
+  - ref: ./Bulk export.request.yaml

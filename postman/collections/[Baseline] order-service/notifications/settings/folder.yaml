@@ -1,0 +1,4 @@
+type: folder
+name: settings
+items:
+  - ref: ./Notification settings.request.yaml

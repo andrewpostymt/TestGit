@@ -1,0 +1,13 @@
+type: folder
+name: '{ruleId}'
+items:
+  - ref: ./enable/folder.yaml
+  - ref: ./disable/folder.yaml
+  - ref: ./test/folder.yaml
+  - ref: ./history/folder.yaml
+  - ref: ./triggers/folder.yaml
+  - ref: ./actions/folder.yaml
+  - ref: ./conditions/folder.yaml
+  - ref: ./Get automation rule.request.yaml
+  - ref: ./Update automation rule.request.yaml
+  - ref: ./Delete automation rule.request.yaml

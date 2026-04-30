@@ -1,0 +1,4 @@
+type: folder
+name: customers
+items:
+  - ref: ./Customer analytics.request.yaml

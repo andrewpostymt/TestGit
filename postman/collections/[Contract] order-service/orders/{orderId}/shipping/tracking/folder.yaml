@@ -1,0 +1,5 @@
+type: folder
+name: tracking
+items:
+  - ref: ./events/folder.yaml
+  - ref: ./Get shipping tracking.request.yaml

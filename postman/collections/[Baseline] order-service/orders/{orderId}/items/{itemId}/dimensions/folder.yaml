@@ -1,0 +1,4 @@
+type: folder
+name: dimensions
+items:
+  - ref: ./Get item dimensions.request.yaml

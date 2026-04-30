@@ -1,0 +1,4 @@
+type: folder
+name: split
+items:
+  - ref: ./Split fulfillment.request.yaml

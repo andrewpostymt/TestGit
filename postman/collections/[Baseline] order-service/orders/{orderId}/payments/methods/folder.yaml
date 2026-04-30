@@ -1,0 +1,4 @@
+type: folder
+name: methods
+items:
+  - ref: ./List payment methods.request.yaml

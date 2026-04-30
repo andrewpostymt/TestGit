@@ -1,0 +1,4 @@
+type: folder
+name: time-series
+items:
+  - ref: ./Time series data.request.yaml

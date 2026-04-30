@@ -1,0 +1,4 @@
+type: folder
+name: templates
+items:
+  - ref: ./List rule templates.request.yaml

@@ -1,0 +1,4 @@
+type: folder
+name: test
+items:
+  - ref: ./Send test notification.request.yaml

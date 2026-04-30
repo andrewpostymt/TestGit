@@ -1,0 +1,4 @@
+type: folder
+name: schedule
+items:
+  - ref: ./Schedule batch operation.request.yaml

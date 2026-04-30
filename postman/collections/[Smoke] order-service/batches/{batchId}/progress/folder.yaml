@@ -1,0 +1,4 @@
+type: folder
+name: progress
+items:
+  - ref: ./Get batch progress.request.yaml

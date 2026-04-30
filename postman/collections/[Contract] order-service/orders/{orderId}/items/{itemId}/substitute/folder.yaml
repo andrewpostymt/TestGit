@@ -1,0 +1,4 @@
+type: folder
+name: substitute
+items:
+  - ref: ./Substitute item.request.yaml

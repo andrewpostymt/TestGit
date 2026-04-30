@@ -1,0 +1,4 @@
+type: folder
+name: label
+items:
+  - ref: ./Generate carrier label.request.yaml

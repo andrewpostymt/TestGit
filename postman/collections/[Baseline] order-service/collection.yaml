@@ -1,0 +1,31 @@
+$schema: https://schema.postman.com/json/draft-2020-12/collection/v3.0.0/
+type: collection
+name: '[Baseline] order-service'
+description: |-
+  Comprehensive order management API covering the full order lifecycle — creation through fulfillment, returns, analytics, and automation.
+
+  Contact Support:
+   Name: Platform Engineering
+   Email: platform@example.com
+id: 4e01f590-a524-4389-a19d-7035c5538cb0
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{bearerToken}}'
+      type: string
+variables:
+  - key: baseUrl
+    value: https://api.example.com/v1
+items:
+  - ref: ./orders/folder.yaml
+  - ref: ./returns/folder.yaml
+  - ref: ./documents/folder.yaml
+  - ref: ./analytics/folder.yaml
+  - ref: ./notifications/folder.yaml
+  - ref: ./automation/folder.yaml
+  - ref: ./webhooks/folder.yaml
+  - ref: ./integrations/folder.yaml
+  - ref: ./batches/folder.yaml
+  - ref: ./custom-fields/folder.yaml
+  - ref: ./audit/folder.yaml

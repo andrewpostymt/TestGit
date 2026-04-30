@@ -1,0 +1,5 @@
+type: folder
+name: returns
+items:
+  - ref: ./policy/folder.yaml
+  - ref: ./analytics/folder.yaml

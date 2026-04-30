@@ -1,0 +1,4 @@
+type: folder
+name: analytics
+items:
+  - ref: ./orders/folder.yaml

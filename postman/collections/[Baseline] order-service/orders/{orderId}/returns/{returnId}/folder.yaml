@@ -1,0 +1,14 @@
+type: folder
+name: '{returnId}'
+items:
+  - ref: ./approve/folder.yaml
+  - ref: ./reject/folder.yaml
+  - ref: ./receive/folder.yaml
+  - ref: ./inspect/folder.yaml
+  - ref: ./restock/folder.yaml
+  - ref: ./refund/folder.yaml
+  - ref: ./exchange/folder.yaml
+  - ref: ./label/folder.yaml
+  - ref: ./history/folder.yaml
+  - ref: ./Get return.request.yaml
+  - ref: ./Update return.request.yaml

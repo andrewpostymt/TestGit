@@ -1,0 +1,4 @@
+type: folder
+name: errors
+items:
+  - ref: ./Get batch errors.request.yaml

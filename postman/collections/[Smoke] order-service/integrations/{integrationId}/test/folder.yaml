@@ -1,0 +1,4 @@
+type: folder
+name: test
+items:
+  - ref: ./Test integration.request.yaml

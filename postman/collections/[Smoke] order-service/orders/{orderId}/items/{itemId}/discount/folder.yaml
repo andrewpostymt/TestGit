@@ -1,0 +1,4 @@
+type: folder
+name: discount
+items:
+  - ref: ./Apply item discount.request.yaml

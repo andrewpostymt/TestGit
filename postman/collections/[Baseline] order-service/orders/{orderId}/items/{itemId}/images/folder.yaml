@@ -1,0 +1,4 @@
+type: folder
+name: images
+items:
+  - ref: ./Get item images.request.yaml

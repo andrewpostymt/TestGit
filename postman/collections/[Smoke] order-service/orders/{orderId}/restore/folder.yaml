@@ -1,0 +1,4 @@
+type: folder
+name: restore
+items:
+  - ref: ./Restore archived order.request.yaml

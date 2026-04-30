@@ -1,0 +1,5 @@
+type: folder
+name: documents
+items:
+  - ref: ./templates/folder.yaml
+  - ref: ./settings/folder.yaml

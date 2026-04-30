@@ -1,0 +1,35 @@
+type: folder
+name: '{orderId}'
+items:
+  - ref: ./archive/folder.yaml
+  - ref: ./restore/folder.yaml
+  - ref: ./duplicate/folder.yaml
+  - ref: ./validate/folder.yaml
+  - ref: ./preview/folder.yaml
+  - ref: ./estimate/folder.yaml
+  - ref: ./items/folder.yaml
+  - ref: ./status/folder.yaml
+  - ref: ./cancel/folder.yaml
+  - ref: ./approve/folder.yaml
+  - ref: ./reject/folder.yaml
+  - ref: ./hold/folder.yaml
+  - ref: ./release/folder.yaml
+  - ref: ./escalate/folder.yaml
+  - ref: ./assign/folder.yaml
+  - ref: ./reassign/folder.yaml
+  - ref: ./notify/folder.yaml
+  - ref: ./events/folder.yaml
+  - ref: ./fulfillments/folder.yaml
+  - ref: ./payments/folder.yaml
+  - ref: ./invoice/folder.yaml
+  - ref: ./receipt/folder.yaml
+  - ref: ./returns/folder.yaml
+  - ref: ./shipping/folder.yaml
+  - ref: ./documents/folder.yaml
+  - ref: ./tags/folder.yaml
+  - ref: ./notes/folder.yaml
+  - ref: ./fields/folder.yaml
+  - ref: ./Get order.request.yaml
+  - ref: ./Update order.request.yaml
+  - ref: ./Partially update order.request.yaml
+  - ref: ./Delete order.request.yaml

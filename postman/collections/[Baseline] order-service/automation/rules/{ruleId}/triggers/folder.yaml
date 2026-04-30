@@ -1,0 +1,4 @@
+type: folder
+name: triggers
+items:
+  - ref: ./Get rule triggers.request.yaml

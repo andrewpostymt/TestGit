@@ -1,0 +1,4 @@
+type: folder
+name: pricing
+items:
+  - ref: ./Get item pricing.request.yaml

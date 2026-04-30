@@ -1,0 +1,6 @@
+type: folder
+name: reports
+items:
+  - ref: ./export/folder.yaml
+  - ref: ./schedule/folder.yaml
+  - ref: ./history/folder.yaml

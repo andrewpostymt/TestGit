@@ -1,0 +1,4 @@
+type: folder
+name: restock
+items:
+  - ref: ./Restock returned items.request.yaml

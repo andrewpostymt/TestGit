@@ -1,0 +1,4 @@
+type: folder
+name: options
+items:
+  - ref: ./Get shipping options.request.yaml

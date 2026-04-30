@@ -1,0 +1,4 @@
+type: folder
+name: compliance
+items:
+  - ref: ./Get compliance report.request.yaml

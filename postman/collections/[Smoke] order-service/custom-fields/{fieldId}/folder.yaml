@@ -1,0 +1,6 @@
+type: folder
+name: '{fieldId}'
+items:
+  - ref: ./Get custom field.request.yaml
+  - ref: ./Update custom field.request.yaml
+  - ref: ./Delete custom field.request.yaml

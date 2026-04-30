@@ -1,0 +1,4 @@
+type: folder
+name: manifest
+items:
+  - ref: ./generate/folder.yaml

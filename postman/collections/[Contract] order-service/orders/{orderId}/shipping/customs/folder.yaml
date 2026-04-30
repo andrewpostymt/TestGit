@@ -1,0 +1,4 @@
+type: folder
+name: customs
+items:
+  - ref: ./Create customs declaration.request.yaml

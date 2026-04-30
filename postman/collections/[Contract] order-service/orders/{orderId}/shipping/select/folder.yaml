@@ -1,0 +1,4 @@
+type: folder
+name: select
+items:
+  - ref: ./Select shipping method.request.yaml

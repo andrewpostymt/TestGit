@@ -1,0 +1,5 @@
+type: folder
+name: dispute
+items:
+  - ref: ./evidence/folder.yaml
+  - ref: ./File dispute.request.yaml

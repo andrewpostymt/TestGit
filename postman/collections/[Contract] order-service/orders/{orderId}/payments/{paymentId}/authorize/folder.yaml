@@ -1,0 +1,4 @@
+type: folder
+name: authorize
+items:
+  - ref: ./Authorize payment.request.yaml

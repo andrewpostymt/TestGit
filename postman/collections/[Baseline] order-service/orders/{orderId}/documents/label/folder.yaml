@@ -1,0 +1,4 @@
+type: folder
+name: label
+items:
+  - ref: ./generate/folder.yaml

@@ -1,0 +1,31 @@
+type: http
+name: Get item weight
+url: '{{baseUrl}}/orders/:orderId/items/:itemId/weight'
+method: GET
+pathVariables:
+  - key: orderId
+    value: string
+  - key: itemId
+    value: string
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

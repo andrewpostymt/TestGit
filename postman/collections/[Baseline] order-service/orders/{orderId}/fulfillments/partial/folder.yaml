@@ -1,0 +1,4 @@
+type: folder
+name: partial
+items:
+  - ref: ./Create partial fulfillment.request.yaml

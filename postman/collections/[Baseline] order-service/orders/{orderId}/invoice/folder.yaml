@@ -1,0 +1,4 @@
+type: folder
+name: invoice
+items:
+  - ref: ./Get order invoice.request.yaml

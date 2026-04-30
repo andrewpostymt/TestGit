@@ -1,0 +1,4 @@
+type: folder
+name: disable
+items:
+  - ref: ./Disable rule.request.yaml

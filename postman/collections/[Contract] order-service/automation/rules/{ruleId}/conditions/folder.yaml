@@ -1,0 +1,4 @@
+type: folder
+name: conditions
+items:
+  - ref: ./Get rule conditions.request.yaml

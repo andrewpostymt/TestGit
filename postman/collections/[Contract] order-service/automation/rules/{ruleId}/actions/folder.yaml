@@ -1,0 +1,4 @@
+type: folder
+name: actions
+items:
+  - ref: ./Get rule actions.request.yaml

@@ -1,0 +1,6 @@
+type: folder
+name: returns
+items:
+  - ref: ./{returnId}/folder.yaml
+  - ref: ./List returns.request.yaml
+  - ref: ./Create return request.request.yaml

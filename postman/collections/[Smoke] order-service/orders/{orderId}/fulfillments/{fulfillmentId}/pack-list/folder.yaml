@@ -1,0 +1,4 @@
+type: folder
+name: pack-list
+items:
+  - ref: ./Get pack list.request.yaml

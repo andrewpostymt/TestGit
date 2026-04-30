@@ -1,0 +1,16 @@
+type: folder
+name: orders
+items:
+  - ref: ./metrics/folder.yaml
+  - ref: ./revenue/folder.yaml
+  - ref: ./fulfillment/folder.yaml
+  - ref: ./returns/folder.yaml
+  - ref: ./customers/folder.yaml
+  - ref: ./products/folder.yaml
+  - ref: ./geographic/folder.yaml
+  - ref: ./time-series/folder.yaml
+  - ref: ./cohorts/folder.yaml
+  - ref: ./forecast/folder.yaml
+  - ref: ./anomalies/folder.yaml
+  - ref: ./benchmarks/folder.yaml
+  - ref: ./reports/folder.yaml

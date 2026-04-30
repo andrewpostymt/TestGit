@@ -1,0 +1,4 @@
+type: folder
+name: results
+items:
+  - ref: ./Get batch results.request.yaml

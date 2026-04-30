@@ -1,0 +1,12 @@
+type: folder
+name: orders
+items:
+  - ref: ./{orderId}/folder.yaml
+  - ref: ./export/folder.yaml
+  - ref: ./import/folder.yaml
+  - ref: ./search/folder.yaml
+  - ref: ./filter/folder.yaml
+  - ref: ./bulk/folder.yaml
+  - ref: ./summary/folder.yaml
+  - ref: ./List orders.request.yaml
+  - ref: ./Create order.request.yaml

@@ -1,0 +1,14 @@
+type: folder
+name: '{integrationId}'
+items:
+  - ref: ./sync/folder.yaml
+  - ref: ./logs/folder.yaml
+  - ref: ./mappings/folder.yaml
+  - ref: ./transform/folder.yaml
+  - ref: ./test/folder.yaml
+  - ref: ./events/folder.yaml
+  - ref: ./health/folder.yaml
+  - ref: ./metrics/folder.yaml
+  - ref: ./Get integration.request.yaml
+  - ref: ./Update integration.request.yaml
+  - ref: ./Delete integration.request.yaml

@@ -1,0 +1,4 @@
+type: folder
+name: availability
+items:
+  - ref: ./Check item availability.request.yaml
