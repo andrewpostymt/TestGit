@@ -1,0 +1,4 @@
+type: folder
+name: abandoned
+items:
+  - ref: ./List abandoned carts.request.yaml

@@ -1,0 +1,15 @@
+type: http
+name: Update cart item
+url: '{{baseUrl}}/carts/:cartId/items/:itemId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: cartId
+    value: ''
+  - key: itemId
+    value: ''
+body:
+  type: json
+  content: '{}'

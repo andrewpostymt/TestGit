@@ -1,0 +1,13 @@
+type: http
+name: Apply coupon
+url: '{{baseUrl}}/carts/:cartId/coupon'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: cartId
+    value: ''
+body:
+  type: json
+  content: '{}'

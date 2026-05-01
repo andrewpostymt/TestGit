@@ -1,0 +1,13 @@
+type: http
+name: Merge carts
+url: '{{baseUrl}}/carts/:cartId/merge'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: cartId
+    value: ''
+body:
+  type: json
+  content: '{}'

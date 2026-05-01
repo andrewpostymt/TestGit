@@ -1,0 +1,4 @@
+type: folder
+name: totals
+items:
+  - ref: ./Get cart totals.request.yaml

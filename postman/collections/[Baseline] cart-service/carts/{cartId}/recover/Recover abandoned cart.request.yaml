@@ -1,0 +1,7 @@
+type: http
+name: Recover abandoned cart
+url: '{{baseUrl}}/carts/:cartId/recover'
+method: POST
+pathVariables:
+  - key: cartId
+    value: ''

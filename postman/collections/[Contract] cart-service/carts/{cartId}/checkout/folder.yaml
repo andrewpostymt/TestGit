@@ -1,0 +1,4 @@
+type: folder
+name: checkout
+items:
+  - ref: ./Convert cart to order.request.yaml

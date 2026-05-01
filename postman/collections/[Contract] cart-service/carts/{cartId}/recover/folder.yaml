@@ -1,0 +1,4 @@
+type: folder
+name: recover
+items:
+  - ref: ./Recover abandoned cart.request.yaml

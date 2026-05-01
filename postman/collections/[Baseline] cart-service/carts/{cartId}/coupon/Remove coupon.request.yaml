@@ -1,0 +1,7 @@
+type: http
+name: Remove coupon
+url: '{{baseUrl}}/carts/:cartId/coupon'
+method: DELETE
+pathVariables:
+  - key: cartId
+    value: ''

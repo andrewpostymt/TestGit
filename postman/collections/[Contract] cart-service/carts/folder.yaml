@@ -1,0 +1,7 @@
+type: folder
+name: carts
+items:
+  - ref: ./{cartId}/folder.yaml
+  - ref: ./abandoned/folder.yaml
+  - ref: ./List carts.request.yaml
+  - ref: ./Create cart.request.yaml

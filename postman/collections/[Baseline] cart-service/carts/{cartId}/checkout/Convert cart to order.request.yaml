@@ -1,0 +1,13 @@
+type: http
+name: Convert cart to order
+url: '{{baseUrl}}/carts/:cartId/checkout'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: cartId
+    value: ''
+body:
+  type: json
+  content: '{}'

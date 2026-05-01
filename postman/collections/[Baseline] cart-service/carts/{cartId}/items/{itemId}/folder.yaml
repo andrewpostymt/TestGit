@@ -1,0 +1,5 @@
+type: folder
+name: '{itemId}'
+items:
+  - ref: ./Update cart item.request.yaml
+  - ref: ./Remove cart item.request.yaml

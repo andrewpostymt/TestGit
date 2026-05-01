@@ -1,0 +1,5 @@
+type: folder
+name: coupon
+items:
+  - ref: ./Apply coupon.request.yaml
+  - ref: ./Remove coupon.request.yaml

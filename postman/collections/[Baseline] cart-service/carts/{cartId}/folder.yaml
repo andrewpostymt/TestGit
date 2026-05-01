@@ -1,0 +1,13 @@
+type: folder
+name: '{cartId}'
+items:
+  - ref: ./items/folder.yaml
+  - ref: ./coupon/folder.yaml
+  - ref: ./checkout/folder.yaml
+  - ref: ./totals/folder.yaml
+  - ref: ./merge/folder.yaml
+  - ref: ./recover/folder.yaml
+  - ref: ./Get cart.request.yaml
+  - ref: ./Update cart.request.yaml
+  - ref: ./Partially update cart.request.yaml
+  - ref: ./Delete cart.request.yaml

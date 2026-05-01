@@ -1,0 +1,9 @@
+type: http
+name: List carts
+url: '{{baseUrl}}/carts?page=3114&limit=3114'
+method: GET
+queryParams:
+  - key: page
+    value: '3114'
+  - key: limit
+    value: '3114'

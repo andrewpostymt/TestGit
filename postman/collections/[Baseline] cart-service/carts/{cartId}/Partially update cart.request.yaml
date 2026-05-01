@@ -1,0 +1,13 @@
+type: http
+name: Partially update cart
+url: '{{baseUrl}}/carts/:cartId'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: cartId
+    value: string
+body:
+  type: json
+  content: '{}'

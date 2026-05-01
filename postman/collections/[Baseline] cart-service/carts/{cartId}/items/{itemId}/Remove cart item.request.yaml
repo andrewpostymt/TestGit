@@ -1,0 +1,9 @@
+type: http
+name: Remove cart item
+url: '{{baseUrl}}/carts/:cartId/items/:itemId'
+method: DELETE
+pathVariables:
+  - key: cartId
+    value: ''
+  - key: itemId
+    value: ''

@@ -1,0 +1,5 @@
+type: folder
+name: items
+items:
+  - ref: ./{itemId}/folder.yaml
+  - ref: ./Add item to cart.request.yaml

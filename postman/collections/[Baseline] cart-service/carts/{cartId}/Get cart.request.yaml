@@ -1,0 +1,7 @@
+type: http
+name: Get cart
+url: '{{baseUrl}}/carts/:cartId'
+method: GET
+pathVariables:
+  - key: cartId
+    value: string

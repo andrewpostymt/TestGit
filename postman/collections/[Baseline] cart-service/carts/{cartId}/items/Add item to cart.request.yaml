@@ -1,0 +1,13 @@
+type: http
+name: Add item to cart
+url: '{{baseUrl}}/carts/:cartId/items'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: cartId
+    value: ''
+body:
+  type: json
+  content: '{}'
