@@ -17,6 +17,7 @@ auth:
 variables:
   - key: baseUrl
     value: https://api.example.com/v1
+    type: any
 items:
   - ref: ./orders/folder.yaml
   - ref: ./returns/folder.yaml
