@@ -1,0 +1,4 @@
+type: folder
+name: resources
+items:
+  - ref: ./List resource types.request.yaml

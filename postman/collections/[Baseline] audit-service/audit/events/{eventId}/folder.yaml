@@ -1,0 +1,7 @@
+type: folder
+name: '{eventId}'
+items:
+  - ref: ./Get event.request.yaml
+  - ref: ./Update event.request.yaml
+  - ref: ./Partially update event.request.yaml
+  - ref: ./Delete event.request.yaml

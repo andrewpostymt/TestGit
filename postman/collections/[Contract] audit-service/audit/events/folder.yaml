@@ -1,0 +1,6 @@
+type: folder
+name: events
+items:
+  - ref: ./{eventId}/folder.yaml
+  - ref: ./List events.request.yaml
+  - ref: ./Create event.request.yaml

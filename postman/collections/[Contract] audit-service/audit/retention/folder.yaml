@@ -1,0 +1,5 @@
+type: folder
+name: retention
+items:
+  - ref: ./Get retention policy.request.yaml
+  - ref: ./Update retention policy.request.yaml

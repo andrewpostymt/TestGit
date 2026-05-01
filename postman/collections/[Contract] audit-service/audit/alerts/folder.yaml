@@ -1,0 +1,5 @@
+type: folder
+name: alerts
+items:
+  - ref: ./List audit alerts.request.yaml
+  - ref: ./Create audit alert.request.yaml
