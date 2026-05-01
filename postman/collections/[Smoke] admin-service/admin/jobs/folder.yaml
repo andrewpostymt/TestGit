@@ -1,0 +1,5 @@
+type: folder
+name: jobs
+items:
+  - ref: ./{jobId}/folder.yaml
+  - ref: ./List background jobs.request.yaml

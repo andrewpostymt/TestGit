@@ -1,0 +1,4 @@
+type: folder
+name: health
+items:
+  - ref: ./System health check.request.yaml

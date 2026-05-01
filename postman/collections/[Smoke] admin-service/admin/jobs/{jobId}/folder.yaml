@@ -1,0 +1,4 @@
+type: folder
+name: '{jobId}'
+items:
+  - ref: ./retry/folder.yaml

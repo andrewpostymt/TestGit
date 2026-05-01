@@ -1,0 +1,5 @@
+type: folder
+name: features
+items:
+  - ref: ./{featureId}/folder.yaml
+  - ref: ./List feature flags.request.yaml

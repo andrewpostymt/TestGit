@@ -1,0 +1,15 @@
+type: folder
+name: admin
+items:
+  - ref: ./config/folder.yaml
+  - ref: ./users/folder.yaml
+  - ref: ./permissions/folder.yaml
+  - ref: ./audit-log/folder.yaml
+  - ref: ./system/folder.yaml
+  - ref: ./features/folder.yaml
+  - ref: ./tenants/folder.yaml
+  - ref: ./backups/folder.yaml
+  - ref: ./migrations/folder.yaml
+  - ref: ./cache/folder.yaml
+  - ref: ./jobs/folder.yaml
+  - ref: ./metrics/folder.yaml

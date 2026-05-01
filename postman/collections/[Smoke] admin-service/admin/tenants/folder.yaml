@@ -1,0 +1,5 @@
+type: folder
+name: tenants
+items:
+  - ref: ./List tenants.request.yaml
+  - ref: ./Create tenant.request.yaml

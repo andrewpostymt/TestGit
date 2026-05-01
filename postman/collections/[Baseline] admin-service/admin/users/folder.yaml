@@ -1,0 +1,6 @@
+type: folder
+name: users
+items:
+  - ref: ./{userId}/folder.yaml
+  - ref: ./List admin users.request.yaml
+  - ref: ./Create admin user.request.yaml

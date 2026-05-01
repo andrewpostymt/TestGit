@@ -1,0 +1,4 @@
+type: folder
+name: flush
+items:
+  - ref: ./Flush cache.request.yaml

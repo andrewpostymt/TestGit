@@ -1,0 +1,6 @@
+type: folder
+name: system
+items:
+  - ref: ./health/folder.yaml
+  - ref: ./status/folder.yaml
+  - ref: ./maintenance/folder.yaml

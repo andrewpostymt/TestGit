@@ -1,0 +1,4 @@
+type: folder
+name: maintenance
+items:
+  - ref: ./Enable maintenance mode.request.yaml

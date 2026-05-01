@@ -1,0 +1,4 @@
+type: folder
+name: '{featureId}'
+items:
+  - ref: ./Update feature flag.request.yaml

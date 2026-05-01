@@ -1,0 +1,5 @@
+type: folder
+name: backups
+items:
+  - ref: ./List backups.request.yaml
+  - ref: ./Trigger backup.request.yaml
