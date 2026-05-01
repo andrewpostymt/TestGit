@@ -1,0 +1,4 @@
+type: folder
+name: bestsellers
+items:
+  - ref: ./Get bestsellers.request.yaml

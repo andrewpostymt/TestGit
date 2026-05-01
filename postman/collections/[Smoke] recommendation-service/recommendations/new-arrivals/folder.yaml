@@ -1,0 +1,4 @@
+type: folder
+name: new-arrivals
+items:
+  - ref: ./Get new arrivals.request.yaml

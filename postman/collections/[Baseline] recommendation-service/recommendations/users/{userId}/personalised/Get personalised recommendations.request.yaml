@@ -1,0 +1,7 @@
+type: http
+name: Get personalised recommendations
+url: '{{baseUrl}}/recommendations/users/:userId/personalised'
+method: GET
+pathVariables:
+  - key: userId
+    value: ''

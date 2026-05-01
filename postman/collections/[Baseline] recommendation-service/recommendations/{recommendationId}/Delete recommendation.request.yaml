@@ -1,0 +1,7 @@
+type: http
+name: Delete recommendation
+url: '{{baseUrl}}/recommendations/:recommendationId'
+method: DELETE
+pathVariables:
+  - key: recommendationId
+    value: string

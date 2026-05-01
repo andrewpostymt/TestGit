@@ -1,0 +1,4 @@
+type: folder
+name: similar
+items:
+  - ref: ./Get similar products.request.yaml

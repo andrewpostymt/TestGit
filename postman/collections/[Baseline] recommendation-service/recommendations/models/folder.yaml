@@ -1,0 +1,4 @@
+type: folder
+name: models
+items:
+  - ref: ./List recommendation models.request.yaml

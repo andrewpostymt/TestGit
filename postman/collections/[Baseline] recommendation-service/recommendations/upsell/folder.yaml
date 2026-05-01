@@ -1,0 +1,4 @@
+type: folder
+name: upsell
+items:
+  - ref: ./Get upsell recommendations.request.yaml

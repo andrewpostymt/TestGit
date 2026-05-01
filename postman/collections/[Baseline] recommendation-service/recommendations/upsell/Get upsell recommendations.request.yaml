@@ -1,0 +1,4 @@
+type: http
+name: Get upsell recommendations
+url: '{{baseUrl}}/recommendations/upsell'
+method: GET

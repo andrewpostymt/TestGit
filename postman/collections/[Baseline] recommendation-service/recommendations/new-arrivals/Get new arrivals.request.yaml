@@ -1,0 +1,4 @@
+type: http
+name: Get new arrivals
+url: '{{baseUrl}}/recommendations/new-arrivals'
+method: GET

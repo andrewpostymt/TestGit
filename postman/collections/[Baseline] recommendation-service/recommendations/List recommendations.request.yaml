@@ -1,0 +1,9 @@
+type: http
+name: List recommendations
+url: '{{baseUrl}}/recommendations?page=2474&limit=2474'
+method: GET
+queryParams:
+  - key: page
+    value: '2474'
+  - key: limit
+    value: '2474'

@@ -1,0 +1,4 @@
+type: http
+name: Get cross-sell recommendations
+url: '{{baseUrl}}/recommendations/cross-sell'
+method: GET

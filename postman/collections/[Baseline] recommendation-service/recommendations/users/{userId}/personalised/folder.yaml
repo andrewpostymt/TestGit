@@ -1,0 +1,4 @@
+type: folder
+name: personalised
+items:
+  - ref: ./Get personalised recommendations.request.yaml

@@ -1,0 +1,4 @@
+type: folder
+name: cross-sell
+items:
+  - ref: ./Get cross-sell recommendations.request.yaml

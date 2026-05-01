@@ -1,0 +1,4 @@
+type: http
+name: Get product bundles
+url: '{{baseUrl}}/recommendations/bundles'
+method: GET

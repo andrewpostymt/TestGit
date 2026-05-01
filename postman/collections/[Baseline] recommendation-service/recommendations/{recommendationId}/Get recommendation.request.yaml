@@ -1,0 +1,7 @@
+type: http
+name: Get recommendation
+url: '{{baseUrl}}/recommendations/:recommendationId'
+method: GET
+pathVariables:
+  - key: recommendationId
+    value: string

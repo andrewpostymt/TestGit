@@ -1,0 +1,7 @@
+type: folder
+name: '{recommendationId}'
+items:
+  - ref: ./Get recommendation.request.yaml
+  - ref: ./Update recommendation.request.yaml
+  - ref: ./Partially update recommendation.request.yaml
+  - ref: ./Delete recommendation.request.yaml

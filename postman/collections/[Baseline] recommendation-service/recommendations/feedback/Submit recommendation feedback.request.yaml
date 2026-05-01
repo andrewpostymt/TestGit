@@ -1,0 +1,10 @@
+type: http
+name: Submit recommendation feedback
+url: '{{baseUrl}}/recommendations/feedback'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

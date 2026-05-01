@@ -1,0 +1,4 @@
+type: folder
+name: bundles
+items:
+  - ref: ./Get product bundles.request.yaml

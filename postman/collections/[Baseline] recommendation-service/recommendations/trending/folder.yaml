@@ -1,0 +1,4 @@
+type: folder
+name: trending
+items:
+  - ref: ./Get trending products.request.yaml

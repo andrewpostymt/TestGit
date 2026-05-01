@@ -1,0 +1,13 @@
+type: http
+name: Update recommendation
+url: '{{baseUrl}}/recommendations/:recommendationId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: recommendationId
+    value: string
+body:
+  type: json
+  content: '{}'

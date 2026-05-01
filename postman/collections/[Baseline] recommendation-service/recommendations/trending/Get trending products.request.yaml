@@ -1,0 +1,4 @@
+type: http
+name: Get trending products
+url: '{{baseUrl}}/recommendations/trending'
+method: GET

@@ -1,0 +1,13 @@
+type: http
+name: Partially update recommendation
+url: '{{baseUrl}}/recommendations/:recommendationId'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: recommendationId
+    value: string
+body:
+  type: json
+  content: '{}'

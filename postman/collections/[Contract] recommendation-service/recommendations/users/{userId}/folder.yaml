@@ -1,0 +1,4 @@
+type: folder
+name: '{userId}'
+items:
+  - ref: ./personalised/folder.yaml

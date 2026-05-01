@@ -1,0 +1,4 @@
+type: http
+name: Get bestsellers
+url: '{{baseUrl}}/recommendations/bestsellers'
+method: GET

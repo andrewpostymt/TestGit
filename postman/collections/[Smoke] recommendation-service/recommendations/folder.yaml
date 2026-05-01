@@ -1,0 +1,16 @@
+type: folder
+name: recommendations
+items:
+  - ref: ./{recommendationId}/folder.yaml
+  - ref: ./products/folder.yaml
+  - ref: ./users/folder.yaml
+  - ref: ./trending/folder.yaml
+  - ref: ./new-arrivals/folder.yaml
+  - ref: ./bestsellers/folder.yaml
+  - ref: ./bundles/folder.yaml
+  - ref: ./cross-sell/folder.yaml
+  - ref: ./upsell/folder.yaml
+  - ref: ./models/folder.yaml
+  - ref: ./feedback/folder.yaml
+  - ref: ./List recommendations.request.yaml
+  - ref: ./Create recommendation.request.yaml

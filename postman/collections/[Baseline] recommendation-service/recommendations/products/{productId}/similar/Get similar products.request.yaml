@@ -1,0 +1,7 @@
+type: http
+name: Get similar products
+url: '{{baseUrl}}/recommendations/products/:productId/similar'
+method: GET
+pathVariables:
+  - key: productId
+    value: ''
