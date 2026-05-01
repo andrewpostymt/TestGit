@@ -1,0 +1,4 @@
+type: folder
+name: summary
+items:
+  - ref: ./Get checkout summary.request.yaml

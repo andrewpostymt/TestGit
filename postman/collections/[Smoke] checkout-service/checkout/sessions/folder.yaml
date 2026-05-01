@@ -1,0 +1,7 @@
+type: folder
+name: sessions
+items:
+  - ref: ./{checkoutId}/folder.yaml
+  - ref: ./{sessionId}/folder.yaml
+  - ref: ./List checkouts.request.yaml
+  - ref: ./Create checkout.request.yaml

@@ -1,0 +1,4 @@
+type: folder
+name: promotions
+items:
+  - ref: ./validate/folder.yaml

@@ -1,0 +1,10 @@
+type: http
+name: Validate promotion code
+url: '{{baseUrl}}/checkout/promotions/validate'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

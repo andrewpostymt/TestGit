@@ -1,0 +1,4 @@
+type: folder
+name: confirm
+items:
+  - ref: ./Confirm checkout.request.yaml

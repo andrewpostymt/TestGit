@@ -1,0 +1,4 @@
+type: folder
+name: shipping
+items:
+  - ref: ./Set shipping method.request.yaml

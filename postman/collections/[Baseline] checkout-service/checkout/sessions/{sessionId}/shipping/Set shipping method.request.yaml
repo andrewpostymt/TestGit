@@ -1,0 +1,13 @@
+type: http
+name: Set shipping method
+url: '{{baseUrl}}/checkout/sessions/:sessionId/shipping'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: sessionId
+    value: ''
+body:
+  type: json
+  content: '{}'

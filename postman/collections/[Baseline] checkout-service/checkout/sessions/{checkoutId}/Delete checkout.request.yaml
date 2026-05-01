@@ -1,0 +1,7 @@
+type: http
+name: Delete checkout
+url: '{{baseUrl}}/checkout/sessions/:checkoutId'
+method: DELETE
+pathVariables:
+  - key: checkoutId
+    value: string

@@ -1,0 +1,10 @@
+type: folder
+name: '{sessionId}'
+items:
+  - ref: ./shipping/folder.yaml
+  - ref: ./payment/folder.yaml
+  - ref: ./address/folder.yaml
+  - ref: ./confirm/folder.yaml
+  - ref: ./summary/folder.yaml
+  - ref: ./abandon/folder.yaml
+  - ref: ./notes/folder.yaml

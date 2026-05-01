@@ -1,0 +1,7 @@
+type: http
+name: Get checkout summary
+url: '{{baseUrl}}/checkout/sessions/:sessionId/summary'
+method: GET
+pathVariables:
+  - key: sessionId
+    value: ''

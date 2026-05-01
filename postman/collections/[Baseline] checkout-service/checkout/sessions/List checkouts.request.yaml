@@ -1,0 +1,9 @@
+type: http
+name: List checkouts
+url: '{{baseUrl}}/checkout/sessions?page=4977&limit=4977'
+method: GET
+queryParams:
+  - key: page
+    value: '4977'
+  - key: limit
+    value: '4977'

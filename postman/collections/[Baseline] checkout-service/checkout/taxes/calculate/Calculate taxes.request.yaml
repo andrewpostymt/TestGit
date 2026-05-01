@@ -1,0 +1,10 @@
+type: http
+name: Calculate taxes
+url: '{{baseUrl}}/checkout/taxes/calculate'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

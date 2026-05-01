@@ -1,0 +1,4 @@
+type: folder
+name: abandon
+items:
+  - ref: ./Abandon checkout.request.yaml

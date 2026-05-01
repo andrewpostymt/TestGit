@@ -1,0 +1,13 @@
+type: http
+name: Add order notes
+url: '{{baseUrl}}/checkout/sessions/:sessionId/notes'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: sessionId
+    value: ''
+body:
+  type: json
+  content: '{}'

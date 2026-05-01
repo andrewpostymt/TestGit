@@ -1,0 +1,9 @@
+type: folder
+name: checkout
+items:
+  - ref: ./sessions/folder.yaml
+  - ref: ./express/folder.yaml
+  - ref: ./address/folder.yaml
+  - ref: ./taxes/folder.yaml
+  - ref: ./promotions/folder.yaml
+  - ref: ./gift-wrap/folder.yaml

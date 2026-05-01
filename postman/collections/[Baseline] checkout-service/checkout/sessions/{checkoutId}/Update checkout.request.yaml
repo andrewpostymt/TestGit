@@ -1,0 +1,13 @@
+type: http
+name: Update checkout
+url: '{{baseUrl}}/checkout/sessions/:checkoutId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: checkoutId
+    value: string
+body:
+  type: json
+  content: '{}'

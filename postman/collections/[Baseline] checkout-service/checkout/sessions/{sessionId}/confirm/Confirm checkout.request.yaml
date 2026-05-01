@@ -1,0 +1,7 @@
+type: http
+name: Confirm checkout
+url: '{{baseUrl}}/checkout/sessions/:sessionId/confirm'
+method: POST
+pathVariables:
+  - key: sessionId
+    value: ''

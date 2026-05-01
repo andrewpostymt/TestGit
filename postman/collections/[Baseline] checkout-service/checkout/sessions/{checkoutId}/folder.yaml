@@ -1,0 +1,7 @@
+type: folder
+name: '{checkoutId}'
+items:
+  - ref: ./Get checkout.request.yaml
+  - ref: ./Update checkout.request.yaml
+  - ref: ./Partially update checkout.request.yaml
+  - ref: ./Delete checkout.request.yaml

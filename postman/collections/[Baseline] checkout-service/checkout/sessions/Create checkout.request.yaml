@@ -1,0 +1,10 @@
+type: http
+name: Create checkout
+url: '{{baseUrl}}/checkout/sessions'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'
