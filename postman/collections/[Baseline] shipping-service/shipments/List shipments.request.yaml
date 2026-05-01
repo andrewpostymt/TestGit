@@ -1,9 +1,31 @@
 type: http
 name: List shipments
-url: '{{baseUrl}}/shipments?page=207&limit=207'
+url: '{{baseUrl}}/shipments?page=1334&limit=1334'
 method: GET
 queryParams:
   - key: page
-    value: '207'
+    value: '1334'
   - key: limit
-    value: '207'
+    value: '1334'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

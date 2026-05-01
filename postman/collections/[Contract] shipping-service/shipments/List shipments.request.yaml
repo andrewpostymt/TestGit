@@ -1,12 +1,12 @@
 type: http
 name: List shipments
-url: '{{baseUrl}}/shipments?page=434&limit=434'
+url: '{{baseUrl}}/shipments?page=10&limit=10'
 method: GET
 queryParams:
   - key: page
-    value: '434'
+    value: '10'
   - key: limit
-    value: '434'
+    value: '10'
 scripts:
   - type: afterResponse
     code:
@@ -68,3 +68,25 @@ scripts:
       - '    } catch (e) {}'
       - '})();'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found
