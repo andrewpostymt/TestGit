@@ -1,0 +1,4 @@
+type: folder
+name: events
+items:
+  - ref: ./List event types.request.yaml

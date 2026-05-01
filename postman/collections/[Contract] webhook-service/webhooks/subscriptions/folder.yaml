@@ -1,0 +1,5 @@
+type: folder
+name: subscriptions
+items:
+  - ref: ./List event subscriptions.request.yaml
+  - ref: ./Create subscription.request.yaml

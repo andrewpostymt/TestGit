@@ -1,0 +1,4 @@
+type: folder
+name: endpoints
+items:
+  - ref: ./List webhook endpoints.request.yaml

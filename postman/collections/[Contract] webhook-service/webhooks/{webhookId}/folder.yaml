@@ -1,0 +1,9 @@
+type: folder
+name: '{webhookId}'
+items:
+  - ref: ./test/folder.yaml
+  - ref: ./deliveries/folder.yaml
+  - ref: ./Get webhook.request.yaml
+  - ref: ./Update webhook.request.yaml
+  - ref: ./Partially update webhook.request.yaml
+  - ref: ./Delete webhook.request.yaml
