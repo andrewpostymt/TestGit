@@ -1,0 +1,4 @@
+type: folder
+name: activate
+items:
+  - ref: ./Activate discount.request.yaml

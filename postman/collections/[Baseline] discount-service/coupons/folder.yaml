@@ -1,0 +1,8 @@
+type: folder
+name: coupons
+items:
+  - ref: ./{couponId}/folder.yaml
+  - ref: ./validate/folder.yaml
+  - ref: ./bulk/folder.yaml
+  - ref: ./List coupon codes.request.yaml
+  - ref: ./Create coupon.request.yaml

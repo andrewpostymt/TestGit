@@ -1,0 +1,4 @@
+type: folder
+name: '{couponId}'
+items:
+  - ref: ./Get coupon.request.yaml

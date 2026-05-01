@@ -1,0 +1,6 @@
+type: folder
+name: promotions
+items:
+  - ref: ./{promotionId}/folder.yaml
+  - ref: ./List promotions.request.yaml
+  - ref: ./Create promotion.request.yaml

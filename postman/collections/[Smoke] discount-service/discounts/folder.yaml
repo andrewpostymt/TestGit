@@ -1,0 +1,7 @@
+type: folder
+name: discounts
+items:
+  - ref: ./{discountId}/folder.yaml
+  - ref: ./analytics/folder.yaml
+  - ref: ./List discounts.request.yaml
+  - ref: ./Create discount.request.yaml

@@ -1,0 +1,11 @@
+type: folder
+name: '{discountId}'
+items:
+  - ref: ./apply/folder.yaml
+  - ref: ./usage/folder.yaml
+  - ref: ./activate/folder.yaml
+  - ref: ./deactivate/folder.yaml
+  - ref: ./Get discount.request.yaml
+  - ref: ./Update discount.request.yaml
+  - ref: ./Partially update discount.request.yaml
+  - ref: ./Delete discount.request.yaml
