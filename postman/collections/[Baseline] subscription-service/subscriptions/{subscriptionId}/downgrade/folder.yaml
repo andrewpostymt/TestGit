@@ -1,0 +1,4 @@
+type: folder
+name: downgrade
+items:
+  - ref: ./Downgrade subscription.request.yaml

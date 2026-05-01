@@ -1,0 +1,5 @@
+type: folder
+name: plans
+items:
+  - ref: ./{planId}/folder.yaml
+  - ref: ./List plans.request.yaml

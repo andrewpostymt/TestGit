@@ -1,0 +1,31 @@
+type: http
+name: List subscriptions
+url: '{{baseUrl}}/subscriptions?page=4954&limit=4954'
+method: GET
+queryParams:
+  - key: page
+    value: '4954'
+  - key: limit
+    value: '4954'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

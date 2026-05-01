@@ -1,0 +1,4 @@
+type: folder
+name: analytics
+items:
+  - ref: ./Subscription analytics.request.yaml

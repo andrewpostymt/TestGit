@@ -1,0 +1,4 @@
+type: folder
+name: prorate
+items:
+  - ref: ./Calculate proration.request.yaml

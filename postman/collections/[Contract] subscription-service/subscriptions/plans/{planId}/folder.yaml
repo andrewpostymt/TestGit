@@ -1,0 +1,4 @@
+type: folder
+name: '{planId}'
+items:
+  - ref: ./Get plan details.request.yaml

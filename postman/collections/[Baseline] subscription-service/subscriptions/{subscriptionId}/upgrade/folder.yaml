@@ -1,0 +1,4 @@
+type: folder
+name: upgrade
+items:
+  - ref: ./Upgrade subscription.request.yaml

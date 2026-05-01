@@ -1,0 +1,9 @@
+type: folder
+name: subscriptions
+items:
+  - ref: ./{subscriptionId}/folder.yaml
+  - ref: ./plans/folder.yaml
+  - ref: ./trials/folder.yaml
+  - ref: ./analytics/folder.yaml
+  - ref: ./List subscriptions.request.yaml
+  - ref: ./Create subscription.request.yaml

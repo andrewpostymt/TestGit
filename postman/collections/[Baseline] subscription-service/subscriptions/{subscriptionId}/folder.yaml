@@ -1,0 +1,17 @@
+type: folder
+name: '{subscriptionId}'
+items:
+  - ref: ./pause/folder.yaml
+  - ref: ./resume/folder.yaml
+  - ref: ./cancel/folder.yaml
+  - ref: ./upgrade/folder.yaml
+  - ref: ./downgrade/folder.yaml
+  - ref: ./billing/folder.yaml
+  - ref: ./invoices/folder.yaml
+  - ref: ./usage/folder.yaml
+  - ref: ./payment-method/folder.yaml
+  - ref: ./prorate/folder.yaml
+  - ref: ./Get subscription.request.yaml
+  - ref: ./Update subscription.request.yaml
+  - ref: ./Partially update subscription.request.yaml
+  - ref: ./Delete subscription.request.yaml

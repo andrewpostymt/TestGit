@@ -1,0 +1,4 @@
+type: folder
+name: trials
+items:
+  - ref: ./List active trials.request.yaml
