@@ -1,12 +1,12 @@
 type: http
 name: List reports
-url: '{{baseUrl}}/analytics/reports?page=1387&limit=1387'
+url: '{{baseUrl}}/analytics/reports?page=3157&limit=3157'
 method: GET
 queryParams:
   - key: page
-    value: '1387'
+    value: '3157'
   - key: limit
-    value: '1387'
+    value: '3157'
 scripts:
   - type: afterResponse
     code:
@@ -25,3 +25,25 @@ scripts:
       - '    }'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

@@ -1,9 +1,31 @@
 type: http
 name: List reports
-url: '{{baseUrl}}/analytics/reports?page=6751&limit=6751'
+url: '{{baseUrl}}/analytics/reports?page=79&limit=79'
 method: GET
 queryParams:
   - key: page
-    value: '6751'
+    value: '79'
   - key: limit
-    value: '6751'
+    value: '79'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found
