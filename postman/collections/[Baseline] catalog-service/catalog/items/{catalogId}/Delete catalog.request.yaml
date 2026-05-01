@@ -1,0 +1,7 @@
+type: http
+name: Delete catalog
+url: '{{baseUrl}}/catalog/items/:catalogId'
+method: DELETE
+pathVariables:
+  - key: catalogId
+    value: string

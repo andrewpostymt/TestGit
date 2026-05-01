@@ -1,0 +1,5 @@
+type: folder
+name: rules
+items:
+  - ref: ./List merchandising rules.request.yaml
+  - ref: ./Create merchandising rule.request.yaml

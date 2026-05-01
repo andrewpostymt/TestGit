@@ -1,0 +1,7 @@
+type: http
+name: Get category
+url: '{{baseUrl}}/catalog/categories/:categoryId'
+method: GET
+pathVariables:
+  - key: categoryId
+    value: ''

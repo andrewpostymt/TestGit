@@ -1,0 +1,13 @@
+type: http
+name: Update catalog
+url: '{{baseUrl}}/catalog/items/:catalogId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: catalogId
+    value: string
+body:
+  type: json
+  content: '{}'

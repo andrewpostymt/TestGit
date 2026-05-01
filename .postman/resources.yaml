@@ -2,9 +2,9 @@ workspace:
   id: 6c627c6d-e3d1-4b99-bbac-3e5bbe2e10d3
 localResources:
   collections:
-    - ../postman/collections/[Baseline] customer-service
-    - ../postman/collections/[Smoke] customer-service
-    - ../postman/collections/[Contract] customer-service
+    - ../postman/collections/[Baseline] catalog-service
+    - ../postman/collections/[Smoke] catalog-service
+    - ../postman/collections/[Contract] catalog-service
   environments:
     - ../postman/environments/prod.postman_environment.json
   specs:
@@ -45,8 +45,8 @@ localResources:
     - ../services/workflow-service/openapi.yaml
 cloudResources:
   collections:
-    ../postman/collections/[Baseline] customer-service: 48857926-4e01f590-a524-4389-a19d-7035c5538cb0
-    ../postman/collections/[Smoke] customer-service: 48857926-6ebb2ccf-0cdb-43ee-879b-65214e2d1c00
-    ../postman/collections/[Contract] customer-service: 48857926-1d9f56ee-f7f7-4a36-aaa0-99b4e1b007dc
+    ../postman/collections/[Baseline] catalog-service: 48857926-4e01f590-a524-4389-a19d-7035c5538cb0
+    ../postman/collections/[Smoke] catalog-service: 48857926-6ebb2ccf-0cdb-43ee-879b-65214e2d1c00
+    ../postman/collections/[Contract] catalog-service: 48857926-1d9f56ee-f7f7-4a36-aaa0-99b4e1b007dc
   environments:
     ../postman/environments/prod.postman_environment.json: 48857926-aeacd7bd-de31-44c2-9c72-90b4a2fc0fde

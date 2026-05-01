@@ -1,0 +1,5 @@
+type: folder
+name: attributes
+items:
+  - ref: ./List attributes.request.yaml
+  - ref: ./Create attribute.request.yaml

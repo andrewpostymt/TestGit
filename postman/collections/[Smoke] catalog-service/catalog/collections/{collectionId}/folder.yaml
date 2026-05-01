@@ -1,0 +1,6 @@
+type: folder
+name: '{collectionId}'
+items:
+  - ref: ./items/folder.yaml
+  - ref: ./Get collection.request.yaml
+  - ref: ./Update collection.request.yaml

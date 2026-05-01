@@ -1,0 +1,4 @@
+type: http
+name: List merchandising rules
+url: '{{baseUrl}}/catalog/rules'
+method: GET

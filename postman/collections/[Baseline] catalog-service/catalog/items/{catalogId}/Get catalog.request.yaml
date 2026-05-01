@@ -1,0 +1,7 @@
+type: http
+name: Get catalog
+url: '{{baseUrl}}/catalog/items/:catalogId'
+method: GET
+pathVariables:
+  - key: catalogId
+    value: string

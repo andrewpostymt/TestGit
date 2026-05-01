@@ -1,0 +1,7 @@
+type: folder
+name: '{catalogId}'
+items:
+  - ref: ./Get catalog.request.yaml
+  - ref: ./Update catalog.request.yaml
+  - ref: ./Partially update catalog.request.yaml
+  - ref: ./Delete catalog.request.yaml

@@ -1,0 +1,7 @@
+type: http
+name: List collection items
+url: '{{baseUrl}}/catalog/collections/:collectionId/items'
+method: GET
+pathVariables:
+  - key: collectionId
+    value: ''

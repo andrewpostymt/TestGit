@@ -1,0 +1,6 @@
+type: folder
+name: items
+items:
+  - ref: ./{catalogId}/folder.yaml
+  - ref: ./List catalogs.request.yaml
+  - ref: ./Create catalog.request.yaml

@@ -1,0 +1,6 @@
+type: folder
+name: collections
+items:
+  - ref: ./{collectionId}/folder.yaml
+  - ref: ./List collections.request.yaml
+  - ref: ./Create collection.request.yaml

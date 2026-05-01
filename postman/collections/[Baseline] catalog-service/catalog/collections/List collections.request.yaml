@@ -1,0 +1,4 @@
+type: http
+name: List collections
+url: '{{baseUrl}}/catalog/collections'
+method: GET

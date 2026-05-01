@@ -1,0 +1,4 @@
+type: folder
+name: tree
+items:
+  - ref: ./Get category tree.request.yaml

@@ -1,0 +1,6 @@
+type: folder
+name: categories
+items:
+  - ref: ./{categoryId}/folder.yaml
+  - ref: ./List categories.request.yaml
+  - ref: ./Create category.request.yaml

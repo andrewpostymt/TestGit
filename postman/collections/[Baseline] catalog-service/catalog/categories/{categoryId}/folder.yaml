@@ -1,0 +1,5 @@
+type: folder
+name: '{categoryId}'
+items:
+  - ref: ./tree/folder.yaml
+  - ref: ./Get category.request.yaml

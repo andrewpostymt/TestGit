@@ -1,0 +1,10 @@
+type: http
+name: Create merchandising rule
+url: '{{baseUrl}}/catalog/rules'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

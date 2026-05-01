@@ -1,0 +1,4 @@
+type: folder
+name: items
+items:
+  - ref: ./List collection items.request.yaml

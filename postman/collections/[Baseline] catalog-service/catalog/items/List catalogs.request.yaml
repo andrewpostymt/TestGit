@@ -1,0 +1,9 @@
+type: http
+name: List catalogs
+url: '{{baseUrl}}/catalog/items?page=1264&limit=1264'
+method: GET
+queryParams:
+  - key: page
+    value: '1264'
+  - key: limit
+    value: '1264'

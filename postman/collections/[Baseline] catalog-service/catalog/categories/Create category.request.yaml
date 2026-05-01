@@ -1,0 +1,10 @@
+type: http
+name: Create category
+url: '{{baseUrl}}/catalog/categories'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'
