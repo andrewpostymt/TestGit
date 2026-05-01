@@ -1,12 +1,12 @@
 type: http
 name: List reviews
-url: '{{baseUrl}}/reviews?page=9020&limit=9020'
+url: '{{baseUrl}}/reviews?page=8372&limit=8372'
 method: GET
 queryParams:
   - key: page
-    value: '9020'
+    value: '8372'
   - key: limit
-    value: '9020'
+    value: '8372'
 scripts:
   - type: afterResponse
     code:
@@ -25,3 +25,25 @@ scripts:
       - '    }'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

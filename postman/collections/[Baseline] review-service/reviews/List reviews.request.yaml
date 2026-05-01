@@ -1,9 +1,31 @@
 type: http
 name: List reviews
-url: '{{baseUrl}}/reviews?page=3556&limit=3556'
+url: '{{baseUrl}}/reviews?page=150&limit=150'
 method: GET
 queryParams:
   - key: page
-    value: '3556'
+    value: '150'
   - key: limit
-    value: '3556'
+    value: '150'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found
