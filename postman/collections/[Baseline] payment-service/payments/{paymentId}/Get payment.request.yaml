@@ -1,0 +1,7 @@
+type: http
+name: Get payment
+url: '{{baseUrl}}/payments/:paymentId'
+method: GET
+pathVariables:
+  - key: paymentId
+    value: string

@@ -1,0 +1,7 @@
+type: http
+name: Capture payment
+url: '{{baseUrl}}/payments/:paymentId/capture'
+method: POST
+pathVariables:
+  - key: paymentId
+    value: ''

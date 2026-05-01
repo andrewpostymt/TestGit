@@ -1,0 +1,13 @@
+type: http
+name: Update payment
+url: '{{baseUrl}}/payments/:paymentId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: paymentId
+    value: string
+body:
+  type: json
+  content: '{}'

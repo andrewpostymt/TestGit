@@ -1,0 +1,10 @@
+type: http
+name: Add payment method
+url: '{{baseUrl}}/payments/methods'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

@@ -1,0 +1,9 @@
+type: http
+name: List payments
+url: '{{baseUrl}}/payments?page=8911&limit=8911'
+method: GET
+queryParams:
+  - key: page
+    value: '8911'
+  - key: limit
+    value: '8911'

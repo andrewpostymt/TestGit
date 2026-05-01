@@ -1,0 +1,7 @@
+type: http
+name: Remove payment method
+url: '{{baseUrl}}/payments/methods/:methodId'
+method: DELETE
+pathVariables:
+  - key: methodId
+    value: ''

@@ -1,0 +1,5 @@
+type: folder
+name: reports
+items:
+  - ref: ./daily/folder.yaml
+  - ref: ./monthly/folder.yaml

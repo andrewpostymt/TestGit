@@ -1,0 +1,4 @@
+type: http
+name: List payment methods
+url: '{{baseUrl}}/payments/methods'
+method: GET

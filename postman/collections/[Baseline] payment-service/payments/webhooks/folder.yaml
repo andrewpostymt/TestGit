@@ -1,0 +1,4 @@
+type: folder
+name: webhooks
+items:
+  - ref: ./Payment webhook endpoint.request.yaml

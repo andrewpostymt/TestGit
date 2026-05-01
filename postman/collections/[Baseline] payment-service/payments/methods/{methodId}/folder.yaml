@@ -1,0 +1,5 @@
+type: folder
+name: '{methodId}'
+items:
+  - ref: ./default/folder.yaml
+  - ref: ./Remove payment method.request.yaml

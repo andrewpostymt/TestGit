@@ -1,0 +1,13 @@
+type: http
+name: Create dispute
+url: '{{baseUrl}}/payments/:paymentId/dispute'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: paymentId
+    value: ''
+body:
+  type: json
+  content: '{}'

@@ -1,0 +1,12 @@
+type: folder
+name: '{paymentId}'
+items:
+  - ref: ./capture/folder.yaml
+  - ref: ./void/folder.yaml
+  - ref: ./refund/folder.yaml
+  - ref: ./dispute/folder.yaml
+  - ref: ./receipt/folder.yaml
+  - ref: ./Get payment.request.yaml
+  - ref: ./Update payment.request.yaml
+  - ref: ./Partially update payment.request.yaml
+  - ref: ./Delete payment.request.yaml

@@ -1,0 +1,13 @@
+type: http
+name: Refund payment
+url: '{{baseUrl}}/payments/:paymentId/refund'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: paymentId
+    value: ''
+body:
+  type: json
+  content: '{}'

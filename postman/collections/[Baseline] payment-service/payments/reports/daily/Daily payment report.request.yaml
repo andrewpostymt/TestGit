@@ -1,0 +1,4 @@
+type: http
+name: Daily payment report
+url: '{{baseUrl}}/payments/reports/daily'
+method: GET

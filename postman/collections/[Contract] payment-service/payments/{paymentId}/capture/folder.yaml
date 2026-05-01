@@ -1,0 +1,4 @@
+type: folder
+name: capture
+items:
+  - ref: ./Capture payment.request.yaml

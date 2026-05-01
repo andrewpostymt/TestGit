@@ -1,0 +1,4 @@
+type: http
+name: Monthly payment report
+url: '{{baseUrl}}/payments/reports/monthly'
+method: GET

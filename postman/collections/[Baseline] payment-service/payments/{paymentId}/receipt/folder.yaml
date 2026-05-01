@@ -1,0 +1,4 @@
+type: folder
+name: receipt
+items:
+  - ref: ./Get payment receipt.request.yaml

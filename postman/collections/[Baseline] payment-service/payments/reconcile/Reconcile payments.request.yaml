@@ -1,0 +1,10 @@
+type: http
+name: Reconcile payments
+url: '{{baseUrl}}/payments/reconcile'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

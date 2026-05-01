@@ -1,0 +1,7 @@
+type: http
+name: Set default payment method
+url: '{{baseUrl}}/payments/methods/:methodId/default'
+method: POST
+pathVariables:
+  - key: methodId
+    value: ''

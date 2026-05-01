@@ -1,0 +1,7 @@
+type: http
+name: Delete payment
+url: '{{baseUrl}}/payments/:paymentId'
+method: DELETE
+pathVariables:
+  - key: paymentId
+    value: string

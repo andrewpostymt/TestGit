@@ -1,0 +1,7 @@
+type: http
+name: Get payment receipt
+url: '{{baseUrl}}/payments/:paymentId/receipt'
+method: GET
+pathVariables:
+  - key: paymentId
+    value: ''

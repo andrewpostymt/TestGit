@@ -1,0 +1,6 @@
+type: folder
+name: methods
+items:
+  - ref: ./{methodId}/folder.yaml
+  - ref: ./List payment methods.request.yaml
+  - ref: ./Add payment method.request.yaml
