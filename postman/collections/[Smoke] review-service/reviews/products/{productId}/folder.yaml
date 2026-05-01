@@ -1,0 +1,4 @@
+type: folder
+name: '{productId}'
+items:
+  - ref: ./Get product reviews.request.yaml

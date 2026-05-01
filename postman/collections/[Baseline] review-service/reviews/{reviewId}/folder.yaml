@@ -1,0 +1,12 @@
+type: folder
+name: '{reviewId}'
+items:
+  - ref: ./approve/folder.yaml
+  - ref: ./reject/folder.yaml
+  - ref: ./flag/folder.yaml
+  - ref: ./helpful/folder.yaml
+  - ref: ./reply/folder.yaml
+  - ref: ./Get review.request.yaml
+  - ref: ./Update review.request.yaml
+  - ref: ./Partially update review.request.yaml
+  - ref: ./Delete review.request.yaml

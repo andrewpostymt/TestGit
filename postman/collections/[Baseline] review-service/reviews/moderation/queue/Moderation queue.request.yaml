@@ -1,0 +1,4 @@
+type: http
+name: Moderation queue
+url: '{{baseUrl}}/reviews/moderation/queue'
+method: GET

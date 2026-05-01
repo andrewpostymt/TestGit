@@ -1,0 +1,13 @@
+type: http
+name: Partially update review
+url: '{{baseUrl}}/reviews/:reviewId'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: reviewId
+    value: string
+body:
+  type: json
+  content: '{}'

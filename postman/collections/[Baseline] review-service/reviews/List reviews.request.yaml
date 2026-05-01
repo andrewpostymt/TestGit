@@ -1,0 +1,9 @@
+type: http
+name: List reviews
+url: '{{baseUrl}}/reviews?page=3556&limit=3556'
+method: GET
+queryParams:
+  - key: page
+    value: '3556'
+  - key: limit
+    value: '3556'

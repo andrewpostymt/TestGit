@@ -1,0 +1,13 @@
+type: http
+name: Flag review
+url: '{{baseUrl}}/reviews/:reviewId/flag'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: reviewId
+    value: ''
+body:
+  type: json
+  content: '{}'

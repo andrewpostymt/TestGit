@@ -1,0 +1,13 @@
+type: http
+name: Update review
+url: '{{baseUrl}}/reviews/:reviewId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: reviewId
+    value: string
+body:
+  type: json
+  content: '{}'

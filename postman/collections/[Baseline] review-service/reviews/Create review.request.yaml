@@ -1,0 +1,10 @@
+type: http
+name: Create review
+url: '{{baseUrl}}/reviews'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

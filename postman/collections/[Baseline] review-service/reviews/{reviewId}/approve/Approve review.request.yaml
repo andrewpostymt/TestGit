@@ -1,0 +1,7 @@
+type: http
+name: Approve review
+url: '{{baseUrl}}/reviews/:reviewId/approve'
+method: POST
+pathVariables:
+  - key: reviewId
+    value: ''

@@ -1,0 +1,13 @@
+type: http
+name: Reply to review
+url: '{{baseUrl}}/reviews/:reviewId/reply'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: reviewId
+    value: ''
+body:
+  type: json
+  content: '{}'

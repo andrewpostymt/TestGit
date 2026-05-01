@@ -1,0 +1,7 @@
+type: http
+name: Mark review as helpful
+url: '{{baseUrl}}/reviews/:reviewId/helpful'
+method: POST
+pathVariables:
+  - key: reviewId
+    value: ''

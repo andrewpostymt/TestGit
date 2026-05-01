@@ -1,0 +1,4 @@
+type: folder
+name: flag
+items:
+  - ref: ./Flag review.request.yaml

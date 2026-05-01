@@ -1,0 +1,10 @@
+type: folder
+name: reviews
+items:
+  - ref: ./{reviewId}/folder.yaml
+  - ref: ./products/folder.yaml
+  - ref: ./summary/folder.yaml
+  - ref: ./moderation/folder.yaml
+  - ref: ./import/folder.yaml
+  - ref: ./List reviews.request.yaml
+  - ref: ./Create review.request.yaml

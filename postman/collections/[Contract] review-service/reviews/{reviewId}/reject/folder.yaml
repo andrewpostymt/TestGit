@@ -1,0 +1,4 @@
+type: folder
+name: reject
+items:
+  - ref: ./Reject review.request.yaml

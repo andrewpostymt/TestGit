@@ -1,0 +1,4 @@
+type: folder
+name: queue
+items:
+  - ref: ./Moderation queue.request.yaml
