@@ -17,6 +17,7 @@ auth:
 variables:
   - key: baseUrl
     value: https://api.example.com/v1/checkout
+    type: any
 items:
   - ref: ./checkout/folder.yaml
   - ref: ./00 - Resolve Secrets.request.yaml
