@@ -48,12 +48,13 @@ jobs:
         id: onboard
         uses: postman-cs/postman-api-onboarding-action@main
         with:
-          project-name:         order-service
-          spec-url:             https://raw.githubusercontent.com/andrewpostymt/TestGit/main/services/order-service/openapi.yaml
-          workspace-id:         ${{ inputs.workspace-id || vars.POSTMAN_WORKSPACE_ID }}
-          postman-api-key:      ${{ secrets.POSTMAN_API_KEY }}
-          github-token:         ${{ secrets.GITHUB_TOKEN }}
-          generate-ci-workflow: 'false'
+          project-name:          order-service
+          spec-url:              https://raw.githubusercontent.com/andrewpostymt/TestGit/main/services/order-service/openapi.yaml
+          workspace-id:          ${{ inputs.workspace-id || vars.POSTMAN_WORKSPACE_ID }}
+          postman-api-key:       ${{ secrets.POSTMAN_API_KEY }}
+          postman-access-token:  ${{ secrets.POSTMAN_ACCESS_TOKEN }}
+          github-token:          ${{ secrets.GITHUB_TOKEN }}
+          generate-ci-workflow:  'false'
 
       - name: Print workspace info
         run: |
@@ -125,12 +126,13 @@ jobs:
         id: onboard
         uses: postman-cs/postman-api-onboarding-action@main
         with:
-          project-name:         ${{ matrix.service }}
-          spec-url:             https://raw.githubusercontent.com/andrewpostymt/TestGit/main/services/${{ matrix.service }}/openapi.yaml
-          workspace-id:         ${{ needs.onboarding-anchor.outputs.workspace-id }}
-          postman-api-key:      ${{ secrets.POSTMAN_API_KEY }}
-          github-token:         ${{ secrets.GITHUB_TOKEN }}
-          generate-ci-workflow: 'false'
+          project-name:          ${{ matrix.service }}
+          spec-url:              https://raw.githubusercontent.com/andrewpostymt/TestGit/main/services/${{ matrix.service }}/openapi.yaml
+          workspace-id:          ${{ needs.onboarding-anchor.outputs.workspace-id }}
+          postman-api-key:       ${{ secrets.POSTMAN_API_KEY }}
+          postman-access-token:  ${{ secrets.POSTMAN_ACCESS_TOKEN }}
+          github-token:          ${{ secrets.GITHUB_TOKEN }}
+          generate-ci-workflow:  'false'
 
       - name: Print collection outputs
         run: |
