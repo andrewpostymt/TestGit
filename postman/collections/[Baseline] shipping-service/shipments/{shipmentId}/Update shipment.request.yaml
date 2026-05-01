@@ -1,0 +1,13 @@
+type: http
+name: Update shipment
+url: '{{baseUrl}}/shipments/:shipmentId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: shipmentId
+    value: string
+body:
+  type: json
+  content: '{}'

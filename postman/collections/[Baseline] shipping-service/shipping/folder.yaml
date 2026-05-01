@@ -1,0 +1,10 @@
+type: folder
+name: shipping
+items:
+  - ref: ./rates/folder.yaml
+  - ref: ./carriers/folder.yaml
+  - ref: ./zones/folder.yaml
+  - ref: ./address/folder.yaml
+  - ref: ./manifests/folder.yaml
+  - ref: ./pickups/folder.yaml
+  - ref: ./insurance/folder.yaml

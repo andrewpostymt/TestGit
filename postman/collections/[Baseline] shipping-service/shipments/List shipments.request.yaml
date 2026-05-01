@@ -1,0 +1,9 @@
+type: http
+name: List shipments
+url: '{{baseUrl}}/shipments?page=207&limit=207'
+method: GET
+queryParams:
+  - key: page
+    value: '207'
+  - key: limit
+    value: '207'

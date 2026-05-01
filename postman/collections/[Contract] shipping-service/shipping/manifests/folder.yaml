@@ -1,0 +1,5 @@
+type: folder
+name: manifests
+items:
+  - ref: ./List manifests.request.yaml
+  - ref: ./Create manifest.request.yaml

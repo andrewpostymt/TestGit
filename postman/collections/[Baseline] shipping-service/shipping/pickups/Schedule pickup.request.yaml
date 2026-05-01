@@ -1,0 +1,10 @@
+type: http
+name: Schedule pickup
+url: '{{baseUrl}}/shipping/pickups'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

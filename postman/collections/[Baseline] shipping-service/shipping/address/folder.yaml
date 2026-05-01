@@ -1,0 +1,4 @@
+type: folder
+name: address
+items:
+  - ref: ./validate/folder.yaml

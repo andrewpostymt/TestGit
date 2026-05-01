@@ -1,0 +1,5 @@
+type: folder
+name: pickups
+items:
+  - ref: ./List pickups.request.yaml
+  - ref: ./Schedule pickup.request.yaml

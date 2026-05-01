@@ -1,0 +1,7 @@
+type: http
+name: Generate label
+url: '{{baseUrl}}/shipments/:shipmentId/label'
+method: POST
+pathVariables:
+  - key: shipmentId
+    value: ''

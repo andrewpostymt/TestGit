@@ -1,0 +1,4 @@
+type: folder
+name: zones
+items:
+  - ref: ./List shipping zones.request.yaml

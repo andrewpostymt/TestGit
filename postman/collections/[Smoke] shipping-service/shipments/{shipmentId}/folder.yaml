@@ -1,0 +1,9 @@
+type: folder
+name: '{shipmentId}'
+items:
+  - ref: ./track/folder.yaml
+  - ref: ./label/folder.yaml
+  - ref: ./Get shipment.request.yaml
+  - ref: ./Update shipment.request.yaml
+  - ref: ./Partially update shipment.request.yaml
+  - ref: ./Delete shipment.request.yaml

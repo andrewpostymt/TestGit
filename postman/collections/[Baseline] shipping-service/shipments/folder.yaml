@@ -1,0 +1,6 @@
+type: folder
+name: shipments
+items:
+  - ref: ./{shipmentId}/folder.yaml
+  - ref: ./List shipments.request.yaml
+  - ref: ./Create shipment.request.yaml

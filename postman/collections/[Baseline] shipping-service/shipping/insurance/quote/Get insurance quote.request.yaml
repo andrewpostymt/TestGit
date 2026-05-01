@@ -1,0 +1,10 @@
+type: http
+name: Get insurance quote
+url: '{{baseUrl}}/shipping/insurance/quote'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

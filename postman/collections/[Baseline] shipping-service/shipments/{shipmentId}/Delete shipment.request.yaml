@@ -1,0 +1,7 @@
+type: http
+name: Delete shipment
+url: '{{baseUrl}}/shipments/:shipmentId'
+method: DELETE
+pathVariables:
+  - key: shipmentId
+    value: string

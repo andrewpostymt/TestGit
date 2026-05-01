@@ -1,0 +1,4 @@
+type: http
+name: List shipping zones
+url: '{{baseUrl}}/shipping/zones'
+method: GET

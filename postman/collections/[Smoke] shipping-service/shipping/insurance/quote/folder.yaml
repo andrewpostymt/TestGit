@@ -1,0 +1,4 @@
+type: folder
+name: quote
+items:
+  - ref: ./Get insurance quote.request.yaml

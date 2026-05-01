@@ -1,0 +1,4 @@
+type: folder
+name: rates
+items:
+  - ref: ./Calculate shipping rates.request.yaml

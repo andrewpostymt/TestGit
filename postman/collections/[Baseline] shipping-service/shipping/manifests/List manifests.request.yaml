@@ -1,0 +1,4 @@
+type: http
+name: List manifests
+url: '{{baseUrl}}/shipping/manifests'
+method: GET

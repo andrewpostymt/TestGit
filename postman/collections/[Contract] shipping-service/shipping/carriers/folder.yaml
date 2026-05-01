@@ -1,0 +1,5 @@
+type: folder
+name: carriers
+items:
+  - ref: ./{carrierId}/folder.yaml
+  - ref: ./List carriers.request.yaml

@@ -1,0 +1,4 @@
+type: http
+name: List pickups
+url: '{{baseUrl}}/shipping/pickups'
+method: GET

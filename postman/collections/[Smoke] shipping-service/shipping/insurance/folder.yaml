@@ -1,0 +1,4 @@
+type: folder
+name: insurance
+items:
+  - ref: ./quote/folder.yaml

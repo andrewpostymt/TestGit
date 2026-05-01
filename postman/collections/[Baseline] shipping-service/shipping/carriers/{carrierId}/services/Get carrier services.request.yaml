@@ -1,0 +1,7 @@
+type: http
+name: Get carrier services
+url: '{{baseUrl}}/shipping/carriers/:carrierId/services'
+method: GET
+pathVariables:
+  - key: carrierId
+    value: ''

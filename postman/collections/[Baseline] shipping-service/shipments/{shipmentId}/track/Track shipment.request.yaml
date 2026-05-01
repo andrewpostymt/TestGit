@@ -1,0 +1,7 @@
+type: http
+name: Track shipment
+url: '{{baseUrl}}/shipments/:shipmentId/track'
+method: GET
+pathVariables:
+  - key: shipmentId
+    value: ''

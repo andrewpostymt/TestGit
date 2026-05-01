@@ -1,0 +1,13 @@
+type: http
+name: Partially update shipment
+url: '{{baseUrl}}/shipments/:shipmentId'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: shipmentId
+    value: string
+body:
+  type: json
+  content: '{}'
