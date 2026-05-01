@@ -118,6 +118,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Pull latest main before onboarding
+        run: git pull --rebase origin main
+
       - name: Onboard ${{ matrix.service }}
         id: onboard
         uses: postman-cs/postman-api-onboarding-action@main
