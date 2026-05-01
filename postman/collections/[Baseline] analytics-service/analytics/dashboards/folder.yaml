@@ -1,0 +1,6 @@
+type: folder
+name: dashboards
+items:
+  - ref: ./{dashboardId}/folder.yaml
+  - ref: ./List dashboards.request.yaml
+  - ref: ./Create dashboard.request.yaml

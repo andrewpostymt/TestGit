@@ -1,0 +1,4 @@
+type: http
+name: Get A/B test results
+url: '{{baseUrl}}/analytics/ab-tests'
+method: GET

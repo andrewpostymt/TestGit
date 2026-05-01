@@ -1,0 +1,4 @@
+type: folder
+name: cohorts
+items:
+  - ref: ./Get cohort analysis.request.yaml

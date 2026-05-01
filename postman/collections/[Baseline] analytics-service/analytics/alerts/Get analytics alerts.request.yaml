@@ -1,0 +1,4 @@
+type: http
+name: Get analytics alerts
+url: '{{baseUrl}}/analytics/alerts'
+method: GET

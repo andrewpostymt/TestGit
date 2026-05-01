@@ -1,0 +1,4 @@
+type: http
+name: Get funnel analysis
+url: '{{baseUrl}}/analytics/funnels'
+method: GET

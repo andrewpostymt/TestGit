@@ -1,0 +1,4 @@
+type: http
+name: Get forecasts
+url: '{{baseUrl}}/analytics/forecast'
+method: GET

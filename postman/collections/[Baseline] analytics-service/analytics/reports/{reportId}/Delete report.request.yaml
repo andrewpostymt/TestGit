@@ -1,0 +1,7 @@
+type: http
+name: Delete report
+url: '{{baseUrl}}/analytics/reports/:reportId'
+method: DELETE
+pathVariables:
+  - key: reportId
+    value: string

@@ -1,0 +1,13 @@
+type: http
+name: Partially update report
+url: '{{baseUrl}}/analytics/reports/:reportId'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: reportId
+    value: string
+body:
+  type: json
+  content: '{}'

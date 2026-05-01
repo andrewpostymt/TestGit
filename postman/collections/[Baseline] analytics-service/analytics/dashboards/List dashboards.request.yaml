@@ -1,0 +1,4 @@
+type: http
+name: List dashboards
+url: '{{baseUrl}}/analytics/dashboards'
+method: GET

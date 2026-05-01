@@ -1,0 +1,4 @@
+type: folder
+name: alerts
+items:
+  - ref: ./Get analytics alerts.request.yaml

@@ -1,0 +1,4 @@
+type: http
+name: Get attribution data
+url: '{{baseUrl}}/analytics/attribution'
+method: GET

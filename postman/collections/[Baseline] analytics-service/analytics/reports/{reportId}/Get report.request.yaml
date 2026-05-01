@@ -1,0 +1,7 @@
+type: http
+name: Get report
+url: '{{baseUrl}}/analytics/reports/:reportId'
+method: GET
+pathVariables:
+  - key: reportId
+    value: string

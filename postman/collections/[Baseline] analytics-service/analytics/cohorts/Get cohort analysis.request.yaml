@@ -1,0 +1,4 @@
+type: http
+name: Get cohort analysis
+url: '{{baseUrl}}/analytics/cohorts'
+method: GET

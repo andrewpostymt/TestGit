@@ -1,0 +1,4 @@
+type: folder
+name: segments
+items:
+  - ref: ./Get customer segments.request.yaml

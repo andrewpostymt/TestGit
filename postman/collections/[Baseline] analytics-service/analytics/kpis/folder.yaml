@@ -1,0 +1,4 @@
+type: folder
+name: kpis
+items:
+  - ref: ./Get KPIs.request.yaml

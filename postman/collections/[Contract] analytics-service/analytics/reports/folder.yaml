@@ -1,0 +1,6 @@
+type: folder
+name: reports
+items:
+  - ref: ./{reportId}/folder.yaml
+  - ref: ./List reports.request.yaml
+  - ref: ./Create report.request.yaml

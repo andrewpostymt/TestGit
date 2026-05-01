@@ -1,0 +1,9 @@
+type: http
+name: List reports
+url: '{{baseUrl}}/analytics/reports?page=6751&limit=6751'
+method: GET
+queryParams:
+  - key: page
+    value: '6751'
+  - key: limit
+    value: '6751'

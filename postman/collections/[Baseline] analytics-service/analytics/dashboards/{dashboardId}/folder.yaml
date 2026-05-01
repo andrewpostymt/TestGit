@@ -1,0 +1,4 @@
+type: folder
+name: '{dashboardId}'
+items:
+  - ref: ./Get dashboard.request.yaml

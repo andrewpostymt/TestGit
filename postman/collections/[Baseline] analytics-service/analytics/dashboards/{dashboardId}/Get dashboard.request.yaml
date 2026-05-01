@@ -1,0 +1,7 @@
+type: http
+name: Get dashboard
+url: '{{baseUrl}}/analytics/dashboards/:dashboardId'
+method: GET
+pathVariables:
+  - key: dashboardId
+    value: ''

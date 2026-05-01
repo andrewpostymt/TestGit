@@ -1,0 +1,10 @@
+type: http
+name: Create report
+url: '{{baseUrl}}/analytics/reports'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

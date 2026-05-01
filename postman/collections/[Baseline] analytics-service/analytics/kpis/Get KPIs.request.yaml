@@ -1,0 +1,4 @@
+type: http
+name: Get KPIs
+url: '{{baseUrl}}/analytics/kpis'
+method: GET

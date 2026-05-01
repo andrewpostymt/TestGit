@@ -1,0 +1,4 @@
+type: folder
+name: funnels
+items:
+  - ref: ./Get funnel analysis.request.yaml

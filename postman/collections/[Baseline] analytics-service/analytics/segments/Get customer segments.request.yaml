@@ -1,0 +1,4 @@
+type: http
+name: Get customer segments
+url: '{{baseUrl}}/analytics/segments'
+method: GET

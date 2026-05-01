@@ -1,0 +1,7 @@
+type: folder
+name: '{reportId}'
+items:
+  - ref: ./Get report.request.yaml
+  - ref: ./Update report.request.yaml
+  - ref: ./Partially update report.request.yaml
+  - ref: ./Delete report.request.yaml

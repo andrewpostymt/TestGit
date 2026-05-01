@@ -1,0 +1,16 @@
+type: folder
+name: analytics
+items:
+  - ref: ./reports/folder.yaml
+  - ref: ./dashboards/folder.yaml
+  - ref: ./metrics/folder.yaml
+  - ref: ./kpis/folder.yaml
+  - ref: ./funnels/folder.yaml
+  - ref: ./cohorts/folder.yaml
+  - ref: ./segments/folder.yaml
+  - ref: ./export/folder.yaml
+  - ref: ./schedule/folder.yaml
+  - ref: ./alerts/folder.yaml
+  - ref: ./forecast/folder.yaml
+  - ref: ./attribution/folder.yaml
+  - ref: ./ab-tests/folder.yaml

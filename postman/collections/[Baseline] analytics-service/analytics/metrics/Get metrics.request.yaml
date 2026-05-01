@@ -1,0 +1,4 @@
+type: http
+name: Get metrics
+url: '{{baseUrl}}/analytics/metrics'
+method: GET

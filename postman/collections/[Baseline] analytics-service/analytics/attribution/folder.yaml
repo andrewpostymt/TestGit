@@ -1,0 +1,4 @@
+type: folder
+name: attribution
+items:
+  - ref: ./Get attribution data.request.yaml
