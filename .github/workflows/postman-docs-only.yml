@@ -1,0 +1,58 @@
+name: Generate Postman Docs
+
+# Standalone docs-only workflow — runs generate-docs against an existing
+# workspace without re-running onboarding. Use this after the full
+# postman-pipeline.yml has already set up the workspace and collections.
+#
+# Required secrets:  POSTMAN_API_KEY, POSTMAN_ACCESS_TOKEN
+# Required variables: POSTMAN_WORKSPACE_ID (or pass workspace-id as input)
+
+on:
+  workflow_dispatch:
+    inputs:
+      workspace-id:
+        description: Postman workspace ID (defaults to POSTMAN_WORKSPACE_ID variable)
+        required: false
+      dry-run:
+        description: Dry-run (no PR opened)
+        type: boolean
+        default: false
+
+jobs:
+  generate-docs:
+    name: Generate collection documentation
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout postman-agent-docs-action
+        uses: actions/checkout@v4
+        with:
+          repository: andrewpostymt/postman-agent-docs-action
+          token:      ${{ secrets.GH_PAT }}
+          path:       .github/actions/postman-agent-docs-action
+
+      - name: Generate docs for all collections
+        id: docs
+        uses: ./.github/actions/postman-agent-docs-action
+        with:
+          postman-api-key:      ${{ secrets.POSTMAN_API_KEY }}
+          workspace-id:         ${{ inputs.workspace-id || vars.POSTMAN_WORKSPACE_ID }}
+          git-mode:             'true'
+          github-token:         ${{ secrets.GITHUB_TOKEN }}
+          agent-mode:           'true'
+          postman-access-token: ${{ secrets.POSTMAN_ACCESS_TOKEN }}
+          overwrite-existing:   'true'
+          dry-run:              ${{ inputs.dry-run }}
+
+      - name: Print docs results
+        run: |
+          echo "branch-name:         ${{ steps.docs.outputs.branch-name }}"
+          echo "collections-updated: ${{ steps.docs.outputs.collections-updated }}"
+          echo "collections-skipped: ${{ steps.docs.outputs.collections-skipped }}"
+          echo ""
+          echo "Results:"
+          echo '${{ steps.docs.outputs.results-json }}' | jq '.'
