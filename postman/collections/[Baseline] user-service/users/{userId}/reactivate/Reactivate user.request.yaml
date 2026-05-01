@@ -1,0 +1,7 @@
+type: http
+name: Reactivate user
+url: '{{baseUrl}}/users/:userId/reactivate'
+method: POST
+pathVariables:
+  - key: userId
+    value: ''

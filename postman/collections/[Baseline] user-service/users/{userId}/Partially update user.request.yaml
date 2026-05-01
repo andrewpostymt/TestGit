@@ -1,0 +1,13 @@
+type: http
+name: Partially update user
+url: '{{baseUrl}}/users/:userId'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: userId
+    value: string
+body:
+  type: json
+  content: '{}'

@@ -1,0 +1,21 @@
+$schema: https://schema.postman.com/json/draft-2020-12/collection/v3.0.0/
+type: collection
+name: '[Baseline] user-service'
+description: |-
+  User account management, profiles, preferences, and authentication.
+
+  Contact Support:
+   Name: Platform Engineering
+   Email: platform@example.com
+id: 4e01f590-a524-4389-a19d-7035c5538cb0
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{bearerToken}}'
+      type: string
+variables:
+  - key: baseUrl
+    value: https://api.example.com/v1/users
+items:
+  - ref: ./users/folder.yaml

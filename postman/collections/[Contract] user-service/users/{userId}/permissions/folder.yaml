@@ -1,0 +1,4 @@
+type: folder
+name: permissions
+items:
+  - ref: ./Get user permissions.request.yaml

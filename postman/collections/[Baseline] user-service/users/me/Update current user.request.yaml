@@ -1,0 +1,10 @@
+type: http
+name: Update current user
+url: '{{baseUrl}}/users/me'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

@@ -1,0 +1,7 @@
+type: http
+name: List active sessions
+url: '{{baseUrl}}/users/:userId/sessions'
+method: GET
+pathVariables:
+  - key: userId
+    value: ''

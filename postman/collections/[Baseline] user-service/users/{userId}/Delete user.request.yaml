@@ -1,0 +1,7 @@
+type: http
+name: Delete user
+url: '{{baseUrl}}/users/:userId'
+method: DELETE
+pathVariables:
+  - key: userId
+    value: string

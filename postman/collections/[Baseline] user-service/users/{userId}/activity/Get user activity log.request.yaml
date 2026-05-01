@@ -1,0 +1,7 @@
+type: http
+name: Get user activity log
+url: '{{baseUrl}}/users/:userId/activity'
+method: GET
+pathVariables:
+  - key: userId
+    value: ''

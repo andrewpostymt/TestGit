@@ -1,0 +1,16 @@
+type: folder
+name: '{userId}'
+items:
+  - ref: ./avatar/folder.yaml
+  - ref: ./preferences/folder.yaml
+  - ref: ./activity/folder.yaml
+  - ref: ./sessions/folder.yaml
+  - ref: ./mfa/folder.yaml
+  - ref: ./deactivate/folder.yaml
+  - ref: ./reactivate/folder.yaml
+  - ref: ./roles/folder.yaml
+  - ref: ./permissions/folder.yaml
+  - ref: ./Get user.request.yaml
+  - ref: ./Update user.request.yaml
+  - ref: ./Partially update user.request.yaml
+  - ref: ./Delete user.request.yaml

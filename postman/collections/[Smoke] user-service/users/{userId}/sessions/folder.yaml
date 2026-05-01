@@ -1,0 +1,5 @@
+type: folder
+name: sessions
+items:
+  - ref: ./List active sessions.request.yaml
+  - ref: ./Revoke all sessions.request.yaml

@@ -1,0 +1,7 @@
+type: http
+name: Disable MFA
+url: '{{baseUrl}}/users/:userId/mfa'
+method: DELETE
+pathVariables:
+  - key: userId
+    value: ''

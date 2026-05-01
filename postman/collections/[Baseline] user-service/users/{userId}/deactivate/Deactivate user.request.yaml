@@ -1,0 +1,7 @@
+type: http
+name: Deactivate user
+url: '{{baseUrl}}/users/:userId/deactivate'
+method: POST
+pathVariables:
+  - key: userId
+    value: ''

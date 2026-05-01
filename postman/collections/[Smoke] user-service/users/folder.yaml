@@ -1,0 +1,8 @@
+type: folder
+name: users
+items:
+  - ref: ./{userId}/folder.yaml
+  - ref: ./me/folder.yaml
+  - ref: ./search/folder.yaml
+  - ref: ./List users.request.yaml
+  - ref: ./Create user.request.yaml

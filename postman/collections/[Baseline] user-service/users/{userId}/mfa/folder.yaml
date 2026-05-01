@@ -1,0 +1,5 @@
+type: folder
+name: mfa
+items:
+  - ref: ./Enable MFA.request.yaml
+  - ref: ./Disable MFA.request.yaml

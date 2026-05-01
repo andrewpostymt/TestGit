@@ -1,0 +1,5 @@
+type: folder
+name: me
+items:
+  - ref: ./Get current user.request.yaml
+  - ref: ./Update current user.request.yaml

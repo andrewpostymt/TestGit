@@ -1,0 +1,13 @@
+type: http
+name: Upload user avatar
+url: '{{baseUrl}}/users/:userId/avatar'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: userId
+    value: ''
+body:
+  type: json
+  content: '{}'

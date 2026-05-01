@@ -1,0 +1,13 @@
+type: http
+name: Update user preferences
+url: '{{baseUrl}}/users/:userId/preferences'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: userId
+    value: ''
+body:
+  type: json
+  content: '{}'

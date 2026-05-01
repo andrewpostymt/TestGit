@@ -1,0 +1,4 @@
+type: folder
+name: deactivate
+items:
+  - ref: ./Deactivate user.request.yaml

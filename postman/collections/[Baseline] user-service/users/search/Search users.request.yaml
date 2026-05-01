@@ -1,0 +1,4 @@
+type: http
+name: Search users
+url: '{{baseUrl}}/users/search'
+method: GET

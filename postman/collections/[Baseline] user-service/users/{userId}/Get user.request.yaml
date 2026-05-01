@@ -1,0 +1,7 @@
+type: http
+name: Get user
+url: '{{baseUrl}}/users/:userId'
+method: GET
+pathVariables:
+  - key: userId
+    value: string

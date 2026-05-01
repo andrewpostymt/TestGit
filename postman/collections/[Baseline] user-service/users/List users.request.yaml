@@ -1,0 +1,9 @@
+type: http
+name: List users
+url: '{{baseUrl}}/users?page=1173&limit=1173'
+method: GET
+queryParams:
+  - key: page
+    value: '1173'
+  - key: limit
+    value: '1173'

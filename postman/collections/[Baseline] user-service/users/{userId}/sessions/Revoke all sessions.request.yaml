@@ -1,0 +1,7 @@
+type: http
+name: Revoke all sessions
+url: '{{baseUrl}}/users/:userId/sessions'
+method: DELETE
+pathVariables:
+  - key: userId
+    value: ''

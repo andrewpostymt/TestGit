@@ -1,0 +1,13 @@
+type: http
+name: Enable MFA
+url: '{{baseUrl}}/users/:userId/mfa'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: userId
+    value: ''
+body:
+  type: json
+  content: '{}'

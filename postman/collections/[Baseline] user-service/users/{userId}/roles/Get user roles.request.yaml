@@ -1,0 +1,7 @@
+type: http
+name: Get user roles
+url: '{{baseUrl}}/users/:userId/roles'
+method: GET
+pathVariables:
+  - key: userId
+    value: ''

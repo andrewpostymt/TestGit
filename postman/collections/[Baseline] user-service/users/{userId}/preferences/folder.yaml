@@ -1,0 +1,5 @@
+type: folder
+name: preferences
+items:
+  - ref: ./Get user preferences.request.yaml
+  - ref: ./Update user preferences.request.yaml

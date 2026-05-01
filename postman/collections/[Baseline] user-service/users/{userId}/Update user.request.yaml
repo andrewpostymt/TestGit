@@ -1,0 +1,13 @@
+type: http
+name: Update user
+url: '{{baseUrl}}/users/:userId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: userId
+    value: string
+body:
+  type: json
+  content: '{}'

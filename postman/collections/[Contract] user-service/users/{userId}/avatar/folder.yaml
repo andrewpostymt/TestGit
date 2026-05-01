@@ -1,0 +1,4 @@
+type: folder
+name: avatar
+items:
+  - ref: ./Upload user avatar.request.yaml

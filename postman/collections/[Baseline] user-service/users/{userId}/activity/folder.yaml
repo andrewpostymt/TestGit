@@ -1,0 +1,4 @@
+type: folder
+name: activity
+items:
+  - ref: ./Get user activity log.request.yaml
