@@ -1,0 +1,4 @@
+type: folder
+name: '{keyId}'
+items:
+  - ref: ./Update translation key.request.yaml

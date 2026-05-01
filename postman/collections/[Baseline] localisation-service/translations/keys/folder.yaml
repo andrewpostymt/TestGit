@@ -1,0 +1,6 @@
+type: folder
+name: keys
+items:
+  - ref: ./{keyId}/folder.yaml
+  - ref: ./List translation keys.request.yaml
+  - ref: ./Create translation key.request.yaml

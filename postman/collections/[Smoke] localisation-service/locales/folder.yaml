@@ -1,0 +1,7 @@
+type: folder
+name: locales
+items:
+  - ref: ./{localeId}/folder.yaml
+  - ref: ./{localeCode}/folder.yaml
+  - ref: ./List locales.request.yaml
+  - ref: ./Create locale.request.yaml

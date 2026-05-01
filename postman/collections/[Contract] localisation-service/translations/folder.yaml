@@ -1,0 +1,7 @@
+type: folder
+name: translations
+items:
+  - ref: ./keys/folder.yaml
+  - ref: ./import/folder.yaml
+  - ref: ./export/folder.yaml
+  - ref: ./missing/folder.yaml

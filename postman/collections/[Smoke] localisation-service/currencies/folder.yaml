@@ -1,0 +1,4 @@
+type: folder
+name: currencies
+items:
+  - ref: ./List supported currencies.request.yaml

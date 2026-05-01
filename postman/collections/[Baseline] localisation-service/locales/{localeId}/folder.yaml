@@ -1,0 +1,7 @@
+type: folder
+name: '{localeId}'
+items:
+  - ref: ./Get locale.request.yaml
+  - ref: ./Update locale.request.yaml
+  - ref: ./Partially update locale.request.yaml
+  - ref: ./Delete locale.request.yaml

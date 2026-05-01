@@ -1,0 +1,31 @@
+type: http
+name: List locales
+url: '{{baseUrl}}/locales?page=8878&limit=8878'
+method: GET
+queryParams:
+  - key: page
+    value: '8878'
+  - key: limit
+    value: '8878'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

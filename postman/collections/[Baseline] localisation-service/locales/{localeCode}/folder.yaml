@@ -1,0 +1,4 @@
+type: folder
+name: '{localeCode}'
+items:
+  - ref: ./translations/folder.yaml

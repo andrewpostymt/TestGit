@@ -1,0 +1,4 @@
+type: folder
+name: timezones
+items:
+  - ref: ./List timezones.request.yaml

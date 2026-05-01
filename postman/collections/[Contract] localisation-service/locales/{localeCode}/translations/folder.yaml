@@ -1,0 +1,5 @@
+type: folder
+name: translations
+items:
+  - ref: ./Get translations for locale.request.yaml
+  - ref: ./Update translations.request.yaml
