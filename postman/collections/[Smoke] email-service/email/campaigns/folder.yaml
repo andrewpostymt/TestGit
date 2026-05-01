@@ -1,0 +1,5 @@
+type: folder
+name: campaigns
+items:
+  - ref: ./List campaigns.request.yaml
+  - ref: ./Create campaign.request.yaml

@@ -1,0 +1,5 @@
+type: folder
+name: send
+items:
+  - ref: ./bulk/folder.yaml
+  - ref: ./Send email.request.yaml

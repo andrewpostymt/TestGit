@@ -1,0 +1,7 @@
+type: folder
+name: '{emailId}'
+items:
+  - ref: ./Get email.request.yaml
+  - ref: ./Update email.request.yaml
+  - ref: ./Partially update email.request.yaml
+  - ref: ./Delete email.request.yaml

@@ -1,0 +1,4 @@
+type: folder
+name: analytics
+items:
+  - ref: ./Email analytics.request.yaml

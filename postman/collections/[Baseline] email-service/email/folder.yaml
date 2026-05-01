@@ -1,0 +1,10 @@
+type: folder
+name: email
+items:
+  - ref: ./messages/folder.yaml
+  - ref: ./send/folder.yaml
+  - ref: ./templates/folder.yaml
+  - ref: ./domains/folder.yaml
+  - ref: ./suppressions/folder.yaml
+  - ref: ./analytics/folder.yaml
+  - ref: ./campaigns/folder.yaml

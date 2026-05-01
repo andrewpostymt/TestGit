@@ -1,0 +1,31 @@
+type: http
+name: List emails
+url: '{{baseUrl}}/email/messages?page=4610&limit=4610'
+method: GET
+queryParams:
+  - key: page
+    value: '4610'
+  - key: limit
+    value: '4610'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

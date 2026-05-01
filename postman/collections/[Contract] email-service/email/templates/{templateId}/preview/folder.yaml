@@ -1,0 +1,4 @@
+type: folder
+name: preview
+items:
+  - ref: ./Preview template.request.yaml

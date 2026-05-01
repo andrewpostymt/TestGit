@@ -1,0 +1,5 @@
+type: folder
+name: domains
+items:
+  - ref: ./List sending domains.request.yaml
+  - ref: ./Add sending domain.request.yaml

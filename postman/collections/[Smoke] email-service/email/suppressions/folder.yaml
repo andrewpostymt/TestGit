@@ -1,0 +1,5 @@
+type: folder
+name: suppressions
+items:
+  - ref: ./List suppressions.request.yaml
+  - ref: ./Add suppression.request.yaml
