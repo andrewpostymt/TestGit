@@ -1,0 +1,4 @@
+type: folder
+name: signatures
+items:
+  - ref: ./Get signatures.request.yaml

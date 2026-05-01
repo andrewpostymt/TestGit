@@ -1,0 +1,5 @@
+type: folder
+name: templates
+items:
+  - ref: ./List document templates.request.yaml
+  - ref: ./Create template.request.yaml

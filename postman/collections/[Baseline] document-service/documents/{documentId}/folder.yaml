@@ -1,0 +1,14 @@
+type: folder
+name: '{documentId}'
+items:
+  - ref: ./versions/folder.yaml
+  - ref: ./download/folder.yaml
+  - ref: ./sign/folder.yaml
+  - ref: ./signatures/folder.yaml
+  - ref: ./share/folder.yaml
+  - ref: ./convert/folder.yaml
+  - ref: ./archive/folder.yaml
+  - ref: ./Get document.request.yaml
+  - ref: ./Update document.request.yaml
+  - ref: ./Partially update document.request.yaml
+  - ref: ./Delete document.request.yaml

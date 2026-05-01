@@ -1,0 +1,10 @@
+type: folder
+name: documents
+items:
+  - ref: ./{documentId}/folder.yaml
+  - ref: ./templates/folder.yaml
+  - ref: ./generate/folder.yaml
+  - ref: ./search/folder.yaml
+  - ref: ./folders/folder.yaml
+  - ref: ./List documents.request.yaml
+  - ref: ./Create document.request.yaml

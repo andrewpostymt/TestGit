@@ -1,0 +1,5 @@
+type: folder
+name: versions
+items:
+  - ref: ./List document versions.request.yaml
+  - ref: ./Create new version.request.yaml

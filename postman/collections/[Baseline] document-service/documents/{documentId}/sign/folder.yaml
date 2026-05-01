@@ -1,0 +1,4 @@
+type: folder
+name: sign
+items:
+  - ref: ./Sign document.request.yaml
