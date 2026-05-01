@@ -1,0 +1,13 @@
+type: folder
+name: notifications
+items:
+  - ref: ./{notificationId}/folder.yaml
+  - ref: ./send/folder.yaml
+  - ref: ./templates/folder.yaml
+  - ref: ./preferences/folder.yaml
+  - ref: ./channels/folder.yaml
+  - ref: ./subscriptions/folder.yaml
+  - ref: ./unsubscribe/folder.yaml
+  - ref: ./logs/folder.yaml
+  - ref: ./List notifications.request.yaml
+  - ref: ./Create notification.request.yaml

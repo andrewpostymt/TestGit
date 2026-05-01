@@ -1,0 +1,4 @@
+type: folder
+name: bulk
+items:
+  - ref: ./Send bulk notifications.request.yaml

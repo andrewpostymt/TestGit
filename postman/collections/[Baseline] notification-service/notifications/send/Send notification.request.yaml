@@ -1,0 +1,10 @@
+type: http
+name: Send notification
+url: '{{baseUrl}}/notifications/send'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

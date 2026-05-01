@@ -1,0 +1,5 @@
+type: folder
+name: '{templateId}'
+items:
+  - ref: ./Get template.request.yaml
+  - ref: ./Update template.request.yaml

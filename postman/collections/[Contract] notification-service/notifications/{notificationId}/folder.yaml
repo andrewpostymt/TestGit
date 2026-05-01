@@ -1,0 +1,7 @@
+type: folder
+name: '{notificationId}'
+items:
+  - ref: ./Get notification.request.yaml
+  - ref: ./Update notification.request.yaml
+  - ref: ./Partially update notification.request.yaml
+  - ref: ./Delete notification.request.yaml

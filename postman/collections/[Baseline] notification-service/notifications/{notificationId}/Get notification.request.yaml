@@ -1,0 +1,7 @@
+type: http
+name: Get notification
+url: '{{baseUrl}}/notifications/:notificationId'
+method: GET
+pathVariables:
+  - key: notificationId
+    value: string

@@ -1,0 +1,9 @@
+type: http
+name: List notifications
+url: '{{baseUrl}}/notifications?page=6325&limit=6325'
+method: GET
+queryParams:
+  - key: page
+    value: '6325'
+  - key: limit
+    value: '6325'

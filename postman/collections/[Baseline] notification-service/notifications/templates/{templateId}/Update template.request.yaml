@@ -1,0 +1,13 @@
+type: http
+name: Update template
+url: '{{baseUrl}}/notifications/templates/:templateId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: templateId
+    value: ''
+body:
+  type: json
+  content: '{}'

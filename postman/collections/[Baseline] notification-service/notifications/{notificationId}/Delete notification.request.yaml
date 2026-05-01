@@ -1,0 +1,7 @@
+type: http
+name: Delete notification
+url: '{{baseUrl}}/notifications/:notificationId'
+method: DELETE
+pathVariables:
+  - key: notificationId
+    value: string

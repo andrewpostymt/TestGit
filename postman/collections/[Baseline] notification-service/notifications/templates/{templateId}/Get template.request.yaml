@@ -1,0 +1,7 @@
+type: http
+name: Get template
+url: '{{baseUrl}}/notifications/templates/:templateId'
+method: GET
+pathVariables:
+  - key: templateId
+    value: ''

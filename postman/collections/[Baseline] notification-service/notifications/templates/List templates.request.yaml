@@ -1,0 +1,4 @@
+type: http
+name: List templates
+url: '{{baseUrl}}/notifications/templates'
+method: GET

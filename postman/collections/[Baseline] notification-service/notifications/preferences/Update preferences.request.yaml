@@ -1,0 +1,10 @@
+type: http
+name: Update preferences
+url: '{{baseUrl}}/notifications/preferences'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

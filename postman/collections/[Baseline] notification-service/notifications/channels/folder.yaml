@@ -1,0 +1,4 @@
+type: folder
+name: channels
+items:
+  - ref: ./List notification channels.request.yaml

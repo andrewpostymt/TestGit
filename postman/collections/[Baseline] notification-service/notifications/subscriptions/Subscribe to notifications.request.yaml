@@ -1,0 +1,10 @@
+type: http
+name: Subscribe to notifications
+url: '{{baseUrl}}/notifications/subscriptions'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

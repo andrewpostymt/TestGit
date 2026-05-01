@@ -1,0 +1,4 @@
+type: folder
+name: unsubscribe
+items:
+  - ref: ./Unsubscribe.request.yaml

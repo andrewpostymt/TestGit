@@ -1,0 +1,4 @@
+type: http
+name: Notification delivery logs
+url: '{{baseUrl}}/notifications/logs'
+method: GET

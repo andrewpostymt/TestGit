@@ -1,0 +1,4 @@
+type: http
+name: Get notification preferences
+url: '{{baseUrl}}/notifications/preferences'
+method: GET

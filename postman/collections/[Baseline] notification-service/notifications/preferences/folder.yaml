@@ -1,0 +1,5 @@
+type: folder
+name: preferences
+items:
+  - ref: ./Get notification preferences.request.yaml
+  - ref: ./Update preferences.request.yaml

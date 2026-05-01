@@ -1,0 +1,4 @@
+type: http
+name: List notification channels
+url: '{{baseUrl}}/notifications/channels'
+method: GET
