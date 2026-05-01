@@ -1,9 +1,31 @@
 type: http
 name: List carts
-url: '{{baseUrl}}/carts?page=3114&limit=3114'
+url: '{{baseUrl}}/carts?page=801&limit=801'
 method: GET
 queryParams:
   - key: page
-    value: '3114'
+    value: '801'
   - key: limit
-    value: '3114'
+    value: '801'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

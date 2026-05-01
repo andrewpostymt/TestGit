@@ -1,12 +1,12 @@
 type: http
 name: List carts
-url: '{{baseUrl}}/carts?page=3802&limit=3802'
+url: '{{baseUrl}}/carts?page=3502&limit=3502'
 method: GET
 queryParams:
   - key: page
-    value: '3802'
+    value: '3502'
   - key: limit
-    value: '3802'
+    value: '3502'
 scripts:
   - type: afterResponse
     code:
@@ -68,3 +68,25 @@ scripts:
       - '    } catch (e) {}'
       - '})();'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found
