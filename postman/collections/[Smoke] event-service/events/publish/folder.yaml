@@ -1,0 +1,5 @@
+type: folder
+name: publish
+items:
+  - ref: ./batch/folder.yaml
+  - ref: ./Publish event.request.yaml

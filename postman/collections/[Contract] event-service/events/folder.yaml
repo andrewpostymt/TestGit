@@ -1,0 +1,15 @@
+type: folder
+name: events
+items:
+  - ref: ./{eventId}/folder.yaml
+  - ref: ./publish/folder.yaml
+  - ref: ./topics/folder.yaml
+  - ref: ./subscriptions/folder.yaml
+  - ref: ./replay/folder.yaml
+  - ref: ./dead-letter/folder.yaml
+  - ref: ./metrics/folder.yaml
+  - ref: ./consumers/folder.yaml
+  - ref: ./schema-registry/folder.yaml
+  - ref: ./filters/folder.yaml
+  - ref: ./List events.request.yaml
+  - ref: ./Create event.request.yaml

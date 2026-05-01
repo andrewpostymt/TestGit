@@ -1,0 +1,4 @@
+type: folder
+name: dead-letter
+items:
+  - ref: ./Get dead letter queue.request.yaml

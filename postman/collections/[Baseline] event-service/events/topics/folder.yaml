@@ -1,0 +1,6 @@
+type: folder
+name: topics
+items:
+  - ref: ./{topicId}/folder.yaml
+  - ref: ./List topics.request.yaml
+  - ref: ./Create topic.request.yaml

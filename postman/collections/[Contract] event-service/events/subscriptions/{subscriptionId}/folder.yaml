@@ -1,0 +1,5 @@
+type: folder
+name: '{subscriptionId}'
+items:
+  - ref: ./pause/folder.yaml
+  - ref: ./resume/folder.yaml

@@ -1,0 +1,23 @@
+$schema: https://schema.postman.com/json/draft-2020-12/collection/v3.0.0/
+type: collection
+name: '[Smoke] event-service'
+description: |-
+  Event streaming, pub/sub messaging, and event replay for async workflows.
+
+  Contact Support:
+   Name: Platform Engineering
+   Email: platform@example.com
+id: 6ebb2ccf-0cdb-43ee-879b-65214e2d1c00
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{bearerToken}}'
+      type: string
+variables:
+  - key: baseUrl
+    value: https://api.example.com/v1/events
+    type: any
+items:
+  - ref: ./events/folder.yaml
+  - ref: ./00 - Resolve Secrets.request.yaml

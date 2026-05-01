@@ -1,0 +1,4 @@
+type: folder
+name: consumers
+items:
+  - ref: ./List consumers.request.yaml

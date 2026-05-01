@@ -1,0 +1,5 @@
+type: folder
+name: schema-registry
+items:
+  - ref: ./Get schema registry.request.yaml
+  - ref: ./Register schema.request.yaml

@@ -1,0 +1,31 @@
+type: http
+name: List events
+url: '{{baseUrl}}/events?page=5701&limit=5701'
+method: GET
+queryParams:
+  - key: page
+    value: '5701'
+  - key: limit
+    value: '5701'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found
