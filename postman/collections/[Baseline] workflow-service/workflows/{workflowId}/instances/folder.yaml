@@ -1,0 +1,4 @@
+type: folder
+name: instances
+items:
+  - ref: ./List workflow instances.request.yaml

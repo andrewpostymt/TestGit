@@ -1,0 +1,4 @@
+type: folder
+name: '{taskId}'
+items:
+  - ref: ./complete/folder.yaml

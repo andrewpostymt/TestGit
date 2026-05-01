@@ -1,0 +1,5 @@
+type: folder
+name: permissions
+items:
+  - ref: ./Get workflow permissions.request.yaml
+  - ref: ./Update permissions.request.yaml

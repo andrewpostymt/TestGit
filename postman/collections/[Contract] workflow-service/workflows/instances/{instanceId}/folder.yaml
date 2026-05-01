@@ -1,0 +1,5 @@
+type: folder
+name: '{instanceId}'
+items:
+  - ref: ./steps/folder.yaml
+  - ref: ./Get workflow instance.request.yaml

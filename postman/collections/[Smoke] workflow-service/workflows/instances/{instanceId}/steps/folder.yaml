@@ -1,0 +1,4 @@
+type: folder
+name: steps
+items:
+  - ref: ./Get workflow steps.request.yaml

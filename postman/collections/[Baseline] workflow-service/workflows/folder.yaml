@@ -1,0 +1,10 @@
+type: folder
+name: workflows
+items:
+  - ref: ./{workflowId}/folder.yaml
+  - ref: ./instances/folder.yaml
+  - ref: ./templates/folder.yaml
+  - ref: ./import/folder.yaml
+  - ref: ./tasks/folder.yaml
+  - ref: ./List workflows.request.yaml
+  - ref: ./Create workflow.request.yaml

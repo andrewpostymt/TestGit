@@ -1,0 +1,5 @@
+type: folder
+name: tasks
+items:
+  - ref: ./{taskId}/folder.yaml
+  - ref: ./List pending tasks.request.yaml

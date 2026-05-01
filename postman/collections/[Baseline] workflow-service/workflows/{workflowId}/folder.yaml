@@ -1,0 +1,16 @@
+type: folder
+name: '{workflowId}'
+items:
+  - ref: ./start/folder.yaml
+  - ref: ./pause/folder.yaml
+  - ref: ./resume/folder.yaml
+  - ref: ./cancel/folder.yaml
+  - ref: ./instances/folder.yaml
+  - ref: ./triggers/folder.yaml
+  - ref: ./export/folder.yaml
+  - ref: ./analytics/folder.yaml
+  - ref: ./permissions/folder.yaml
+  - ref: ./Get workflow.request.yaml
+  - ref: ./Update workflow.request.yaml
+  - ref: ./Partially update workflow.request.yaml
+  - ref: ./Delete workflow.request.yaml

@@ -1,0 +1,5 @@
+type: folder
+name: triggers
+items:
+  - ref: ./List workflow triggers.request.yaml
+  - ref: ./Add trigger.request.yaml
