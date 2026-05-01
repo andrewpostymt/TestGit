@@ -1,0 +1,5 @@
+type: folder
+name: roles
+items:
+  - ref: ./List roles.request.yaml
+  - ref: ./Create role.request.yaml

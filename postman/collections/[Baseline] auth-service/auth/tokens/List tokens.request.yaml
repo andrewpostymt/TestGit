@@ -1,0 +1,9 @@
+type: http
+name: List tokens
+url: '{{baseUrl}}/auth/tokens?page=5240&limit=5240'
+method: GET
+queryParams:
+  - key: page
+    value: '5240'
+  - key: limit
+    value: '5240'

@@ -1,0 +1,6 @@
+type: folder
+name: tokens
+items:
+  - ref: ./{tokenId}/folder.yaml
+  - ref: ./List tokens.request.yaml
+  - ref: ./Create token.request.yaml

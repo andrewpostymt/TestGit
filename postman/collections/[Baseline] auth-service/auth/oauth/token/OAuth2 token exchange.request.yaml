@@ -1,0 +1,10 @@
+type: http
+name: OAuth2 token exchange
+url: '{{baseUrl}}/auth/oauth/token'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

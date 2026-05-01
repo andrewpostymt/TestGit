@@ -1,0 +1,7 @@
+type: folder
+name: '{tokenId}'
+items:
+  - ref: ./Get token.request.yaml
+  - ref: ./Update token.request.yaml
+  - ref: ./Partially update token.request.yaml
+  - ref: ./Delete token.request.yaml

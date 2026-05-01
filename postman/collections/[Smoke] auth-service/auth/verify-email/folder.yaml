@@ -1,0 +1,4 @@
+type: folder
+name: verify-email
+items:
+  - ref: ./Verify email address.request.yaml

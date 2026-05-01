@@ -1,0 +1,4 @@
+type: folder
+name: forgot-password
+items:
+  - ref: ./Request password reset.request.yaml

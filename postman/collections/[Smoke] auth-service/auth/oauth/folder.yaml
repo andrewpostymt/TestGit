@@ -1,0 +1,6 @@
+type: folder
+name: oauth
+items:
+  - ref: ./authorize/folder.yaml
+  - ref: ./token/folder.yaml
+  - ref: ./revoke/folder.yaml

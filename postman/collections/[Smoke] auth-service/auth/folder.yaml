@@ -1,0 +1,16 @@
+type: folder
+name: auth
+items:
+  - ref: ./tokens/folder.yaml
+  - ref: ./login/folder.yaml
+  - ref: ./logout/folder.yaml
+  - ref: ./refresh/folder.yaml
+  - ref: ./register/folder.yaml
+  - ref: ./forgot-password/folder.yaml
+  - ref: ./reset-password/folder.yaml
+  - ref: ./verify-email/folder.yaml
+  - ref: ./oauth/folder.yaml
+  - ref: ./saml/folder.yaml
+  - ref: ./permissions/folder.yaml
+  - ref: ./roles/folder.yaml
+  - ref: ./introspect/folder.yaml

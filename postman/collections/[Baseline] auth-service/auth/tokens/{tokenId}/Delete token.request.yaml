@@ -1,0 +1,7 @@
+type: http
+name: Delete token
+url: '{{baseUrl}}/auth/tokens/:tokenId'
+method: DELETE
+pathVariables:
+  - key: tokenId
+    value: string

@@ -1,0 +1,4 @@
+type: folder
+name: introspect
+items:
+  - ref: ./Introspect token.request.yaml

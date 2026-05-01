@@ -1,0 +1,7 @@
+type: http
+name: Get token
+url: '{{baseUrl}}/auth/tokens/:tokenId'
+method: GET
+pathVariables:
+  - key: tokenId
+    value: string

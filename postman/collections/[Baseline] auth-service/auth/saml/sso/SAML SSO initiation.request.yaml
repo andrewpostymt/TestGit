@@ -1,0 +1,4 @@
+type: http
+name: SAML SSO initiation
+url: '{{baseUrl}}/auth/saml/sso'
+method: GET

@@ -1,0 +1,4 @@
+type: folder
+name: sso
+items:
+  - ref: ./SAML SSO initiation.request.yaml

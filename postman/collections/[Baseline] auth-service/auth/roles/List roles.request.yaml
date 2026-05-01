@@ -1,0 +1,4 @@
+type: http
+name: List roles
+url: '{{baseUrl}}/auth/roles'
+method: GET

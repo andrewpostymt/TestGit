@@ -1,0 +1,4 @@
+type: folder
+name: authorize
+items:
+  - ref: ./OAuth2 authorize endpoint.request.yaml

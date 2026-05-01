@@ -1,0 +1,4 @@
+type: http
+name: OAuth2 authorize endpoint
+url: '{{baseUrl}}/auth/oauth/authorize'
+method: GET

@@ -1,0 +1,4 @@
+type: folder
+name: register
+items:
+  - ref: ./Register new account.request.yaml

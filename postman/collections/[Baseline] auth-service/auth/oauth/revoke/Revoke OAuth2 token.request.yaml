@@ -1,0 +1,10 @@
+type: http
+name: Revoke OAuth2 token
+url: '{{baseUrl}}/auth/oauth/revoke'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

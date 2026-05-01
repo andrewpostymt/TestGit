@@ -1,0 +1,13 @@
+type: http
+name: Update token
+url: '{{baseUrl}}/auth/tokens/:tokenId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: tokenId
+    value: string
+body:
+  type: json
+  content: '{}'

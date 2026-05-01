@@ -1,0 +1,4 @@
+type: folder
+name: revoke
+items:
+  - ref: ./Revoke OAuth2 token.request.yaml

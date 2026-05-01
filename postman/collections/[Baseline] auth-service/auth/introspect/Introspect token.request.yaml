@@ -1,0 +1,10 @@
+type: http
+name: Introspect token
+url: '{{baseUrl}}/auth/introspect'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

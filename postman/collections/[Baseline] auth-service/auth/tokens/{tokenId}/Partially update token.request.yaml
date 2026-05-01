@@ -1,0 +1,13 @@
+type: http
+name: Partially update token
+url: '{{baseUrl}}/auth/tokens/:tokenId'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: tokenId
+    value: string
+body:
+  type: json
+  content: '{}'

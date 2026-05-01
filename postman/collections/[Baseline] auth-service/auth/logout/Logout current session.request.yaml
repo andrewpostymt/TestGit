@@ -1,0 +1,4 @@
+type: http
+name: Logout current session
+url: '{{baseUrl}}/auth/logout'
+method: POST
