@@ -1,0 +1,7 @@
+type: folder
+name: '{messageId}'
+items:
+  - ref: ./Get message.request.yaml
+  - ref: ./Update message.request.yaml
+  - ref: ./Partially update message.request.yaml
+  - ref: ./Delete message.request.yaml

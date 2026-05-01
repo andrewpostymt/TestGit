@@ -1,0 +1,4 @@
+type: folder
+name: opt-outs
+items:
+  - ref: ./List opt-outs.request.yaml

@@ -1,0 +1,6 @@
+type: folder
+name: messages
+items:
+  - ref: ./{messageId}/folder.yaml
+  - ref: ./List messages.request.yaml
+  - ref: ./Create message.request.yaml

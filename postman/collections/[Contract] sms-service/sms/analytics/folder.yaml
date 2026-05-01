@@ -1,0 +1,4 @@
+type: folder
+name: analytics
+items:
+  - ref: ./SMS analytics.request.yaml

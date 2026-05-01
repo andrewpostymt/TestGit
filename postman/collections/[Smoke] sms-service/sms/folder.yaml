@@ -1,0 +1,11 @@
+type: folder
+name: sms
+items:
+  - ref: ./messages/folder.yaml
+  - ref: ./send/folder.yaml
+  - ref: ./templates/folder.yaml
+  - ref: ./numbers/folder.yaml
+  - ref: ./opt-outs/folder.yaml
+  - ref: ./analytics/folder.yaml
+  - ref: ./inbound/folder.yaml
+  - ref: ./keywords/folder.yaml

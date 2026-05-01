@@ -1,0 +1,5 @@
+type: folder
+name: templates
+items:
+  - ref: ./List SMS templates.request.yaml
+  - ref: ./Create SMS template.request.yaml

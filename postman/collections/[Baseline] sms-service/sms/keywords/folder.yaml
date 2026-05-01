@@ -1,0 +1,5 @@
+type: folder
+name: keywords
+items:
+  - ref: ./List keywords.request.yaml
+  - ref: ./Register keyword.request.yaml

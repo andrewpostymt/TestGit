@@ -1,0 +1,31 @@
+type: http
+name: List messages
+url: '{{baseUrl}}/sms/messages?page=3406&limit=3406'
+method: GET
+queryParams:
+  - key: page
+    value: '3406'
+  - key: limit
+    value: '3406'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

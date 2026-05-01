@@ -1,0 +1,4 @@
+type: folder
+name: inbound
+items:
+  - ref: ./List inbound messages.request.yaml
