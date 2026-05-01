@@ -1,0 +1,5 @@
+type: folder
+name: folders
+items:
+  - ref: ./List folders.request.yaml
+  - ref: ./Create folder.request.yaml

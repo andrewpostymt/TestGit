@@ -1,0 +1,4 @@
+type: folder
+name: share
+items:
+  - ref: ./Share file.request.yaml

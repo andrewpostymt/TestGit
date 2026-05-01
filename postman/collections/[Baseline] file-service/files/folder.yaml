@@ -1,0 +1,10 @@
+type: folder
+name: files
+items:
+  - ref: ./{fileId}/folder.yaml
+  - ref: ./upload/folder.yaml
+  - ref: ./folders/folder.yaml
+  - ref: ./search/folder.yaml
+  - ref: ./bulk/folder.yaml
+  - ref: ./List files.request.yaml
+  - ref: ./Create file.request.yaml

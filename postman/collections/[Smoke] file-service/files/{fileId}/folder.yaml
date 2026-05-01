@@ -1,0 +1,13 @@
+type: folder
+name: '{fileId}'
+items:
+  - ref: ./download/folder.yaml
+  - ref: ./share/folder.yaml
+  - ref: ./move/folder.yaml
+  - ref: ./copy/folder.yaml
+  - ref: ./versions/folder.yaml
+  - ref: ./thumbnail/folder.yaml
+  - ref: ./Get file.request.yaml
+  - ref: ./Update file.request.yaml
+  - ref: ./Partially update file.request.yaml
+  - ref: ./Delete file.request.yaml

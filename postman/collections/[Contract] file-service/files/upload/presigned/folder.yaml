@@ -1,0 +1,4 @@
+type: folder
+name: presigned
+items:
+  - ref: ./Get presigned upload URL.request.yaml

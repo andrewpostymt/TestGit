@@ -1,0 +1,5 @@
+type: folder
+name: upload
+items:
+  - ref: ./presigned/folder.yaml
+  - ref: ./multipart/folder.yaml
