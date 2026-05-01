@@ -2,11 +2,306 @@ $schema: https://schema.postman.com/json/draft-2020-12/collection/v3.0.0/
 type: collection
 name: '[Baseline] rate-limit-service'
 description: |-
-  API rate limiting rules, quota management, and throttle policies.
+  # Order Service API
 
-  Contact Support:
-   Name: Platform Engineering
-   Email: platform@example.com
+  **Owner**: PostVehicle Enterprise Team ([support@postvehicle.io](mailto:support@postvehicle.io) | [#order-service](slack://channel))
+  **Status**: Stable
+  **Last Updated**: May 1, 2026
+
+  ## Purpose
+
+  The Order Service API provides comprehensive lifecycle management for orders — including creation, fulfillment, payments, returns, shipping, and analytics — and is used by internal engineering teams, operations platforms, and third-party integrations within the PostVehicle ecosystem.
+
+  ## Quick Start
+
+  1. Select the appropriate environment (e.g., `staging` or `production`) and confirm `baseUrl` is set
+  2. Authenticate using your Bearer Token — store it as `token` in the active environment
+  3. Run a lightweight read request such as `GET /orders` or `GET /orders/summary` to verify connectivity
+  4. Browse the endpoint groups below to find the resource area relevant to your integration
+
+  ## Authentication
+
+  **Type**: Bearer Token
+
+  Obtain your token from your team or platform admin and store it in the active environment under the variable `token`. All requests must include the header:
+
+  ```
+  Authorization: Bearer {{token}}
+  ```
+
+  ## Endpoints Overview
+
+  | Method | Endpoint | Description |
+  |--------|----------|-------------|
+  | GET | /orders | List all orders |
+  | POST | /orders | Create an order |
+  | GET | /orders/:orderId | Get a specific order |
+  | PUT | /orders/:orderId | Update an order |
+  | PATCH | /orders/:orderId | Partially update an order |
+  | DELETE | /orders/:orderId | Delete an order |
+  | POST | /orders/search | Search orders |
+  | GET | /orders/filter | Filter orders |
+  | GET | /orders/summary | Order summary statistics |
+  | POST | /orders/export | Export orders |
+  | POST | /orders/import | Import orders |
+  | PATCH | /orders/bulk/update | Bulk update orders |
+  | POST | /orders/bulk/delete | Bulk delete orders |
+  | POST | /orders/bulk | Bulk create orders |
+  | POST | /orders/:orderId/archive | Archive an order |
+  | POST | /orders/:orderId/restore | Restore an archived order |
+  | POST | /orders/:orderId/duplicate | Duplicate an order |
+  | POST | /orders/:orderId/validate | Validate an order |
+  | GET | /orders/:orderId/preview | Preview an order |
+  | POST | /orders/:orderId/estimate | Estimate order costs |
+  | POST | /orders/:orderId/cancel | Cancel an order |
+  | POST | /orders/:orderId/approve | Approve an order |
+  | POST | /orders/:orderId/reject | Reject an order |
+  | POST | /orders/:orderId/hold | Place an order on hold |
+  | POST | /orders/:orderId/release | Release an order from hold |
+  | POST | /orders/:orderId/escalate | Escalate an order |
+  | POST | /orders/:orderId/assign | Assign an order |
+  | POST | /orders/:orderId/reassign | Reassign an order |
+  | POST | /orders/:orderId/notify | Send an order notification |
+  | GET | /orders/:orderId/events | Get order events |
+  | GET | /orders/:orderId/status | Get order status |
+  | PUT | /orders/:orderId/status | Update order status |
+  | GET | /orders/:orderId/status/history | Get status history |
+  | GET | /orders/:orderId/status/transitions | Get valid status transitions |
+  | POST | /orders/:orderId/status/comment | Add a status comment |
+  | GET | /orders/:orderId/items | List order items |
+  | POST | /orders/:orderId/items | Add an item to an order |
+  | GET | /orders/:orderId/items/:itemId | Get a specific order item |
+  | PUT | /orders/:orderId/items/:itemId | Update an order item |
+  | DELETE | /orders/:orderId/items/:itemId | Remove an order item |
+  | POST | /orders/:orderId/items/reorder | Reorder items |
+  | PATCH | /orders/:orderId/items/bulk/update | Bulk update items |
+  | POST | /orders/:orderId/items/bulk/remove | Bulk remove items |
+  | POST | /orders/:orderId/items/bulk | Bulk add items |
+  | GET | /orders/:orderId/items/:itemId/availability | Check item availability |
+  | GET | /orders/:orderId/items/:itemId/pricing | Get item pricing |
+  | POST | /orders/:orderId/items/:itemId/discount | Apply item discount |
+  | GET | /orders/:orderId/items/:itemId/tax | Calculate item tax |
+  | GET | /orders/:orderId/items/:itemId/shipping-rate | Get item shipping rate |
+  | POST | /orders/:orderId/items/:itemId/substitute | Substitute an item |
+  | GET | /orders/:orderId/items/:itemId/weight | Get item weight |
+  | GET | /orders/:orderId/items/:itemId/dimensions | Get item dimensions |
+  | GET | /orders/:orderId/items/:itemId/images | Get item images |
+  | GET | /orders/:orderId/items/:itemId/notes | Get item notes |
+  | GET | /orders/:orderId/items/:itemId/metadata | Get item metadata |
+  | GET | /orders/:orderId/fulfillments | List fulfillments |
+  | POST | /orders/:orderId/fulfillments | Create a fulfillment |
+  | GET | /orders/:orderId/fulfillments/:fulfillmentId | Get a fulfillment |
+  | PUT | /orders/:orderId/fulfillments/:fulfillmentId | Update a fulfillment |
+  | POST | /orders/:orderId/fulfillments/partial | Create a partial fulfillment |
+  | POST | /orders/:orderId/fulfillments/split | Split a fulfillment |
+  | POST | /orders/:orderId/fulfillments/merge | Merge fulfillments |
+  | POST | /orders/:orderId/fulfillments/:fulfillmentId/ship | Mark as shipped |
+  | POST | /orders/:orderId/fulfillments/:fulfillmentId/deliver | Mark as delivered |
+  | POST | /orders/:orderId/fulfillments/:fulfillmentId/cancel | Cancel a fulfillment |
+  | POST | /orders/:orderId/fulfillments/:fulfillmentId/return | Create a return from fulfillment |
+  | POST | /orders/:orderId/fulfillments/:fulfillmentId/exchange | Create an exchange |
+  | POST | /orders/:orderId/fulfillments/:fulfillmentId/reship | Reship a fulfillment |
+  | POST | /orders/:orderId/fulfillments/:fulfillmentId/label | Generate a carrier label |
+  | GET | /orders/:orderId/fulfillments/:fulfillmentId/packing-slip | Get packing slip |
+  | GET | /orders/:orderId/fulfillments/:fulfillmentId/manifest | Get manifest |
+  | GET | /orders/:orderId/fulfillments/:fulfillmentId/pick-list | Get pick list |
+  | GET | /orders/:orderId/fulfillments/:fulfillmentId/pack-list | Get pack list |
+  | GET | /orders/:orderId/fulfillments/:fulfillmentId/tracking | Get tracking info |
+  | GET | /orders/:orderId/fulfillments/:fulfillmentId/tracking/history | Get tracking history |
+  | GET | /orders/:orderId/payments | List order payments |
+  | POST | /orders/:orderId/payments | Add a payment |
+  | GET | /orders/:orderId/payments/:paymentId | Get a payment |
+  | PUT | /orders/:orderId/payments/:paymentId | Update a payment |
+  | POST | /orders/:orderId/payments/:paymentId/authorize | Authorize a payment |
+  | POST | /orders/:orderId/payments/:paymentId/capture | Capture a payment |
+  | POST | /orders/:orderId/payments/:paymentId/charge | Charge a payment |
+  | POST | /orders/:orderId/payments/:paymentId/void | Void a payment |
+  | POST | /orders/:orderId/payments/:paymentId/refund | Refund a payment |
+  | POST | /orders/:orderId/payments/:paymentId/partial-refund | Issue a partial refund |
+  | POST | /orders/:orderId/payments/:paymentId/dispute | File a dispute |
+  | POST | /orders/:orderId/payments/:paymentId/dispute/evidence | Submit dispute evidence |
+  | GET | /orders/:orderId/payments/history | Payment history |
+  | GET | /orders/:orderId/payments/methods | List payment methods |
+  | POST | /orders/:orderId/payments/reconcile | Reconcile payments |
+  | POST | /orders/:orderId/payments/credit | Apply credit |
+  | POST | /orders/:orderId/payments/adjustment | Create a price adjustment |
+  | GET | /orders/:orderId/payments/balance | Get order balance |
+  | GET | /orders/:orderId/invoice | Get order invoice |
+  | GET | /orders/:orderId/receipt | Get order receipt |
+  | GET | /orders/:orderId/returns | List returns |
+  | POST | /orders/:orderId/returns | Create a return request |
+  | GET | /orders/:orderId/returns/:returnId | Get a return |
+  | PUT | /orders/:orderId/returns/:returnId | Update a return |
+  | POST | /orders/:orderId/returns/:returnId/approve | Approve a return |
+  | POST | /orders/:orderId/returns/:returnId/reject | Reject a return |
+  | POST | /orders/:orderId/returns/:returnId/receive | Mark return as received |
+  | POST | /orders/:orderId/returns/:returnId/inspect | Inspect returned items |
+  | POST | /orders/:orderId/returns/:returnId/restock | Restock returned items |
+  | POST | /orders/:orderId/returns/:returnId/refund | Issue a return refund |
+  | POST | /orders/:orderId/returns/:returnId/exchange | Create a return exchange |
+  | POST | /orders/:orderId/returns/:returnId/label | Generate a return label |
+  | GET | /orders/:orderId/returns/:returnId/history | Return history |
+  | GET | /returns/policy | Get return policy |
+  | GET | /returns/analytics | Return analytics |
+  | GET | /orders/:orderId/shipping | Get shipping details |
+  | PUT | /orders/:orderId/shipping | Update shipping details |
+  | GET | /orders/:orderId/shipping/options | Get shipping options |
+  | POST | /orders/:orderId/shipping/rates | Calculate shipping rates |
+  | POST | /orders/:orderId/shipping/select | Select shipping method |
+  | GET | /orders/:orderId/shipping/estimate | Get delivery estimate |
+  | GET | /orders/:orderId/shipping/tracking | Get shipping tracking |
+  | GET | /orders/:orderId/shipping/tracking/events | Get tracking events |
+  | POST | /orders/:orderId/shipping/pickup | Schedule carrier pickup |
+  | POST | /orders/:orderId/shipping/address/validate | Validate shipping address |
+  | POST | /orders/:orderId/shipping/insurance | Add shipping insurance |
+  | POST | /orders/:orderId/shipping/customs | Create customs declaration |
+  | GET | /orders/:orderId/shipping/duties | Calculate duties |
+  | GET | /orders/:orderId/shipping/taxes | Calculate shipping taxes |
+  | PUT | /orders/:orderId/shipping/signature | Set signature requirement |
+  | PUT | /orders/:orderId/shipping/special-handling | Set special handling |
+  | PUT | /orders/:orderId/shipping/hazmat | Set hazmat flags |
+  | PUT | /orders/:orderId/shipping/fragile | Set fragile flag |
+  | PUT | /orders/:orderId/shipping/temperature | Set temperature requirements |
+  | PUT | /orders/:orderId/shipping/white-glove | Set white-glove delivery |
+  | GET | /orders/:orderId/documents | List order documents |
+  | POST | /orders/:orderId/documents | Upload a document |
+  | GET | /orders/:orderId/documents/:documentId | Get a document |
+  | PUT | /orders/:orderId/documents/:documentId | Update a document |
+  | DELETE | /orders/:orderId/documents/:documentId | Delete a document |
+  | POST | /orders/:orderId/documents/:documentId/send | Send a document |
+  | GET | /orders/:orderId/documents/:documentId/download | Download a document |
+  | POST | /orders/:orderId/documents/invoice/generate | Generate invoice |
+  | POST | /orders/:orderId/documents/receipt/generate | Generate receipt |
+  | POST | /orders/:orderId/documents/packing-slip/generate | Generate packing slip |
+  | POST | /orders/:orderId/documents/label/generate | Generate shipping label |
+  | POST | /orders/:orderId/documents/manifest/generate | Generate manifest |
+  | GET | /orders/:orderId/documents/history | Document history |
+  | GET | /documents/templates | List document templates |
+  | GET | /documents/settings | Get document settings |
+  | GET | /orders/:orderId/tags | List order tags |
+  | POST | /orders/:orderId/tags | Add a tag to an order |
+  | DELETE | /orders/:orderId/tags/:tag | Remove a tag from an order |
+  | GET | /orders/:orderId/notes | List order notes |
+  | POST | /orders/:orderId/notes | Add a note to an order |
+  | GET | /orders/:orderId/notes/:noteId | — |
+  | PUT | /orders/:orderId/notes/:noteId | Update a note |
+  | DELETE | /orders/:orderId/notes/:noteId | Delete a note |
+  | POST | /orders/:orderId/notes/:noteId/pin | Pin a note |
+  | GET | /orders/:orderId/notes/search | Search notes |
+  | GET | /orders/:orderId/notes/history | Notes history |
+  | GET | /orders/:orderId/fields | Get order field values |
+  | PUT | /orders/:orderId/fields/:fieldId | Set a field value |
+  | DELETE | /orders/:orderId/fields/:fieldId | Clear a field value |
+  | POST | /orders/:orderId/fields/validate | Validate field values |
+  | GET | /custom-fields | List custom fields |
+  | POST | /custom-fields | Create a custom field |
+  | GET | /custom-fields/:fieldId | Get a custom field |
+  | PUT | /custom-fields/:fieldId | Update a custom field |
+  | DELETE | /custom-fields/:fieldId | Delete a custom field |
+  | GET | /custom-fields/templates | List field templates |
+  | GET | /analytics/orders/metrics | Get order metrics |
+  | GET | /analytics/orders/revenue | Revenue analytics |
+  | GET | /analytics/orders/fulfillment | Fulfillment metrics |
+  | GET | /analytics/orders/returns | Return metrics |
+  | GET | /analytics/orders/customers | Customer analytics |
+  | GET | /analytics/orders/products | Product analytics |
+  | GET | /analytics/orders/geographic | Geographic analytics |
+  | GET | /analytics/orders/time-series | Time series data |
+  | GET | /analytics/orders/cohorts | Cohort analysis |
+  | GET | /analytics/orders/forecast | Order forecast |
+  | GET | /analytics/orders/anomalies | Anomaly detection |
+  | GET | /analytics/orders/benchmarks | Performance benchmarks |
+  | POST | /analytics/orders/reports/export | Export analytics report |
+  | POST | /analytics/orders/reports/schedule | Schedule recurring report |
+  | GET | /analytics/orders/reports/history | Report history |
+  | GET | /notifications | List notifications |
+  | POST | /notifications | Create a notification |
+  | GET | /notifications/:notificationId | — |
+  | PUT | /notifications/:notificationId | Update a notification |
+  | DELETE | /notifications/:notificationId | Delete a notification |
+  | POST | /notifications/:notificationId/send | Send a notification |
+  | GET | /notifications/history | Notification history |
+  | GET | /notifications/templates | Notification templates |
+  | GET | /notifications/settings | Notification settings |
+  | POST | /notifications/test | Send a test notification |
+  | GET | /notifications/logs | Notification logs |
+  | GET | /automation/rules | List automation rules |
+  | POST | /automation/rules | Create an automation rule |
+  | GET | /automation/rules/:ruleId | Get an automation rule |
+  | PUT | /automation/rules/:ruleId | Update an automation rule |
+  | DELETE | /automation/rules/:ruleId | Delete an automation rule |
+  | POST | /automation/rules/:ruleId/enable | Enable a rule |
+  | POST | /automation/rules/:ruleId/disable | Disable a rule |
+  | POST | /automation/rules/:ruleId/test | Test an automation rule |
+  | GET | /automation/rules/:ruleId/history | Rule execution history |
+  | GET | /automation/rules/:ruleId/triggers | Get rule triggers |
+  | GET | /automation/rules/:ruleId/actions | Get rule actions |
+  | GET | /automation/rules/:ruleId/conditions | Get rule conditions |
+  | GET | /automation/templates | List rule templates |
+  | POST | /automation/bulk-apply | Bulk apply rules |
+  | GET | /automation/logs | Automation logs |
+  | GET | /webhooks | List webhooks |
+  | POST | /webhooks | Create a webhook |
+  | GET | /webhooks/:webhookId | Get a webhook |
+  | PUT | /webhooks/:webhookId | Update a webhook |
+  | DELETE | /webhooks/:webhookId | Delete a webhook |
+  | POST | /webhooks/:webhookId/test | Test a webhook |
+  | GET | /webhooks/:webhookId/history | Webhook delivery history |
+  | GET | /webhooks/:webhookId/signatures | Get webhook signatures |
+  | POST | /webhooks/:webhookId/retry | Retry failed deliveries |
+  | GET | /webhooks/events | List webhook event types |
+  | GET | /integrations | List integrations |
+  | POST | /integrations | Create an integration |
+  | GET | /integrations/:integrationId | Get an integration |
+  | PUT | /integrations/:integrationId | Update an integration |
+  | DELETE | /integrations/:integrationId | Delete an integration |
+  | POST | /integrations/:integrationId/sync | Sync an integration |
+  | GET | /integrations/:integrationId/logs | Integration logs |
+  | GET | /integrations/:integrationId/mappings | Get field mappings |
+  | PUT | /integrations/:integrationId/mappings | Update field mappings |
+  | POST | /integrations/:integrationId/mappings/validate | Validate mappings |
+  | POST | /integrations/:integrationId/transform | Transform data |
+  | POST | /integrations/:integrationId/test | Test an integration |
+  | GET | /integrations/:integrationId/events | Integration events |
+  | GET | /integrations/:integrationId/health | Integration health check |
+  | GET | /integrations/:integrationId/metrics | Integration metrics |
+  | GET | /batches | List batch operations |
+  | POST | /batches | Create a batch operation |
+  | GET | /batches/:batchId | Get a batch operation |
+  | POST | /batches/:batchId/cancel | Cancel a batch operation |
+  | GET | /batches/:batchId/status | Get batch status |
+  | GET | /batches/:batchId/results | Get batch results |
+  | GET | /batches/:batchId/errors | Get batch errors |
+  | POST | /batches/:batchId/retry | Retry failed batch items |
+  | GET | /batches/:batchId/progress | Get batch progress |
+  | GET | /batches/:batchId/notifications | Batch notifications |
+  | POST | /batches/schedule | Schedule a batch operation |
+  | GET | /batches/templates | List batch templates |
+  | GET | /batches/history | Batch history |
+  | POST | /batches/export | Bulk export |
+  | POST | /batches/import | Bulk import |
+  | GET | /audit/logs | Get audit logs |
+  | GET | /audit/events | Get audit events |
+  | GET | /audit/summary | Get audit summary |
+  | POST | /audit/export | Export audit data |
+  | POST | /audit/filter | Filter audit logs |
+  | GET | /audit/retention | Get retention policy |
+  | GET | /audit/alerts | Get audit alerts |
+  | GET | /audit/users | Get user activity |
+  | GET | /audit/actions | Get action types |
+  | GET | /audit/compliance | Get compliance report |
+
+  ## Lifecycle
+
+  **Stable** — Production-ready, follows semantic versioning.
+
+  Breaking changes are announced via workspace updates with 30 days notice. Non-breaking additions (new endpoints, optional fields) may be introduced at any time. Deprecated endpoints will be flagged in their individual request descriptions before removal.
+
+  ## Support
+
+  Questions? Contact the PostVehicle Enterprise Team at [support@postvehicle.io](mailto:support@postvehicle.io) or reach out via [#order-service](slack://channel).
+
+  <!-- postman-agent-docs-action:managed -->
 id: 4e01f590-a524-4389-a19d-7035c5538cb0
 auth:
   type: bearer
