@@ -1,9 +1,31 @@
 type: http
 name: List users
-url: '{{baseUrl}}/users?page=1173&limit=1173'
+url: '{{baseUrl}}/users?page=8981&limit=8981'
 method: GET
 queryParams:
   - key: page
-    value: '1173'
+    value: '8981'
   - key: limit
-    value: '1173'
+    value: '8981'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found
