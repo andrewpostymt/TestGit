@@ -1,0 +1,9 @@
+type: http
+name: List indexs
+url: '{{baseUrl}}/search/indices?page=3581&limit=3581'
+method: GET
+queryParams:
+  - key: page
+    value: '3581'
+  - key: limit
+    value: '3581'

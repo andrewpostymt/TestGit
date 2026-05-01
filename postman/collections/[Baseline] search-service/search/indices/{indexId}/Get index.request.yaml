@@ -1,0 +1,7 @@
+type: http
+name: Get index
+url: '{{baseUrl}}/search/indices/:indexId'
+method: GET
+pathVariables:
+  - key: indexId
+    value: string

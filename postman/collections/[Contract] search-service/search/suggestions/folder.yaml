@@ -1,0 +1,4 @@
+type: folder
+name: suggestions
+items:
+  - ref: ./Get search suggestions.request.yaml

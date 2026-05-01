@@ -1,0 +1,7 @@
+type: http
+name: Rebuild search index
+url: '{{baseUrl}}/search/indices/:indexId/rebuild'
+method: POST
+pathVariables:
+  - key: indexId
+    value: ''

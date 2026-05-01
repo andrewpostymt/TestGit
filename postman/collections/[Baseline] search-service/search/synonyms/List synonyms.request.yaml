@@ -1,0 +1,4 @@
+type: http
+name: List synonyms
+url: '{{baseUrl}}/search/synonyms'
+method: GET

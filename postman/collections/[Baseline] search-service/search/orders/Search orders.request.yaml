@@ -1,0 +1,4 @@
+type: http
+name: Search orders
+url: '{{baseUrl}}/search/orders'
+method: GET

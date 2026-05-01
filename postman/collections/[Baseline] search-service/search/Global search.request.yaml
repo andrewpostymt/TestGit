@@ -1,0 +1,4 @@
+type: http
+name: Global search
+url: '{{baseUrl}}/search'
+method: GET

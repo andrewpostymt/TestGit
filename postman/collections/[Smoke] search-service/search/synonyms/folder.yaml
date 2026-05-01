@@ -1,0 +1,5 @@
+type: folder
+name: synonyms
+items:
+  - ref: ./List synonyms.request.yaml
+  - ref: ./Add synonyms.request.yaml

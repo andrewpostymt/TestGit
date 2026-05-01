@@ -1,0 +1,4 @@
+type: http
+name: Get search suggestions
+url: '{{baseUrl}}/search/suggestions'
+method: GET

@@ -1,0 +1,10 @@
+type: http
+name: Add synonyms
+url: '{{baseUrl}}/search/synonyms'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

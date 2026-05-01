@@ -1,0 +1,4 @@
+type: http
+name: Search customers
+url: '{{baseUrl}}/search/customers'
+method: GET

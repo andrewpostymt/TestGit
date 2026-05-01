@@ -1,0 +1,13 @@
+type: http
+name: Partially update index
+url: '{{baseUrl}}/search/indices/:indexId'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: indexId
+    value: string
+body:
+  type: json
+  content: '{}'

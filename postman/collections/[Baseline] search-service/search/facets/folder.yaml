@@ -1,0 +1,4 @@
+type: folder
+name: facets
+items:
+  - ref: ./Get search facets.request.yaml

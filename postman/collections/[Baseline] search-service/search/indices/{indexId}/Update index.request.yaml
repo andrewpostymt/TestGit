@@ -1,0 +1,13 @@
+type: http
+name: Update index
+url: '{{baseUrl}}/search/indices/:indexId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: indexId
+    value: string
+body:
+  type: json
+  content: '{}'

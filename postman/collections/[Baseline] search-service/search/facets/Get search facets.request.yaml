@@ -1,0 +1,10 @@
+type: http
+name: Get search facets
+url: '{{baseUrl}}/search/facets'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

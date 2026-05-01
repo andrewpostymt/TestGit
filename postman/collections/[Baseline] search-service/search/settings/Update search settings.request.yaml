@@ -1,0 +1,10 @@
+type: http
+name: Update search settings
+url: '{{baseUrl}}/search/settings'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

@@ -1,0 +1,6 @@
+type: folder
+name: indices
+items:
+  - ref: ./{indexId}/folder.yaml
+  - ref: ./List indexs.request.yaml
+  - ref: ./Create index.request.yaml

@@ -1,0 +1,8 @@
+type: folder
+name: '{indexId}'
+items:
+  - ref: ./rebuild/folder.yaml
+  - ref: ./Get index.request.yaml
+  - ref: ./Update index.request.yaml
+  - ref: ./Partially update index.request.yaml
+  - ref: ./Delete index.request.yaml

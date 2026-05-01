@@ -1,0 +1,7 @@
+type: http
+name: Delete index
+url: '{{baseUrl}}/search/indices/:indexId'
+method: DELETE
+pathVariables:
+  - key: indexId
+    value: string

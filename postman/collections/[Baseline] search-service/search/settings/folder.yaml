@@ -1,0 +1,4 @@
+type: folder
+name: settings
+items:
+  - ref: ./Update search settings.request.yaml

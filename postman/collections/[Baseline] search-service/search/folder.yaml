@@ -1,0 +1,13 @@
+type: folder
+name: search
+items:
+  - ref: ./indices/folder.yaml
+  - ref: ./products/folder.yaml
+  - ref: ./orders/folder.yaml
+  - ref: ./customers/folder.yaml
+  - ref: ./suggestions/folder.yaml
+  - ref: ./facets/folder.yaml
+  - ref: ./synonyms/folder.yaml
+  - ref: ./analytics/folder.yaml
+  - ref: ./settings/folder.yaml
+  - ref: ./Global search.request.yaml

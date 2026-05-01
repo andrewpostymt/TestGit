@@ -1,0 +1,4 @@
+type: http
+name: Search analytics
+url: '{{baseUrl}}/search/analytics'
+method: GET
