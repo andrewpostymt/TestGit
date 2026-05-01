@@ -1,12 +1,12 @@
 type: http
 name: List stocks
-url: '{{baseUrl}}/inventory/items?page=3669&limit=3669'
+url: '{{baseUrl}}/inventory/items?page=1986&limit=1986'
 method: GET
 queryParams:
   - key: page
-    value: '3669'
+    value: '1986'
   - key: limit
-    value: '3669'
+    value: '1986'
 scripts:
   - type: afterResponse
     code:
@@ -25,3 +25,25 @@ scripts:
       - '    }'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

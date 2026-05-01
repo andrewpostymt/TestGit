@@ -17,5 +17,6 @@ auth:
 variables:
   - key: baseUrl
     value: https://api.example.com/v1/inventory
+    type: any
 items:
   - ref: ./inventory/folder.yaml
