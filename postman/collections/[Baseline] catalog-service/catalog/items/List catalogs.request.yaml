@@ -1,9 +1,31 @@
 type: http
 name: List catalogs
-url: '{{baseUrl}}/catalog/items?page=1264&limit=1264'
+url: '{{baseUrl}}/catalog/items?page=75&limit=75'
 method: GET
 queryParams:
   - key: page
-    value: '1264'
+    value: '75'
   - key: limit
-    value: '1264'
+    value: '75'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

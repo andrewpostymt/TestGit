@@ -1,12 +1,12 @@
 type: http
 name: List catalogs
-url: '{{baseUrl}}/catalog/items?page=6463&limit=6463'
+url: '{{baseUrl}}/catalog/items?page=5264&limit=5264'
 method: GET
 queryParams:
   - key: page
-    value: '6463'
+    value: '5264'
   - key: limit
-    value: '6463'
+    value: '5264'
 scripts:
   - type: afterResponse
     code:
@@ -68,3 +68,25 @@ scripts:
       - '    } catch (e) {}'
       - '})();'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found
