@@ -1,0 +1,10 @@
+type: folder
+name: billing
+items:
+  - ref: ./invoices/folder.yaml
+  - ref: ./tax-rates/folder.yaml
+  - ref: ./tax/folder.yaml
+  - ref: ./payment-terms/folder.yaml
+  - ref: ./overdue/folder.yaml
+  - ref: ./statements/folder.yaml
+  - ref: ./reconciliation/folder.yaml

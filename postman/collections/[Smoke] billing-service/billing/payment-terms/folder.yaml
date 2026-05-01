@@ -1,0 +1,4 @@
+type: folder
+name: payment-terms
+items:
+  - ref: ./List payment terms.request.yaml

@@ -1,0 +1,4 @@
+type: folder
+name: statements
+items:
+  - ref: ./Get account statements.request.yaml

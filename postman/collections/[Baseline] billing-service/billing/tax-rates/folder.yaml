@@ -1,0 +1,5 @@
+type: folder
+name: tax-rates
+items:
+  - ref: ./List tax rates.request.yaml
+  - ref: ./Create tax rate.request.yaml

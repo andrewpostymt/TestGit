@@ -1,0 +1,4 @@
+type: folder
+name: credit-note
+items:
+  - ref: ./Create credit note.request.yaml

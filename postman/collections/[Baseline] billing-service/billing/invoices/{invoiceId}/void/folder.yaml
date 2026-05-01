@@ -1,0 +1,4 @@
+type: folder
+name: void
+items:
+  - ref: ./Void invoice.request.yaml

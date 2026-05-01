@@ -1,0 +1,11 @@
+type: folder
+name: '{invoiceId}'
+items:
+  - ref: ./send/folder.yaml
+  - ref: ./pay/folder.yaml
+  - ref: ./void/folder.yaml
+  - ref: ./credit-note/folder.yaml
+  - ref: ./Get invoice.request.yaml
+  - ref: ./Update invoice.request.yaml
+  - ref: ./Partially update invoice.request.yaml
+  - ref: ./Delete invoice.request.yaml
