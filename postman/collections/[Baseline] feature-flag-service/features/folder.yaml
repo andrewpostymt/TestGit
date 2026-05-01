@@ -1,0 +1,10 @@
+type: folder
+name: features
+items:
+  - ref: ./{flagId}/folder.yaml
+  - ref: ./evaluate/folder.yaml
+  - ref: ./ab-tests/folder.yaml
+  - ref: ./environments/folder.yaml
+  - ref: ./analytics/folder.yaml
+  - ref: ./List flags.request.yaml
+  - ref: ./Create flag.request.yaml

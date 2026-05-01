@@ -1,0 +1,4 @@
+type: folder
+name: rollout
+items:
+  - ref: ./Update rollout percentage.request.yaml

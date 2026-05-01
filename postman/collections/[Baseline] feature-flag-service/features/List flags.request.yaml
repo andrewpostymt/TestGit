@@ -1,0 +1,31 @@
+type: http
+name: List flags
+url: '{{baseUrl}}/features?page=9520&limit=9520'
+method: GET
+queryParams:
+  - key: page
+    value: '9520'
+  - key: limit
+    value: '9520'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

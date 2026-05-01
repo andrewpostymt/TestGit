@@ -1,0 +1,5 @@
+type: folder
+name: targets
+items:
+  - ref: ./Get targeting rules.request.yaml
+  - ref: ./Update targeting rules.request.yaml

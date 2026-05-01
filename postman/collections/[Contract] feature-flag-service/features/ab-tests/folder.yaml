@@ -1,0 +1,5 @@
+type: folder
+name: ab-tests
+items:
+  - ref: ./List A B tests.request.yaml
+  - ref: ./Create A B test.request.yaml

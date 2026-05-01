@@ -1,0 +1,12 @@
+type: folder
+name: '{flagId}'
+items:
+  - ref: ./enable/folder.yaml
+  - ref: ./disable/folder.yaml
+  - ref: ./rollout/folder.yaml
+  - ref: ./targets/folder.yaml
+  - ref: ./history/folder.yaml
+  - ref: ./Get flag.request.yaml
+  - ref: ./Update flag.request.yaml
+  - ref: ./Partially update flag.request.yaml
+  - ref: ./Delete flag.request.yaml

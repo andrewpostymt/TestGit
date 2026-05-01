@@ -1,0 +1,4 @@
+type: folder
+name: environments
+items:
+  - ref: ./List environments.request.yaml
