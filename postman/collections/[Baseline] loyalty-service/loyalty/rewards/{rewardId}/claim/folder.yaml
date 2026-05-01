@@ -1,0 +1,4 @@
+type: folder
+name: claim
+items:
+  - ref: ./Claim reward.request.yaml

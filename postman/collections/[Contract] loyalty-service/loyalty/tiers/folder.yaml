@@ -1,0 +1,5 @@
+type: folder
+name: tiers
+items:
+  - ref: ./List loyalty tiers.request.yaml
+  - ref: ./Create tier.request.yaml

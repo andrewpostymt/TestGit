@@ -1,0 +1,7 @@
+type: folder
+name: accounts
+items:
+  - ref: ./{loyaltyId}/folder.yaml
+  - ref: ./{accountId}/folder.yaml
+  - ref: ./List loyaltys.request.yaml
+  - ref: ./Create loyalty.request.yaml

@@ -1,0 +1,6 @@
+type: folder
+name: rewards
+items:
+  - ref: ./{rewardId}/folder.yaml
+  - ref: ./List rewards.request.yaml
+  - ref: ./Create reward.request.yaml

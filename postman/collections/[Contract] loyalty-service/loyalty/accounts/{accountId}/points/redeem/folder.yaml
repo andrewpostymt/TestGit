@@ -1,0 +1,4 @@
+type: folder
+name: redeem
+items:
+  - ref: ./Redeem points.request.yaml

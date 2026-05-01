@@ -1,0 +1,6 @@
+type: folder
+name: points
+items:
+  - ref: ./redeem/folder.yaml
+  - ref: ./history/folder.yaml
+  - ref: ./Award points.request.yaml

@@ -1,0 +1,9 @@
+type: folder
+name: loyalty
+items:
+  - ref: ./accounts/folder.yaml
+  - ref: ./tiers/folder.yaml
+  - ref: ./rewards/folder.yaml
+  - ref: ./programmes/folder.yaml
+  - ref: ./analytics/folder.yaml
+  - ref: ./leaderboard/folder.yaml

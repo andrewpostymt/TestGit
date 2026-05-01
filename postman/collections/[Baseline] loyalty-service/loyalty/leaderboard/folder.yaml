@@ -1,0 +1,4 @@
+type: folder
+name: leaderboard
+items:
+  - ref: ./Get points leaderboard.request.yaml

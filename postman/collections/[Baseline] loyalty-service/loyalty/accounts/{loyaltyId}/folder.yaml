@@ -1,0 +1,7 @@
+type: folder
+name: '{loyaltyId}'
+items:
+  - ref: ./Get loyalty.request.yaml
+  - ref: ./Update loyalty.request.yaml
+  - ref: ./Partially update loyalty.request.yaml
+  - ref: ./Delete loyalty.request.yaml

@@ -1,0 +1,5 @@
+type: folder
+name: programmes
+items:
+  - ref: ./List programmes.request.yaml
+  - ref: ./Create programme.request.yaml
