@@ -1,0 +1,13 @@
+type: http
+name: Create product variant
+url: '{{baseUrl}}/products/:productId/variants'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: productId
+    value: ''
+body:
+  type: json
+  content: '{}'

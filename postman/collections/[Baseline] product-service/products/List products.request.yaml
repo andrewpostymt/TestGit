@@ -1,0 +1,9 @@
+type: http
+name: List products
+url: '{{baseUrl}}/products?page=2621&limit=2621'
+method: GET
+queryParams:
+  - key: page
+    value: '2621'
+  - key: limit
+    value: '2621'

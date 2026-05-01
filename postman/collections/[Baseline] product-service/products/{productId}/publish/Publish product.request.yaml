@@ -1,0 +1,7 @@
+type: http
+name: Publish product
+url: '{{baseUrl}}/products/:productId/publish'
+method: POST
+pathVariables:
+  - key: productId
+    value: ''

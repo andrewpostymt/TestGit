@@ -1,0 +1,4 @@
+type: folder
+name: tags
+items:
+  - ref: ./Get product tags.request.yaml

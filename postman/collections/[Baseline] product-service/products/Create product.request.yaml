@@ -1,0 +1,10 @@
+type: http
+name: Create product
+url: '{{baseUrl}}/products'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

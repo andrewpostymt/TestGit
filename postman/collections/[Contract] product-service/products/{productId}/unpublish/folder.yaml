@@ -1,0 +1,4 @@
+type: folder
+name: unpublish
+items:
+  - ref: ./Unpublish product.request.yaml

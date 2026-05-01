@@ -1,0 +1,7 @@
+type: http
+name: List product variants
+url: '{{baseUrl}}/products/:productId/variants'
+method: GET
+pathVariables:
+  - key: productId
+    value: ''

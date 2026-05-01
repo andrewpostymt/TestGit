@@ -1,0 +1,4 @@
+type: folder
+name: related
+items:
+  - ref: ./Get related products.request.yaml

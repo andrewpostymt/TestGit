@@ -1,0 +1,7 @@
+type: http
+name: Delete product
+url: '{{baseUrl}}/products/:productId'
+method: DELETE
+pathVariables:
+  - key: productId
+    value: string

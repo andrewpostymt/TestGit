@@ -1,0 +1,7 @@
+type: http
+name: Get product
+url: '{{baseUrl}}/products/:productId'
+method: GET
+pathVariables:
+  - key: productId
+    value: string

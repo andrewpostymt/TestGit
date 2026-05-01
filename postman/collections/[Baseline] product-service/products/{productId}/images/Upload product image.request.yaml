@@ -1,0 +1,13 @@
+type: http
+name: Upload product image
+url: '{{baseUrl}}/products/:productId/images'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: productId
+    value: ''
+body:
+  type: json
+  content: '{}'

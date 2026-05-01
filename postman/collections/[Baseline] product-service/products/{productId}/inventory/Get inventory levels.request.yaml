@@ -1,0 +1,7 @@
+type: http
+name: Get inventory levels
+url: '{{baseUrl}}/products/:productId/inventory'
+method: GET
+pathVariables:
+  - key: productId
+    value: ''

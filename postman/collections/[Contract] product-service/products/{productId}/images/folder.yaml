@@ -1,0 +1,5 @@
+type: folder
+name: images
+items:
+  - ref: ./List product images.request.yaml
+  - ref: ./Upload product image.request.yaml

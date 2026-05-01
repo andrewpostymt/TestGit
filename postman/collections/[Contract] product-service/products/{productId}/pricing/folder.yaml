@@ -1,0 +1,5 @@
+type: folder
+name: pricing
+items:
+  - ref: ./Get product pricing.request.yaml
+  - ref: ./Update product pricing.request.yaml

@@ -1,0 +1,13 @@
+type: http
+name: Partially update product
+url: '{{baseUrl}}/products/:productId'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: productId
+    value: string
+body:
+  type: json
+  content: '{}'

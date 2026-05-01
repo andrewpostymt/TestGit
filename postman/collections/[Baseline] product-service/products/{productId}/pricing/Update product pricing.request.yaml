@@ -1,0 +1,13 @@
+type: http
+name: Update product pricing
+url: '{{baseUrl}}/products/:productId/pricing'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: productId
+    value: ''
+body:
+  type: json
+  content: '{}'

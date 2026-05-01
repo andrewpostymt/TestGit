@@ -1,0 +1,7 @@
+type: http
+name: List product images
+url: '{{baseUrl}}/products/:productId/images'
+method: GET
+pathVariables:
+  - key: productId
+    value: ''

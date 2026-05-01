@@ -1,0 +1,5 @@
+type: folder
+name: variants
+items:
+  - ref: ./List product variants.request.yaml
+  - ref: ./Create product variant.request.yaml

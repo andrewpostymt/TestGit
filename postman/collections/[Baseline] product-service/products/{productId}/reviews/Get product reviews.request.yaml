@@ -1,0 +1,7 @@
+type: http
+name: Get product reviews
+url: '{{baseUrl}}/products/:productId/reviews'
+method: GET
+pathVariables:
+  - key: productId
+    value: ''

@@ -1,0 +1,13 @@
+type: http
+name: Update SEO metadata
+url: '{{baseUrl}}/products/:productId/seo'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: productId
+    value: ''
+body:
+  type: json
+  content: '{}'

@@ -1,0 +1,18 @@
+type: folder
+name: '{productId}'
+items:
+  - ref: ./variants/folder.yaml
+  - ref: ./images/folder.yaml
+  - ref: ./pricing/folder.yaml
+  - ref: ./inventory/folder.yaml
+  - ref: ./tags/folder.yaml
+  - ref: ./related/folder.yaml
+  - ref: ./reviews/folder.yaml
+  - ref: ./publish/folder.yaml
+  - ref: ./unpublish/folder.yaml
+  - ref: ./seo/folder.yaml
+  - ref: ./attributes/folder.yaml
+  - ref: ./Get product.request.yaml
+  - ref: ./Update product.request.yaml
+  - ref: ./Partially update product.request.yaml
+  - ref: ./Delete product.request.yaml

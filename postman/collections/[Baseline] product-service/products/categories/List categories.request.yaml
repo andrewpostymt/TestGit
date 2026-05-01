@@ -1,0 +1,4 @@
+type: http
+name: List categories
+url: '{{baseUrl}}/products/categories'
+method: GET

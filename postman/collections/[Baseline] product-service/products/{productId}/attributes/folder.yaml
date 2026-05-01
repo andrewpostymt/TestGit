@@ -1,0 +1,4 @@
+type: folder
+name: attributes
+items:
+  - ref: ./Get product attributes.request.yaml

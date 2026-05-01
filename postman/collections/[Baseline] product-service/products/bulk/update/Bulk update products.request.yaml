@@ -1,0 +1,10 @@
+type: http
+name: Bulk update products
+url: '{{baseUrl}}/products/bulk/update'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'
