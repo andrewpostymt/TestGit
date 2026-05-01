@@ -159,9 +159,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Checkout postman-agent-docs-action
+        uses: actions/checkout@v4
+        with:
+          repository: andrewpostymt/postman-agent-docs-action
+          token:      ${{ secrets.GH_PAT }}
+          path:       .github/actions/postman-agent-docs-action
+
       - name: Generate docs for all collections
         id: docs
-        uses: andrewpostymt/postman-agent-docs-action@main
+        uses: ./.github/actions/postman-agent-docs-action
         with:
           postman-api-key:      ${{ secrets.POSTMAN_API_KEY }}
           workspace-id:         ${{ needs.onboarding-anchor.outputs.workspace-id }}
