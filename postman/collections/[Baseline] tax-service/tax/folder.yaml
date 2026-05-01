@@ -1,0 +1,12 @@
+type: folder
+name: tax
+items:
+  - ref: ./rates/folder.yaml
+  - ref: ./calculate/folder.yaml
+  - ref: ./nexus/folder.yaml
+  - ref: ./exemptions/folder.yaml
+  - ref: ./reports/folder.yaml
+  - ref: ./categories/folder.yaml
+  - ref: ./jurisdictions/folder.yaml
+  - ref: ./validate/folder.yaml
+  - ref: ./filing/folder.yaml

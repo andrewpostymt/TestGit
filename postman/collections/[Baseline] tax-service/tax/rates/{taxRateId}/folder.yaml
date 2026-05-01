@@ -1,0 +1,7 @@
+type: folder
+name: '{taxRateId}'
+items:
+  - ref: ./Get taxRate.request.yaml
+  - ref: ./Update taxRate.request.yaml
+  - ref: ./Partially update taxRate.request.yaml
+  - ref: ./Delete taxRate.request.yaml

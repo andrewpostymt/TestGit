@@ -1,0 +1,4 @@
+type: folder
+name: categories
+items:
+  - ref: ./List tax categories.request.yaml

@@ -1,0 +1,5 @@
+type: folder
+name: exemptions
+items:
+  - ref: ./List exemptions.request.yaml
+  - ref: ./Create exemption.request.yaml
