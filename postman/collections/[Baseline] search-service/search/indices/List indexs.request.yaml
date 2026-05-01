@@ -1,9 +1,31 @@
 type: http
 name: List indexs
-url: '{{baseUrl}}/search/indices?page=3581&limit=3581'
+url: '{{baseUrl}}/search/indices?page=7846&limit=7846'
 method: GET
 queryParams:
   - key: page
-    value: '3581'
+    value: '7846'
   - key: limit
-    value: '3581'
+    value: '7846'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

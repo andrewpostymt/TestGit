@@ -1,12 +1,12 @@
 type: http
 name: List indexs
-url: '{{baseUrl}}/search/indices?page=3824&limit=3824'
+url: '{{baseUrl}}/search/indices?page=2792&limit=2792'
 method: GET
 queryParams:
   - key: page
-    value: '3824'
+    value: '2792'
   - key: limit
-    value: '3824'
+    value: '2792'
 scripts:
   - type: afterResponse
     code:
@@ -25,3 +25,25 @@ scripts:
       - '    }'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found
