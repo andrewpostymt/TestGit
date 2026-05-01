@@ -1,9 +1,31 @@
 type: http
 name: List tokens
-url: '{{baseUrl}}/auth/tokens?page=5240&limit=5240'
+url: '{{baseUrl}}/auth/tokens?page=7024&limit=7024'
 method: GET
 queryParams:
   - key: page
-    value: '5240'
+    value: '7024'
   - key: limit
-    value: '5240'
+    value: '7024'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found
