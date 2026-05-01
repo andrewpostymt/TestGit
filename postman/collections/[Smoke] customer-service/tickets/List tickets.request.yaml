@@ -1,12 +1,12 @@
 type: http
 name: List tickets
-url: '{{baseUrl}}/tickets?page=1482&limit=1482'
+url: '{{baseUrl}}/tickets?page=2546&limit=2546'
 method: GET
 queryParams:
   - key: page
-    value: '1482'
+    value: '2546'
   - key: limit
-    value: '1482'
+    value: '2546'
 scripts:
   - type: afterResponse
     code:
@@ -25,3 +25,25 @@ scripts:
       - '    }'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

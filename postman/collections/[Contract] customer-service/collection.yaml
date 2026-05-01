@@ -17,6 +17,7 @@ auth:
 variables:
   - key: baseUrl
     value: https://api.example.com/v1/customer-service
+    type: any
 items:
   - ref: ./tickets/folder.yaml
   - ref: ./knowledge-base/folder.yaml
