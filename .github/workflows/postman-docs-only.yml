@@ -13,6 +13,11 @@ on:
       workspace-id:
         description: Postman workspace ID (defaults to POSTMAN_WORKSPACE_ID variable)
         required: false
+      collection-ids:
+        description: >-
+          Comma-separated collection IDs to document (leave blank for all collections).
+          Use this to target a single service for validation before a full workspace run.
+        required: false
       dry-run:
         description: Dry-run (no PR opened)
         type: boolean
@@ -41,6 +46,7 @@ jobs:
         with:
           postman-api-key:      ${{ secrets.POSTMAN_API_KEY }}
           workspace-id:         ${{ inputs.workspace-id || vars.POSTMAN_WORKSPACE_ID }}
+          collection-ids:       ${{ inputs.collection-ids }}
           git-mode:             'true'
           github-token:         ${{ secrets.GITHUB_TOKEN }}
           agent-mode:           'true'
