@@ -1,12 +1,12 @@
 type: http
 name: List notifications
-url: '{{baseUrl}}/notifications?page=4727&limit=4727'
+url: '{{baseUrl}}/notifications?page=6300&limit=6300'
 method: GET
 queryParams:
   - key: page
-    value: '4727'
+    value: '6300'
   - key: limit
-    value: '4727'
+    value: '6300'
 scripts:
   - type: afterResponse
     code:
@@ -68,3 +68,25 @@ scripts:
       - '    } catch (e) {}'
       - '})();'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

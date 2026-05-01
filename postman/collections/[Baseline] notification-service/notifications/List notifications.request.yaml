@@ -1,9 +1,31 @@
 type: http
 name: List notifications
-url: '{{baseUrl}}/notifications?page=6325&limit=6325'
+url: '{{baseUrl}}/notifications?page=9234&limit=9234'
 method: GET
 queryParams:
   - key: page
-    value: '6325'
+    value: '9234'
   - key: limit
-    value: '6325'
+    value: '9234'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found
