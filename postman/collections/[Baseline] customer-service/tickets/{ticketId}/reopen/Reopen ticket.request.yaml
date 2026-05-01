@@ -1,0 +1,7 @@
+type: http
+name: Reopen ticket
+url: '{{baseUrl}}/tickets/:ticketId/reopen'
+method: POST
+pathVariables:
+  - key: ticketId
+    value: ''

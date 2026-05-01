@@ -1,0 +1,7 @@
+type: http
+name: Get ticket
+url: '{{baseUrl}}/tickets/:ticketId'
+method: GET
+pathVariables:
+  - key: ticketId
+    value: string

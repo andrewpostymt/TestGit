@@ -1,0 +1,13 @@
+type: http
+name: Add message
+url: '{{baseUrl}}/tickets/:ticketId/messages'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: ticketId
+    value: ''
+body:
+  type: json
+  content: '{}'

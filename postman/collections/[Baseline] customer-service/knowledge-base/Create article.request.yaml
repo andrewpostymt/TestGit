@@ -1,0 +1,10 @@
+type: http
+name: Create article
+url: '{{baseUrl}}/knowledge-base'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

@@ -1,0 +1,4 @@
+type: folder
+name: policies
+items:
+  - ref: ./List SLA policies.request.yaml

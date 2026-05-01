@@ -1,0 +1,6 @@
+type: folder
+name: tickets
+items:
+  - ref: ./{ticketId}/folder.yaml
+  - ref: ./List tickets.request.yaml
+  - ref: ./Create ticket.request.yaml

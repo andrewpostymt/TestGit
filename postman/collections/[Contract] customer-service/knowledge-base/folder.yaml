@@ -1,0 +1,6 @@
+type: folder
+name: knowledge-base
+items:
+  - ref: ./{articleId}/folder.yaml
+  - ref: ./List articles.request.yaml
+  - ref: ./Create article.request.yaml

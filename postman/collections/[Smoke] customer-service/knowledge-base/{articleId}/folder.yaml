@@ -1,0 +1,4 @@
+type: folder
+name: '{articleId}'
+items:
+  - ref: ./Get article.request.yaml

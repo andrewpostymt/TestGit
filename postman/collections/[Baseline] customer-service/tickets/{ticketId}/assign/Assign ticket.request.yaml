@@ -1,0 +1,13 @@
+type: http
+name: Assign ticket
+url: '{{baseUrl}}/tickets/:ticketId/assign'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: ticketId
+    value: ''
+body:
+  type: json
+  content: '{}'

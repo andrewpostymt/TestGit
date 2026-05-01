@@ -1,0 +1,4 @@
+type: folder
+name: queues
+items:
+  - ref: ./List support queues.request.yaml

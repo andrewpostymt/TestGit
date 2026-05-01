@@ -1,0 +1,4 @@
+type: http
+name: List articles
+url: '{{baseUrl}}/knowledge-base'
+method: GET

@@ -1,0 +1,4 @@
+type: folder
+name: sla
+items:
+  - ref: ./policies/folder.yaml

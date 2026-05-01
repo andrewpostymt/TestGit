@@ -1,0 +1,4 @@
+type: folder
+name: close
+items:
+  - ref: ./Close ticket.request.yaml

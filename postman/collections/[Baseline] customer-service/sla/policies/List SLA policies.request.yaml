@@ -1,0 +1,4 @@
+type: http
+name: List SLA policies
+url: '{{baseUrl}}/sla/policies'
+method: GET

@@ -1,0 +1,13 @@
+type: http
+name: Update ticket
+url: '{{baseUrl}}/tickets/:ticketId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: ticketId
+    value: string
+body:
+  type: json
+  content: '{}'

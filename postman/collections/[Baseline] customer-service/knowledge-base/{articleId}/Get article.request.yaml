@@ -1,0 +1,7 @@
+type: http
+name: Get article
+url: '{{baseUrl}}/knowledge-base/:articleId'
+method: GET
+pathVariables:
+  - key: articleId
+    value: ''

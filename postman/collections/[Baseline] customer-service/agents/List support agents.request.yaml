@@ -1,0 +1,4 @@
+type: http
+name: List support agents
+url: '{{baseUrl}}/agents'
+method: GET

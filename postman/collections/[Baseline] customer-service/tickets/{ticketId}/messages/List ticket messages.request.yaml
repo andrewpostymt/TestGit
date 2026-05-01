@@ -1,0 +1,7 @@
+type: http
+name: List ticket messages
+url: '{{baseUrl}}/tickets/:ticketId/messages'
+method: GET
+pathVariables:
+  - key: ticketId
+    value: ''

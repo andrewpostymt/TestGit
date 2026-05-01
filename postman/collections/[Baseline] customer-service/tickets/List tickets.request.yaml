@@ -1,0 +1,9 @@
+type: http
+name: List tickets
+url: '{{baseUrl}}/tickets?page=7630&limit=7630'
+method: GET
+queryParams:
+  - key: page
+    value: '7630'
+  - key: limit
+    value: '7630'

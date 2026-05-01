@@ -1,0 +1,13 @@
+type: folder
+name: '{ticketId}'
+items:
+  - ref: ./assign/folder.yaml
+  - ref: ./escalate/folder.yaml
+  - ref: ./close/folder.yaml
+  - ref: ./reopen/folder.yaml
+  - ref: ./messages/folder.yaml
+  - ref: ./attachments/folder.yaml
+  - ref: ./Get ticket.request.yaml
+  - ref: ./Update ticket.request.yaml
+  - ref: ./Partially update ticket.request.yaml
+  - ref: ./Delete ticket.request.yaml

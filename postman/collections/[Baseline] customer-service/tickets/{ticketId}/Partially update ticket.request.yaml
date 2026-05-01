@@ -1,0 +1,13 @@
+type: http
+name: Partially update ticket
+url: '{{baseUrl}}/tickets/:ticketId'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: ticketId
+    value: string
+body:
+  type: json
+  content: '{}'

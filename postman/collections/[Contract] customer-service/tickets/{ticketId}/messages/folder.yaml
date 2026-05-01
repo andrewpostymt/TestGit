@@ -1,0 +1,5 @@
+type: folder
+name: messages
+items:
+  - ref: ./List ticket messages.request.yaml
+  - ref: ./Add message.request.yaml

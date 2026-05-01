@@ -1,0 +1,13 @@
+type: http
+name: Upload attachment
+url: '{{baseUrl}}/tickets/:ticketId/attachments'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: ticketId
+    value: ''
+body:
+  type: json
+  content: '{}'

@@ -1,0 +1,4 @@
+type: http
+name: List support queues
+url: '{{baseUrl}}/queues'
+method: GET

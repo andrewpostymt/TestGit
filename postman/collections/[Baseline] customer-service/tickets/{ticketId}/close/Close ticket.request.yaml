@@ -1,0 +1,7 @@
+type: http
+name: Close ticket
+url: '{{baseUrl}}/tickets/:ticketId/close'
+method: POST
+pathVariables:
+  - key: ticketId
+    value: ''
