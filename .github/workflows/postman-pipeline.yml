@@ -180,10 +180,12 @@ jobs:
           dry-run:              ${{ inputs.dry-run }}
 
       - name: Print docs results
+        env:
+          RESULTS_JSON: ${{ steps.docs.outputs.results-json }}
         run: |
           echo "branch-name:         ${{ steps.docs.outputs.branch-name }}"
           echo "collections-updated: ${{ steps.docs.outputs.collections-updated }}"
           echo "collections-skipped: ${{ steps.docs.outputs.collections-skipped }}"
           echo ""
           echo "Results:"
-          echo '${{ steps.docs.outputs.results-json }}' | jq '.'
+          echo "$RESULTS_JSON" | jq '.'
