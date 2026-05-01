@@ -1,0 +1,4 @@
+type: folder
+name: rollback
+items:
+  - ref: ./Rollback config.request.yaml

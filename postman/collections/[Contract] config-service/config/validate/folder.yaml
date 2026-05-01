@@ -1,0 +1,4 @@
+type: folder
+name: validate
+items:
+  - ref: ./Validate config schema.request.yaml

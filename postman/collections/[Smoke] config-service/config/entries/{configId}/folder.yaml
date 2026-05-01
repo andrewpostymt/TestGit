@@ -1,0 +1,7 @@
+type: folder
+name: '{configId}'
+items:
+  - ref: ./Get config.request.yaml
+  - ref: ./Update config.request.yaml
+  - ref: ./Partially update config.request.yaml
+  - ref: ./Delete config.request.yaml

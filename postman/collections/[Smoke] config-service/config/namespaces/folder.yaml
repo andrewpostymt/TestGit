@@ -1,0 +1,5 @@
+type: folder
+name: namespaces
+items:
+  - ref: ./List namespaces.request.yaml
+  - ref: ./Create namespace.request.yaml

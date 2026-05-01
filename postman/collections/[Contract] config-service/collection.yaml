@@ -1,0 +1,23 @@
+$schema: https://schema.postman.com/json/draft-2020-12/collection/v3.0.0/
+type: collection
+name: '[Contract] config-service'
+description: |-
+  Dynamic configuration management with environment and tenant scoping.
+
+  Contact Support:
+   Name: Platform Engineering
+   Email: platform@example.com
+id: 1d9f56ee-f7f7-4a36-aaa0-99b4e1b007dc
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{bearerToken}}'
+      type: string
+variables:
+  - key: baseUrl
+    value: https://api.example.com/v1/config
+    type: any
+items:
+  - ref: ./config/folder.yaml
+  - ref: ./00 - Resolve Secrets.request.yaml

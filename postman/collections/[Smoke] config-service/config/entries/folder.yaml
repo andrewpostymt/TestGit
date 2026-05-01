@@ -1,0 +1,7 @@
+type: folder
+name: entries
+items:
+  - ref: ./{configId}/folder.yaml
+  - ref: ./bulk/folder.yaml
+  - ref: ./List configs.request.yaml
+  - ref: ./Create config.request.yaml

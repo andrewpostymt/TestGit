@@ -1,0 +1,11 @@
+type: folder
+name: config
+items:
+  - ref: ./entries/folder.yaml
+  - ref: ./environments/folder.yaml
+  - ref: ./namespaces/folder.yaml
+  - ref: ./history/folder.yaml
+  - ref: ./rollback/folder.yaml
+  - ref: ./export/folder.yaml
+  - ref: ./import/folder.yaml
+  - ref: ./validate/folder.yaml

@@ -1,0 +1,5 @@
+type: folder
+name: environments
+items:
+  - ref: ./List environments.request.yaml
+  - ref: ./Create environment.request.yaml
