@@ -1,0 +1,5 @@
+type: folder
+name: replenishment
+items:
+  - ref: ./Get replenishment orders.request.yaml
+  - ref: ./Create replenishment order.request.yaml

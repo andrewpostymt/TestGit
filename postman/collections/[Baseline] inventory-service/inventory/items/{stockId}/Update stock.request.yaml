@@ -1,0 +1,13 @@
+type: http
+name: Update stock
+url: '{{baseUrl}}/inventory/items/:stockId'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: stockId
+    value: string
+body:
+  type: json
+  content: '{}'

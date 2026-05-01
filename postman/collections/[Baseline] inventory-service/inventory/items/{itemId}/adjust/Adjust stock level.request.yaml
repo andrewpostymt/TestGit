@@ -1,0 +1,13 @@
+type: http
+name: Adjust stock level
+url: '{{baseUrl}}/inventory/items/:itemId/adjust'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: itemId
+    value: ''
+body:
+  type: json
+  content: '{}'

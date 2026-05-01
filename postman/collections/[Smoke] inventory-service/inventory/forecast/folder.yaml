@@ -1,0 +1,4 @@
+type: folder
+name: forecast
+items:
+  - ref: ./Inventory forecast.request.yaml

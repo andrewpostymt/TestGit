@@ -1,0 +1,4 @@
+type: folder
+name: adjust
+items:
+  - ref: ./Adjust stock level.request.yaml

@@ -1,0 +1,9 @@
+type: http
+name: List stocks
+url: '{{baseUrl}}/inventory/items?page=2253&limit=2253'
+method: GET
+queryParams:
+  - key: page
+    value: '2253'
+  - key: limit
+    value: '2253'

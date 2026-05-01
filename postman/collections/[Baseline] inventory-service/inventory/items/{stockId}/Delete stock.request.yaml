@@ -1,0 +1,7 @@
+type: http
+name: Delete stock
+url: '{{baseUrl}}/inventory/items/:stockId'
+method: DELETE
+pathVariables:
+  - key: stockId
+    value: string

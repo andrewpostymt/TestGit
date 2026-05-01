@@ -1,0 +1,5 @@
+type: folder
+name: locations
+items:
+  - ref: ./List warehouse locations.request.yaml
+  - ref: ./Create location.request.yaml

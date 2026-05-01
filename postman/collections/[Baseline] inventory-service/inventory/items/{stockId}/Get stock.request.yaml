@@ -1,0 +1,7 @@
+type: http
+name: Get stock
+url: '{{baseUrl}}/inventory/items/:stockId'
+method: GET
+pathVariables:
+  - key: stockId
+    value: string

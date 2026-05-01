@@ -1,0 +1,4 @@
+type: folder
+name: alerts
+items:
+  - ref: ./Get low stock alerts.request.yaml

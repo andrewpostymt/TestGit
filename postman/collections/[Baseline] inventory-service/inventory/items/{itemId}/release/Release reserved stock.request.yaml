@@ -1,0 +1,13 @@
+type: http
+name: Release reserved stock
+url: '{{baseUrl}}/inventory/items/:itemId/release'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: itemId
+    value: ''
+body:
+  type: json
+  content: '{}'

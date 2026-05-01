@@ -1,0 +1,13 @@
+type: http
+name: Partially update stock
+url: '{{baseUrl}}/inventory/items/:stockId'
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: stockId
+    value: string
+body:
+  type: json
+  content: '{}'

@@ -1,0 +1,13 @@
+type: http
+name: Reserve stock
+url: '{{baseUrl}}/inventory/items/:itemId/reserve'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+pathVariables:
+  - key: itemId
+    value: ''
+body:
+  type: json
+  content: '{}'

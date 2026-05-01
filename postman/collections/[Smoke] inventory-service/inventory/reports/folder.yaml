@@ -1,0 +1,4 @@
+type: folder
+name: reports
+items:
+  - ref: ./Inventory reports.request.yaml

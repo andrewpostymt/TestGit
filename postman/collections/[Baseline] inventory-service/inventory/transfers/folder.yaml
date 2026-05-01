@@ -1,0 +1,5 @@
+type: folder
+name: transfers
+items:
+  - ref: ./List stock transfers.request.yaml
+  - ref: ./Create stock transfer.request.yaml

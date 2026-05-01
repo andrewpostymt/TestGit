@@ -1,0 +1,4 @@
+type: folder
+name: reserve
+items:
+  - ref: ./Reserve stock.request.yaml

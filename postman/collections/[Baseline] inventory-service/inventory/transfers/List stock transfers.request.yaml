@@ -1,0 +1,4 @@
+type: http
+name: List stock transfers
+url: '{{baseUrl}}/inventory/transfers'
+method: GET

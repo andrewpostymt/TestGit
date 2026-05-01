@@ -1,0 +1,10 @@
+type: http
+name: Create replenishment order
+url: '{{baseUrl}}/inventory/replenishment'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

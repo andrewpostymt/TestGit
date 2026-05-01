@@ -1,0 +1,4 @@
+type: http
+name: Inventory forecast
+url: '{{baseUrl}}/inventory/forecast'
+method: GET

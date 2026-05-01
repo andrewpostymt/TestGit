@@ -1,0 +1,10 @@
+type: http
+name: Create location
+url: '{{baseUrl}}/inventory/locations'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

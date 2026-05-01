@@ -1,0 +1,4 @@
+type: http
+name: Inventory reports
+url: '{{baseUrl}}/inventory/reports'
+method: GET

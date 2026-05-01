@@ -1,0 +1,7 @@
+type: folder
+name: '{stockId}'
+items:
+  - ref: ./Get stock.request.yaml
+  - ref: ./Update stock.request.yaml
+  - ref: ./Partially update stock.request.yaml
+  - ref: ./Delete stock.request.yaml

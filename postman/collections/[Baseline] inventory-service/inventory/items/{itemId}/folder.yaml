@@ -1,0 +1,6 @@
+type: folder
+name: '{itemId}'
+items:
+  - ref: ./adjust/folder.yaml
+  - ref: ./reserve/folder.yaml
+  - ref: ./release/folder.yaml

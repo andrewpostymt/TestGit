@@ -1,0 +1,5 @@
+type: folder
+name: counts
+items:
+  - ref: ./List stock counts.request.yaml
+  - ref: ./Create stock count.request.yaml

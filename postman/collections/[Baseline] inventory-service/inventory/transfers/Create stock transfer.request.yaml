@@ -1,0 +1,10 @@
+type: http
+name: Create stock transfer
+url: '{{baseUrl}}/inventory/transfers'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'

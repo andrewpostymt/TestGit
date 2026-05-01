@@ -1,0 +1,11 @@
+type: folder
+name: inventory
+items:
+  - ref: ./items/folder.yaml
+  - ref: ./locations/folder.yaml
+  - ref: ./transfers/folder.yaml
+  - ref: ./alerts/folder.yaml
+  - ref: ./replenishment/folder.yaml
+  - ref: ./counts/folder.yaml
+  - ref: ./forecast/folder.yaml
+  - ref: ./reports/folder.yaml

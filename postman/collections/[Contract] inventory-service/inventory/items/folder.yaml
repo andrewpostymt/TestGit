@@ -1,0 +1,7 @@
+type: folder
+name: items
+items:
+  - ref: ./{stockId}/folder.yaml
+  - ref: ./{itemId}/folder.yaml
+  - ref: ./List stocks.request.yaml
+  - ref: ./Create stock.request.yaml

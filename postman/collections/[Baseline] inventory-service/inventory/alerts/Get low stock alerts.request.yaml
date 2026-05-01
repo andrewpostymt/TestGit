@@ -1,0 +1,4 @@
+type: http
+name: Get low stock alerts
+url: '{{baseUrl}}/inventory/alerts'
+method: GET

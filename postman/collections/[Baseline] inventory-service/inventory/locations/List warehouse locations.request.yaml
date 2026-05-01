@@ -1,0 +1,4 @@
+type: http
+name: List warehouse locations
+url: '{{baseUrl}}/inventory/locations'
+method: GET

@@ -1,0 +1,10 @@
+type: http
+name: Create stock count
+url: '{{baseUrl}}/inventory/counts'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: '{}'
