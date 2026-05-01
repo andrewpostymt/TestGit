@@ -1,0 +1,31 @@
+type: http
+name: List policys
+url: '{{baseUrl}}/rate-limits/policies?page=6661&limit=6661'
+method: GET
+queryParams:
+  - key: page
+    value: '6661'
+  - key: limit
+    value: '6661'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: text
+        content: ''
+    name: Success
+  - response:
+      statusCode: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        content: ''
+    name: Unauthorized
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Not Found

@@ -1,0 +1,6 @@
+type: folder
+name: policies
+items:
+  - ref: ./{policyId}/folder.yaml
+  - ref: ./List policys.request.yaml
+  - ref: ./Create policy.request.yaml

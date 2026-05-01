@@ -1,0 +1,5 @@
+type: folder
+name: allowlist
+items:
+  - ref: ./Get allowlist.request.yaml
+  - ref: ./Add to allowlist.request.yaml

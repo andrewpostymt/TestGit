@@ -1,0 +1,7 @@
+type: folder
+name: '{policyId}'
+items:
+  - ref: ./Get policy.request.yaml
+  - ref: ./Update policy.request.yaml
+  - ref: ./Partially update policy.request.yaml
+  - ref: ./Delete policy.request.yaml

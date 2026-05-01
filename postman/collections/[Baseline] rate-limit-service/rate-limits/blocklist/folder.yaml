@@ -1,0 +1,5 @@
+type: folder
+name: blocklist
+items:
+  - ref: ./Get blocklist.request.yaml
+  - ref: ./Add to blocklist.request.yaml

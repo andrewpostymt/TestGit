@@ -1,0 +1,5 @@
+type: folder
+name: quotas
+items:
+  - ref: ./{quotaId}/folder.yaml
+  - ref: ./List quotas.request.yaml

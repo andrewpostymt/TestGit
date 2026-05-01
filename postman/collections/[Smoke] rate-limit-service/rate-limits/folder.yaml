@@ -1,0 +1,11 @@
+type: folder
+name: rate-limits
+items:
+  - ref: ./policies/folder.yaml
+  - ref: ./check/folder.yaml
+  - ref: ./quotas/folder.yaml
+  - ref: ./usage/folder.yaml
+  - ref: ./reset/folder.yaml
+  - ref: ./allowlist/folder.yaml
+  - ref: ./blocklist/folder.yaml
+  - ref: ./analytics/folder.yaml
