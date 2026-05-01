@@ -1,0 +1,5 @@
+type: folder
+name: collections
+items:
+  - ref: ./List media collections.request.yaml
+  - ref: ./Create collection.request.yaml

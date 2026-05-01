@@ -1,0 +1,6 @@
+type: folder
+name: assets
+items:
+  - ref: ./{assetId}/folder.yaml
+  - ref: ./List assets.request.yaml
+  - ref: ./Create asset.request.yaml

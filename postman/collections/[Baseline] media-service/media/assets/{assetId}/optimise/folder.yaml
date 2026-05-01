@@ -1,0 +1,4 @@
+type: folder
+name: optimise
+items:
+  - ref: ./Optimise asset.request.yaml

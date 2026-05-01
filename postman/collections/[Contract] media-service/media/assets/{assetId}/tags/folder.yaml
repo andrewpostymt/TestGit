@@ -1,0 +1,5 @@
+type: folder
+name: tags
+items:
+  - ref: ./Get asset tags.request.yaml
+  - ref: ./Add tags to asset.request.yaml

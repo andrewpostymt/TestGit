@@ -1,0 +1,4 @@
+type: folder
+name: usage
+items:
+  - ref: ./Get storage usage.request.yaml

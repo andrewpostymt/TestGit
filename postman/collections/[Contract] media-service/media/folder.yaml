@@ -1,0 +1,8 @@
+type: folder
+name: media
+items:
+  - ref: ./assets/folder.yaml
+  - ref: ./upload/folder.yaml
+  - ref: ./collections/folder.yaml
+  - ref: ./search/folder.yaml
+  - ref: ./usage/folder.yaml

@@ -1,0 +1,5 @@
+type: folder
+name: upload
+items:
+  - ref: ./presigned/folder.yaml
+  - ref: ./Upload media.request.yaml

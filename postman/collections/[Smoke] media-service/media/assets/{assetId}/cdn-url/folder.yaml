@@ -1,0 +1,4 @@
+type: folder
+name: cdn-url
+items:
+  - ref: ./Get CDN URL.request.yaml

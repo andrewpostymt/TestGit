@@ -1,0 +1,11 @@
+type: folder
+name: '{assetId}'
+items:
+  - ref: ./transform/folder.yaml
+  - ref: ./optimise/folder.yaml
+  - ref: ./cdn-url/folder.yaml
+  - ref: ./tags/folder.yaml
+  - ref: ./Get asset.request.yaml
+  - ref: ./Update asset.request.yaml
+  - ref: ./Partially update asset.request.yaml
+  - ref: ./Delete asset.request.yaml
