@@ -1,12 +1,12 @@
 type: http
 name: List messages
-url: '{{baseUrl}}/sms/messages?page=3406&limit=3406'
+url: '{{baseUrl}}/sms/messages?page=7830&limit=7830'
 method: GET
 queryParams:
   - key: page
-    value: '3406'
+    value: '7830'
   - key: limit
-    value: '3406'
+    value: '7830'
 examples:
   - response:
       statusCode: 200

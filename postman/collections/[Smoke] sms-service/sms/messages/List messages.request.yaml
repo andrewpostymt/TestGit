@@ -1,12 +1,12 @@
 type: http
 name: List messages
-url: '{{baseUrl}}/sms/messages?page=1728&limit=1728'
+url: '{{baseUrl}}/sms/messages?page=6922&limit=6922'
 method: GET
 queryParams:
   - key: page
-    value: '1728'
+    value: '6922'
   - key: limit
-    value: '1728'
+    value: '6922'
 scripts:
   - type: afterResponse
     code:
