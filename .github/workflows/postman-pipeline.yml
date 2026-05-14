@@ -9,8 +9,9 @@ name: Postman Pipeline
 #             to avoid commit-and-push conflicts during repo sync)
 # Phase 2  — Generate docs for all collections in git-mode; commits
 #             descriptions to a feature branch and opens a GitHub PR
+# Phase 3  — Register workspace with API Catalog via Insights onboarding action
 #
-# Required secrets:  POSTMAN_API_KEY
+# Required secrets:  POSTMAN_API_KEY, POSTMAN_ACCESS_TOKEN
 # Optional variables: POSTMAN_WORKSPACE_ID  (leave unset to auto-create)
 
 on:
@@ -189,3 +190,43 @@ jobs:
           echo ""
           echo "Results:"
           echo "$RESULTS_JSON" | jq '.'
+
+  # ---------------------------------------------------------------------------
+  # Phase 3 — Register workspace with API Catalog
+  #
+  # Runs after all onboarding jobs complete. Acknowledges the workspace with
+  # the Postman API Catalog service so it appears in the catalog even before
+  # the Insights agent is deployed. poll-timeout-seconds is set to 0 so the
+  # action skips service discovery polling and goes straight to workspace
+  # registration. When the Insights agent is later deployed, increase the
+  # timeout to allow discovered service linking.
+  # ---------------------------------------------------------------------------
+  register-api-catalog:
+    name: Register workspace with API Catalog
+    needs: [onboarding-anchor, onboarding-services]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout insights action
+        uses: actions/checkout@v4
+        with:
+          repository: andrewpostymt/postman-insights-onboarding-action
+          ref:        feature/ado-support
+          token:      ${{ secrets.GH_PAT }}
+          path:       .github/actions/postman-insights-onboarding-action
+
+      - name: Register workspace with API Catalog
+        id: insights
+        uses: ./.github/actions/postman-insights-onboarding-action
+        with:
+          project-name:          order-service
+          workspace-id:          ${{ needs.onboarding-anchor.outputs.workspace-id }}
+          environment-id:        ${{ vars.POSTMAN_ENVIRONMENT_ID || 'placeholder' }}
+          postman-access-token:  ${{ secrets.POSTMAN_ACCESS_TOKEN }}
+          postman-api-key:       ${{ secrets.POSTMAN_API_KEY }}
+          github-token:          ${{ secrets.GITHUB_TOKEN }}
+          poll-timeout-seconds:  '0'
+
+      - name: Print API Catalog registration result
+        run: |
+          echo "status:             ${{ steps.insights.outputs.status }}"
+          echo "verification-token: ${{ steps.insights.outputs.verification-token }}"
