@@ -1,12 +1,12 @@
 type: http
 name: List events
-url: '{{baseUrl}}/audit/events?page=5384&limit=5384'
+url: '{{baseUrl}}/audit/events?page=5969&limit=5969'
 method: GET
 queryParams:
   - key: page
-    value: '5384'
+    value: '5969'
   - key: limit
-    value: '5384'
+    value: '5969'
 examples:
   - response:
       statusCode: 200
