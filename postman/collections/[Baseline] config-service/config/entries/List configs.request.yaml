@@ -1,12 +1,12 @@
 type: http
 name: List configs
-url: '{{baseUrl}}/config/entries?page=4347&limit=4347'
+url: '{{baseUrl}}/config/entries?page=8296&limit=8296'
 method: GET
 queryParams:
   - key: page
-    value: '4347'
+    value: '8296'
   - key: limit
-    value: '4347'
+    value: '8296'
 examples:
   - response:
       statusCode: 200
