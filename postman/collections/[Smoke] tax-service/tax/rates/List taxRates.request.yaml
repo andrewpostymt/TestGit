@@ -1,12 +1,12 @@
 type: http
 name: List taxRates
-url: '{{baseUrl}}/tax/rates?page=9361&limit=9361'
+url: '{{baseUrl}}/tax/rates?page=5734&limit=5734'
 method: GET
 queryParams:
   - key: page
-    value: '9361'
+    value: '5734'
   - key: limit
-    value: '9361'
+    value: '5734'
 scripts:
   - type: afterResponse
     code:
