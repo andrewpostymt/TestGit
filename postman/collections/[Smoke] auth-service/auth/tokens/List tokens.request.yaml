@@ -1,12 +1,12 @@
 type: http
 name: List tokens
-url: '{{baseUrl}}/auth/tokens?page=605&limit=605'
+url: '{{baseUrl}}/auth/tokens?page=9787&limit=9787'
 method: GET
 queryParams:
   - key: page
-    value: '605'
+    value: '9787'
   - key: limit
-    value: '605'
+    value: '9787'
 scripts:
   - type: afterResponse
     code:
